@@ -2,28 +2,28 @@
 ## 1.1 Stress
 In Ulster, stress is usually on the first syllable. There's a strong tendency because of that to shorten the vowels in the unstressed syllables. Even though there's a fada symbol on the vowels in the second/third syllable in the words below, they're said as short vowels usually. The same with the *eo(i)* in the second syllable of the words, it's said as a short *o*. In the samples bellow, *eô* shows that there's a short *o*. The *e* sound, like in the english word *let* is used for *éi/ae* in unstressed syllables. When the dialectal form of the word is different from the standard form, I give the standard version in parentheses.
 
- |                 |  Word               | Pronunciation |
- | --------------- | ------------------- | ------------- |
- | **á > a**       | *amadán*            | *amadan*      |
- |                 | *urlár*             | *urlar*       |
- |                 | *sábháil*           | *sábhail*     |
- |                 | *coimeád*           | *coimead*     |
- |                 | *oileán*            | *oilean*      |
- | **ó > o**       | *bábóg*             | *bábog*       |
- |                 | *siopadóir*         | *siopadoir*   |
- |                 | *trioblóid*         | *triobloid*   |
- |                 | *fuinneog*          | *fuinneôg*    |
- |                 | *ainneoin*          | *ainneôin*    |
- | **ú > u**       | *galún*             | *galun*       |
- |                 | *séasúr*            | *séasur*      |
- |                 | *cosúil*            | *cosuil*      |
- | **é > e**       | *buidéil* (plural)  | *buideil*     |
- |                 | *sciléid (sciléad)* | *scileid*     |
- |                 | *bucaeid (buicéad)* | *buc(a)eid*   |
- | **éa > ea = a** | *coirnéal*          | *coirneal*    |
- |                 | *buidéal*           | *buideal*     |
- |                 | *leithscéal*        | *leisceal*    |
- |                 | *suipéar*           | *suipear*     |
+|                 |  Word               | Pronunciation |
+| --------------- | ------------------- | ------------- |
+| **á > a**       | *amadán*            | *amadan*      |
+|                 | *urlár*             | *urlar*       |
+|                 | *sábháil*           | *sábhail*     |
+|                 | *coimeád*           | *coimead*     |
+|                 | *oileán*            | *oilean*      |
+| **ó > o**       | *bábóg*             | *bábog*       |
+|                 | *siopadóir*         | *siopadoir*   |
+|                 | *trioblóid*         | *triobloid*   |
+|                 | *fuinneog*          | *fuinneôg*    |
+|                 | *ainneoin*          | *ainneôin*    |
+| **ú > u**       | *galún*             | *galun*       |
+|                 | *séasúr*            | *séasur*      |
+|                 | *cosúil*            | *cosuil*      |
+| **é > e**       | *buidéil* (plural)  | *buideil*     |
+|                 | *sciléid (sciléad)* | *scileid*     |
+|                 | *bucaeid (buicéad)* | *buc(a)eid*   |
+| **éa > ea = a** | *coirnéal*          | *coirneal*    |
+|                 | *buidéal*           | *buideal*     |
+|                 | *leithscéal*        | *leisceal*    |
+|                 | *suipéar*           | *suipear*     |
 
 When a word ends in *-ín* or when *-ao(i)* is in an unstressed syllable in a word, the long vowel is shortened as well, but often it's often left long or half-length.
 
