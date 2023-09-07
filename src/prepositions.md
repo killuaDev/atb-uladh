@@ -1,4 +1,4 @@
-# 7. The Prepositions
+# 7.  Prepositions
 ## 7.1 Simple prepositions
 There will be an account in this first section of the most basic group of prepositions. Most of them affect the start of the noun following them, especially when the article is used with them. A compound is often made out of the preposition and the possessive adjective. Nouns were put in the dative after these adjectives once, and feminine nouns often still are. In the examples below, the Standard version is given between ( ).
 
@@ -8,8 +8,8 @@ There will be an account in this first section of the most basic group of prepos
 | *eir* (ar)              | *eir Mháire, eir thiní, fear eir fhear*                                                   |
 | *ios* (as)              | *ios mála, ios bealach, ios Seán*                                                         |
 | *eig* (chuig)           | *eig damhsa/bainis, eig sagart, eig Síle*                                                 |
-| *de*                    | *da/ d;e\* dhuine amháin, da/d;e Sheán*                                                   |
-| *do*                    | *do/ d;e Mháire, do/ d;e dhuine eile*                                                     |
+| *de*                    | *da/ də\* dhuine amháin, da/də Sheán*                                                   |
+| *do*                    | *do/ də Mháire, do/ də dhuine eile*                                                     |
 | *eadar* (idir)          | *eadar Seán agus Tomás*                                                                   |
 | *fá* ((thart) faoi)     | *fá bhaile, ag caint fá Thomas*                                                           |
 | *faoi*                  | *uibheacha faoi chearc, ag magadh faoi Phaidí*                                            |
@@ -24,7 +24,7 @@ There will be an account in this first section of the most basic group of prepos
 | *roimh(e)/ró* (roimh)   | *roimhe seo/sin, roimhe bhliain ó inniu, roimhe/ró Shíle, roimhe/ró mhadadh na comharsan* |
 | *thaire(a)\*\*,* (thar) | *thaire(a) Mhánas, thaire(a) phunta, thaire(a) sheachtain*                                                                                          |
 
-\* The pronounciation of /d;e/ is the same as ***-da*** in *fa**da**.*
+\* The pronounciation of /də/ is the same as ***-da*** in *fa**da**.*
 
 \*\* The end of this preposition has two common pronunciations, /i/ like in *fir*, and /a/ like in *teach*.
 
