@@ -9,7 +9,7 @@
 - [Nouns](./nouns.md)
 - [Adjectives](./adjectives.md)
 - [Pronouns](./pronouns.md)
-- [Prepositions]()
+- [Prepositions](./prepositions.md)
 - [Numbers]()
 - [Misceallaneous]()
 - [Vocabulary]()
