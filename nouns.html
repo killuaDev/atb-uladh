@@ -1,0 +1,608 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Nouns - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html" class="active"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="4-nouns"><a class="header" href="#4-nouns">4 Nouns</a></h1>
+<h2 id="41-the-genitive-case"><a class="header" href="#41-the-genitive-case">4.1 The Genitive Case</a></h2>
+<p>All though a lot of the nouns in the dialect match the declensions laid out in the Standard, the dialect and the Standard aren't always ini agreement about everything. In the classifciation done below, there are classes made of the nouns according to their singular genitive. In the case where a noun has a dative case, it's given as well. These are the patterns which are common in the dialect. The standard spelling is given between brackets.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Ainmneach</th><th>Ginideach</th><th>Tabharthach</th></tr></thead><tbody>
+<tr><td><em>1.</em></td><td><em>gabhar</em></td><td><em>adharc gabhair</em></td><td></td></tr>
+<tr><td><em>2.</em></td><td><em>madú</em> (madadh)</td><td><em>cos madaí</em> (madaidh)</td><td></td></tr>
+<tr><td></td><td><em>socrú</em></td><td><em>cuma socraí</em> (socraithe)</td><td></td></tr>
+<tr><td><em>3.</em></td><td><em>éadach</em></td><td><em>culaith éadaí</em> (éadaigh)</td><td></td></tr>
+<tr><td><em>4.</em></td><td><em>gealach</em></td><td><em>solas na gealaí</em></td><td><em>ar an ghealaí/ghealach</em></td></tr>
+<tr><td><em>5.</em></td><td><em>áit</em></td><td><em>lucht na háite</em></td><td></td></tr>
+<tr><td></td><td><em>cathaoir</em></td><td><em>cos na cathaoire</em> (cathaoireach)</td><td></td></tr>
+<tr><td><em>6.</em></td><td><em>cos</em></td><td><em>bun na coise</em></td><td><em>ar mo chois/chos</em></td></tr>
+<tr><td></td><td><em>fuinneog</em></td><td><em>barr na fuinneoige</em></td><td><em>ar an fhuinneoig/fhuinneog</em></td></tr>
+<tr><td><em>7.</em></td><td><em>blách</em> (bláthach)</td><td><em>ag ól na bláiche</em> (bláthaí)</td><td></td></tr>
+<tr><td></td><td><em>cloigeann</em></td><td><em>blaosc mo chloigne</em> (chloiginn)</td><td><em>ar a chloiginn/chloigeann</em></td></tr>
+<tr><td></td><td><em>obair</em></td><td><em>lucht na hoibre</em></td><td></td></tr>
+<tr><td><em>8.</em></td><td><em>sliabh</em></td><td><em>barr an tsléibhe</em></td><td></td></tr>
+<tr><td></td><td><em>im</em></td><td><em>blas an ime</em></td><td></td></tr>
+<tr><td><em>9.</em></td><td><em>feoil</em></td><td><em>ag ithe feola</em></td><td></td></tr>
+<tr><td></td><td><em>droim</em></td><td><em>i gcúl mo dhroma</em></td><td></td></tr>
+<tr><td><em>10.</em></td><td><em>abhainn</em></td><td><em>bruach na habhanna</em> (habhann)</td><td></td></tr>
+<tr><td></td><td><em>athair</em></td><td><em>teach m'athara</em> (athar)</td><td></td></tr>
+<tr><td></td><td><em>máthair</em></td><td><em>cos mo mháthara</em> (máthar)</td><td></td></tr>
+<tr><td><em>11.</em></td><td><em>cioth</em></td><td><em>tua cheatha</em></td><td></td></tr>
+<tr><td></td><td><em>crioth</em></td><td><em>ar bharr amháin creatha</em></td><td></td></tr>
+<tr><td></td><td><em>lionn</em></td><td><em>teach an leanna/lionna</em></td><td></td></tr>
+<tr><td><em>12.</em></td><td><em>crochú</em> (crochadh)</td><td><em>uair a chrochta</em></td><td></td></tr>
+<tr><td></td><td><em>cáthú</em> (cáthadh)</td><td><em>lá an cháite</em></td><td></td></tr>
+<tr><td></td><td><em>geárrú</em> (gearradh)</td><td><em>fearr an gheárrtha</em> (ghearrtha)</td><td></td></tr>
+<tr><td><em>13.</em></td><td><em>tiní</em> (tine)</td><td><em>cúl na tiniú/tiniv</em> (tine)</td><td></td></tr>
+<tr><td></td><td><em>leabaí</em> (leaba)</td><td><em>éadach (na) leapa</em></td><td></td></tr>
+<tr><td></td><td><em>teangaí</em> (teanga)</td><td><em>barr mo theangtha</em> (theanga)</td><td></td></tr>
+<tr><td><em>14.</em></td><td><em>eochair</em></td><td><em>poll na heochrach</em></td><td></td></tr>
+<tr><td></td><td><em>cóir</em></td><td><em>ag iarraidh córach</em></td><td></td></tr>
+<tr><td></td><td><em>stiúir</em></td><td><em>fear stiúrach</em></td><td></td></tr>
+<tr><td><em>15.</em></td><td><em>comharsa</em></td><td><em>teach na comharsan</em></td><td></td></tr>
+<tr><td></td><td><em>móin</em></td><td><em>ag baint mhónú/mhonach</em> (móna)</td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="42-generalisation-of--aí-in-the-genitive"><a class="header" href="#42-generalisation-of--aí-in-the-genitive">4.2 Generalisation of <em>-(a)í</em> in the genitive</a></h2>
+<p>There are things in this scheme which stray from the historical norms. The words ending in <em>-(e)adh</em> and <em>-i(ú)</em> are falling together with those ending in <em>-(e)ach</em> in the genitive singular. There are a few words ending in <em>-amh</em> inside of this class too. They all have the same sound <em>-(a)í</em> in them in the genitive singular. The vowel is of a similar quality to <em>í</em> except short or half length in speech.</p>
+<div class="table-wrapper"><table><thead><tr><th>Writing</th><th>Speech</th><th>The Genitive</th></tr></thead><tbody>
+<tr><td><em>cogadh</em></td><td><em>cogú</em></td><td><em>tús an chogaí (chogaidh)</em></td></tr>
+<tr><td><em>samhradh</em></td><td><em>samhrú</em></td><td><em>deireadh an tsamhraí</em> (tsamhraidh)</td></tr>
+<tr><td><em>socrú</em></td><td><em>socrú</em></td><td><em>ag déanamh socraí</em> (socrú)</td></tr>
+<tr><td><em>cuidiú</em></td><td><em>cuidiú</em></td><td><em>ag iarraidh cuidí</em> (cuidiú)</td></tr>
+<tr><td><em>éadach</em></td><td><em>éadach</em></td><td><em>ag déanamh éadaí</em> (éadaigh)</td></tr>
+<tr><td><em>gealach</em></td><td><em>gealach</em></td><td><em>le solas na gealaí</em></td></tr>
+<tr><td><em>tórramh</em></td><td><em>tórrú</em></td><td><em>lucht an tórraí</em> (tórraimh)</td></tr>
+<tr><td><em>creideamh</em></td><td><em>creidiú</em></td><td><em>ag teagasc an chreidí</em> (chreidimh)</td></tr>
+</tbody></table>
+</div>
+<h3 id="421-the-dative-in-place-of-the-nominative"><a class="header" href="#421-the-dative-in-place-of-the-nominative">4.2.1 The dative in place of the nominative</a></h3>
+<p>There's long been a tendency in the dialects of Irish to put the dative form in place of the nominative. This mostly happens with feminine nouns. This tendency isn't as strong across Ulster Irish as it is in the other dialects. Even so, there's a specific case which is interesting because as often as the dative case is made into the base form, for example <em>conlach</em> (coinleach) to <em>conlaigh</em>, the genitive of the word is similar to the genitive of the noun <em>tiní</em> (tine) which we've categorised in class (13) above. Words from English like <em>Condaidh</em> (Contae) go into this class too.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>conlaigh</em></td><td><em>ag rácáil na conlú/conlaiv</em></td></tr>
+<tr><td><em>condaidh</em>*</td><td><em>muintir na condou/condaiv</em></td></tr>
+</tbody></table>
+</div>
+<p>* The <em>-aidh</em> in the word <em>condaidh</em> is said like the <em>-aigh-</em> in <em>saighdiúir.</em> </p>
+<p>The <em>ou</em> above shows that in the genitive it has a pronounciation like <em>ow</em> the English word <em>how</em>. In the caise of the ending <em>-aiv,</em> it's said as an 'a' vowel as in the word <em>fear, glan</em> etc.</p>
+<h2 id="43-noun-plurals"><a class="header" href="#43-noun-plurals">4.3 Noun plurals</a></h2>
+<p>The following are the classes of the Plural according to the dialect.</p>
+<ul>
+<li>(i) Slenderisation of the final consonant
+<ul>
+<li><em>bardail, bradáin, droichid, gabhair, galuin ...</em></li>
+<li><em>crainn, poill ...</em></li>
+<li><em>breac/bric, fear/fir, mac/mic ...</em></li>
+</ul>
+</li>
+<li>(ii) <em>-idh/-igh</em></li>
+</ul>
+<h3 id="the-plural"><a class="header" href="#the-plural">The Plural</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Writing</th><th>Speech</th></tr></thead><tbody>
+<tr><td><em>madadh</em> (madra)</td><td><em>madaidh</em></td><td><em>madaí</em></td></tr>
+<tr><td><em>margadh</em></td><td><em>margaí</em></td><td><em>margaí</em></td></tr>
+<tr><td><em>marcach</em></td><td><em>marcaigh</em></td><td><em>marcaí</em></td></tr>
+<tr><td><em>Albanach</em></td><td><em>Albanaigh</em></td><td><em>Alabnaí</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="note"><a class="header" href="#note">Note</a></h3>
+<p>It's normal for words ending in <em>-(e)adh</em> to have an plural in <em>-íocha</em> in the dialects of Donegal today. So those examples above are exceptions, in a way, though perhaps they show the first step in the historical development relating to the prominence of <em>-íocha</em>.</p>
+<ul>
+<li>(iii) <em>-(e)acha/-(a)íocha</em> as a suffix
+<ul>
+<li>(a) Two syllable words. Stem ends on a slender consonant.
+<ul>
+<li><em>carraiceacha, cathaoireacha, colainneacha, guallaineacha, maideanacha, litireacha, paidireacha, pingineacha, roiligeacha/roiliceacha, scillingeacha, uillinneacha ...</em></li>
+<li><em>aithreacha, máithreacha, toibreacha ...</em></li>
+<li><em>bátáil/batálacha, ofráil/ofrálacha, éadáil/éadálacha ...</em></li>
+<li><em>ribe/ribeacha, easna/easnacha, gearria/gearriacha ...</em></li>
+</ul>
+</li>
+<li>(b) One syllable words. They have three syllables in total in the plural.
+<ul>
+<li><em>áiteacha, blaoscacha, éanach, iallacha, leacacha, splancacha ...</em></li>
+<li><em>géacha, claíocha/claidheacha ...</em></li>
+</ul>
+</li>
+<li>(c) Devoicing of a consonant ( &lt; ending <em>-theacha</em>)
+<ul>
+<li><em>leadhb/leadhpacha, lúb/lúpacha, sráid/sráiteacha, díog/díocacha, leabaidh/leapacha ...</em></li>
+</ul>
+</li>
+<li>(d) Intrusive consonant <em>t, n</em> or <em>r</em> + <em>acha</em>
+<ul>
+<li><em>cultacha, iris/irsteacha, scoltacha, stialltacha, tinteacha ...</em></li>
+<li><em>anamnacha, ainmneacha, slis/slisneacha, snaidhmneacha ...</em></li>
+<li><em>nead/neadracha, gadracha, ialltracha ...</em></li>
+</ul>
+</li>
+<li>(e) <em>-(a)íocha</em> is the same as <em>í</em> + <em>acha</em>. There's three syllables: 'í + ach + a'.
+<ul>
+<li>Nouns ending in <em>(e)adh</em> mostly.
+<ul>
+<li><em>cogadh/cogaíocha, briseadh/bristíocha, troscadh/troscaíocha, samhradh/samhraíocha, athródh/athraíocha, olaíocha.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(iv) <em>-(e)annaí</em> (in place of the Standard's <em>-(e)anna</em>)
+<ul>
+<li><em>amannaí, claiseannaí, droimeannaí, gathannaí</em> etc.</li>
+</ul>
+</li>
+<li>(v) <em>-a</em> (one syllable words) (= The Standard, usually)
+<ul>
+<li><em>barra, bróga, cíocha, clocha, cluasa, cosa, fiacha, pluca, sméara, ladhra</em> (ladhracha), <em>buna</em> (bunanna)</li>
+<li><em>-tha</em>
+<ul>
+<li><em>tíortha</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(v) <em>-(a)í</em> (= An Caighdeán)
+<ul>
+<li><em>búistéirí, doc(h)túirí, meisceoirí, saighdiúirí</em> etc.</li>
+<li><em>cailíní, cipíní</em> etc.</li>
+<li><em>cleití, brioscaí, ridirí</em> srl.</li>
+<li><em>beannachtaí, mallachtaí, Gaeltachtaí srl.</em></li>
+<li><em>-(a)í</em> (special cases)
+<ul>
+<li><em>bádaí, gasúraí, péistí</em> etc.</li>
+</ul>
+</li>
+<li><em>-(a)í</em> (<em>-a</em> in the Standard, nouns ending in <em>-eog/-óg</em>)
+<ul>
+<li><em>bábógaí, ciarógaí, fuinneogaí, ordógaí</em> etc.</li>
+</ul>
+</li>
+<li><em>-thaí</em> (Words whose stems end on a broad <em>r</em>)
+<ul>
+<li><em>leabharthaí, pórthaí, saorthaí, scórthaí, spéarthaí,</em> etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(vi) <em>taí</em> (One syllable words ending in <em>l, n,</em> or <em>s</em> usually).
+<ul>
+<li><em>stóltaí, scéaltaí, seáltaí ...</em></li>
+<li><em>bliantaí, piantaí, róntaí, draentaí, traentaí ...</em></li>
+<li><em>bástaí, gléastaí, gnástaí, leigheastaí ...</em></li>
+<li><em>aonach/aontaí, Domhnach/Domhantaí ...</em></li>
+</ul>
+</li>
+<li>(vii) <em>-te</em>
+<ul>
+<li><em>bailte, coillte, muilte, sléibhte, sluaite</em> etc.</li>
+</ul>
+</li>
+<li>(viii) <em>-íonnaí</em> (Words ending in <em>-í</em> can have this plural)
+<ul>
+<li><em>gadaíonnaí, comrádaíonnaí, seanchaíonnaí</em> etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="note-1"><a class="header" href="#note-1">Note</a></h3>
+<p>This ending is usually pronounced as a short <em>í</em> + <em>nnaí</em>. Wagner (1959) says <em>-ní</em> is what Teileann had, that is, a single slender <em>n</em> instead of the doubled broad <em>n</em> which we have above.</p>
+<ul>
+<li>(ix) <em>-e/-a</em> + syncopation
+<ul>
+<li><em>aingle, caiple, cairde, cloigne, coinnle, craicne, doirse, soilse ...</em></li>
+<li><em>gamhna, fiacla</em> etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="44-the-usage-of-the-genitive"><a class="header" href="#44-the-usage-of-the-genitive">4.4. The usage of the genitive</a></h2>
+<p>Often when someone is listening to native speakers they'll hear the nominative case in use where they'd be expecting the genitive case. This is a tendency that's been growing in the language for hundreds of years but it's clear that the change is not fully complete yet. It's heard to assess the situation exactly but the following rules can help show the current state.</p>
+<ul>
+<li>(i) The genitive is alive and well in phrases and sayings which people essentially know by heart, namely:
+<ul>
+<li><em>i lár an lae/na hoíche</em></li>
+<li><em>bean an toí</em></li>
+<li><em>buidéal an linbh</em></li>
+<li><em>teach an tsagairt</em></li>
+<li><em>ag cur amach an aoiligh</em></li>
+<li><em>ag baint mhónadh</em></li>
+<li><em>ag déanamh ime</em></li>
+<li><em>tráthnóna Domhnaigh amháin</em></li>
+<li><em>deartháir m'athar/mo mháthara</em></li>
+<li><em>ar thaobh an bhealaigh mhóir.</em></li>
+<li><em>i gcúl an dorais</em></li>
+<li><em>gunna an tsaighdiúra</em></li>
+<li><em>ag cuartú oibre</em></li>
+<li><em>ag goil 'na mhargaidh</em> (chun an)</li>
+</ul>
+</li>
+<li>(ii) There's long been a tendency now not to put words in the genitive form and to leave them instead in the nominative, there are a couple of cases to distinguish.
+<ul>
+<li>(a) When an adjective is accompanying the noun, it's often now that both are left in the nominative. Both versions exist but I think that the language is moving more towards the nominative. When the genitive form isn't being used, the adjective and the noun are lenited and <em>t</em> is put before a noun starting with <em>s.</em>
+<ul>
+<li><em>hata an fhir uasail/an fhear uasal</em></li>
+<li><em>carr an tsagairt mhóir/carr an tsagart mhór</em></li>
+<li><em>barr na fuinneoige bige/barr an fhuinneog bheag</em></li>
+<li><em>i ndiaidh an mhadaidh ruaidh/an mhadadh rua</em></li>
+</ul>
+</li>
+<li>(b) Even the Official Standard and Niall Ó Dónaill's dictionary recognise the form of the nominative in place of the genitive in the cases below. The dialect has this too.
+<ul>
+<li><em>Bhí siad ag saothrú airgead mór</em></li>
+<li><em>Tá muid ag cur píosa beag.</em></li>
+<li><em>Chaith siad an tráthnóna ag ól uisce beatha</em>.</li>
+<li><em>Níl sé ag déanamh maith ar bith dó.</em></li>
+<li><em>Tá sí ag déanamh scrúdú.</em></li>
+<li><em>Bhí siad ag tabhairt ordú é a dhéanamh.</em></li>
+<li><em>Bhí sé ag iarraidh seasamh.</em></li>
+</ul>
+</li>
+<li>When an ordinal number is in use there's an option between the genitive and the nominative.
+<ul>
+<li><em>Bhí muid ag caint le scoláirí an ceathrú bliain/na ceathrú bliana.</em></li>
+<li><em>Mac an dara bean/na dara mná atá le pósadh.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-genitive-plural"><a class="header" href="#the-genitive-plural">The genitive plural</a></h2>
+<p>The two classes, weak plural and strong plural, are mentioned when plurals come up in Irish. This classification is a help if we want to get a proper understanding of the use of the genitive plural in Ulster Irish. The weak plurals end on a slender consonant or on <em>'a(í)'</em>. Every other plural is a strong plural. The only reason this classification matters is that it helps you handle the genitive plural. If a noun has a strong plural, it will have that same form in the genitive plural. If not, the genitive plural is the same as the nominative singular. The nouns in the dialects of the north fall into this classification but the language has been moving towards strong plurals for a long time now.</p>
+<h3 id="451-weak-plurals"><a class="header" href="#451-weak-plurals">4.5.1 Weak Plurals</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>fear/fir</td><td><em>éadach fear/na bhfear</em></td></tr>
+<tr><td><em>breac/bric</em></td><td><em>ag iascaireacht breac/na mbreac</em></td></tr>
+<tr><td><em>crann/crainn</em></td><td><em>barr na gcrann</em></td></tr>
+<tr><td><em>Albanach/Albanaigh</em></td><td><em>talamh na nAlbanach</em></td></tr>
+<tr><td><em>méar/méara</em></td><td><em>bearr na méar</em></td></tr>
+<tr><td><em>fuinneog/fuinneogaí</em></td><td><em>barr na bhfuinneog</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Note:</strong> Versions are also heard like those below:</p>
+<ul>
+<li><em>ag iascaireacht <strong>bric/na mbric</strong>, barr <strong>na bhfuinneogaí</strong>, ag coinnéail gabhair, ag bualadh <strong>na gcosa</strong></em> etc.</li>
+</ul>
+<h3 id="452-strong-plurals"><a class="header" href="#452-strong-plurals">4.5.2 Strong Plurals</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>doras/doirse</em></td><td><em>ag druid doirse/na ndoirse</em></td></tr>
+<tr><td><em>capall/caiple</em></td><td><em>ag traenáil na gcaiple</em></td></tr>
+<tr><td><em>glún/glúine</em></td><td><em>ag cóiriú na nglúine</em></td></tr>
+<tr><td><em>buille/buillí</em></td><td><em>ag bualadh na mbuillí</em></td></tr>
+<tr><td><em>cipín/cipíní</em></td><td><em>ag caitheamh cipíní/na gcipíní</em></td></tr>
+<tr><td><em>duine/daoiní</em></td><td><em>caint daoiní/na ndaoiní</em></td></tr>
+<tr><td><em>saighdiúir/saighdiúirí</em></td><td><em>ag marú saighdiúirí/na saighdiúirí</em></td></tr>
+<tr><td><em>seoltóir/seoltóirí</em></td><td><em>éadach seoltóirí/na seoltóirí</em></td></tr>
+<tr><td><em>pór/pórthaí</em></td><td><em>ag cur na bpórthaí</em></td></tr>
+<tr><td><em>glór/glórthaí</em></td><td><em>ag cluinstin na nglórthaí</em></td></tr>
+<tr><td><em>bliain/bliantaí</em></td><td><em>ag cuntas na mbliantaí</em></td></tr>
+<tr><td><em>draen/draentaí</em></td><td><em>ag cóiriú na ndraentaí</em></td></tr>
+<tr><td><em>cathaoir/cathaoireacha</em></td><td><em>ag déanamh cathaoireacha/na gcathaoireacha</em></td></tr>
+<tr><td><em>scilling/scillingeacha</em></td><td><em>ag cuntas scillingeacha/na scillingeacha</em></td></tr>
+<tr><td><em>cogadh/cogaíocha</em></td><td><em>le linn na gcogaíocha</em></td></tr>
+<tr><td><em>ola/olaíocha</em></td><td><em>ag cur olaíocha ar a chorp</em></td></tr>
+<tr><td><em>greim/greimeannaí</em></td><td><em>ag cur isteach na ngreimeannaí</em></td></tr>
+<tr><td><em>bainc/bainceannaí</em></td><td><em>ag róbáil na mbainceannaí</em></td></tr>
+<tr><td><em>oibrí/oibríonnaí</em></td><td><em>éadach na n-oibríonnaí</em></td></tr>
+<tr><td><em>gadaí/gadaíonnaí</em></td><td><em>ag cuartú na ngadaíonnaí</em></td></tr>
+<tr><td><em>teach/toithe</em></td><td><em>ag tógaíl toithe</em></td></tr>
+<tr><td><em>bó/ba</em></td><td><em>ag buachailleacht na mba</em></td></tr>
+<tr><td><em>caora/caoirigh</em></td><td><em>cró na gcaoirigh/gcaorach</em></td></tr>
+<tr><td><em>lach/lachain</em></td><td><em>ag coinneáil lachain/lachan</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="453-other-dialectal-traits"><a class="header" href="#453-other-dialectal-traits">4.5.3 Other dialectal traits</a></h3>
+<p>The genitive plural has other traits in Donegal Irish which are worth describing now. I'll go about this description in two ways: (a) forms which were prominent historically in the dialect and (b) the way of the dialect today.</p>
+<p>The Historical Development<br />
+There are two developments worth referencing here, because they are found across many of the subdialects and in the areas where Irish is strongest at the moment.</p>
+<p>Development (i)<br />
+As I've mentioned above, the genitive plural can be based on the nominative singular or the nominative plural. Going off of the nominative plural has long been the most widespread norm. But it wasn't always like this. Often, even when words have strong plurals, the nominative singular is used as the genitive plural in many of the subdialects of Donegal Irish today. This system affects (a) nouns ending in a slender consonant which have <em>-í</em> added to them in the plural and (b) nouns ending in <em>-(e)acht</em> which have <em>-(a)í</em> added to them in the plural.</p>
+<div class="table-wrapper"><table><thead><tr><th>Nominative singular</th><th>Nominative plural</th><th>Genitive Plural</th></tr></thead><tbody>
+<tr><td><em>saighdiúir</em></td><td><em>na saighdiúirí</em></td><td><em>ag marbhadh (na) saighdiúir</em></td></tr>
+<tr><td><em>seoltóir</em></td><td><em>na seoltóirí</em></td><td><em>éadach na seoltóir</em></td></tr>
+<tr><td><em>cipín</em></td><td><em>na cipíní</em></td><td><em>ag briseadh na gcipín</em></td></tr>
+<tr><td><em>coinín</em></td><td><em>na coiníní</em></td><td><em>ag scaoileadh coinín</em></td></tr>
+<tr><td><em>beannacht</em></td><td><em>na beannachtaí</em></td><td><em>lucht na mbeannacht</em></td></tr>
+<tr><td><em>mallacht</em></td><td><em>na mallachtaí</em></td><td><em>ag déanamh mallacht</em></td></tr>
+<tr><td><em>cumhacht</em></td><td><em>na cumhachtaí</em></td><td><em>Dia na gcumhacht</em></td></tr>
+</tbody></table>
+</div>
+<p>Development (ii)<br />
+There are two other genitive plurals found in Donegal Irish. They end in in <em>-(e)ach</em> and <em>-(e)ann</em>, respectively. The one ending in <em>-(e)ach</em> is found more commonly in speech these days. Note that most of these nouns have a nominative plural of <em>-(e)annaí</em> or <em>-(e)acha</em> but there are exceptions to that too. Examples of both are found in the writings of the Mac Grianna family and of other authors. They aren't only in writing, however, but also in the living speech of our own times. Here are some examples of it.</p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Nominative Plural</th><th>Genitive Plural</th></tr></thead><tbody>
+<tr><td><em>culaith</em></td><td><em>cultacha</em></td><td><em>ag déanamh cultach</em></td></tr>
+<tr><td><em>uibh</em></td><td><em>uibheacha</em></td><td><em>ag ithe na n-uibheach</em></td></tr>
+<tr><td><em>(i)níon</em></td><td><em>(i)níonacha</em></td><td><em>beirt (i)níonach</em></td></tr>
+<tr><td><em>gé</em></td><td><em>géacha</em></td><td><em>ag buachailleacht na ngéach</em></td></tr>
+<tr><td><em>éan</em></td><td><em>éanach</em></td><td><em>ag marbhadh éanach</em></td></tr>
+<tr><td><em>sráid</em></td><td><em>sráidteacha</em></td><td><em>ag tomhas na sráidteach</em></td></tr>
+<tr><td><em>snaidhm</em></td><td><em>snaidhmneacha</em></td><td><em>ag cur snaidhmneach</em></td></tr>
+<tr><td><em>nead</em></td><td><em>neadracha</em></td><td><em>ag cuartú neadrach</em></td></tr>
+<tr><td><em>eangach</em></td><td><em>eangachaí</em></td><td><em>ag briseadh na n-eangach</em></td></tr>
+<tr><td><em>caora</em></td><td><em>caoirigh</em></td><td><em>cró na gcaorach</em></td></tr>
+<tr><td><em>bealach</em></td><td><em>beal(t)aí</em></td><td><em>ag cóiríu na mbealtach</em></td></tr>
+<tr><td><em>leabhar</em></td><td><em>leabhart(h)aí</em></td><td><em>ag léamh leabhart(h)ach</em></td></tr>
+<tr><td><em>teach</em></td><td><em>toithe</em></td><td><em>cúl na dtoitheach</em></td></tr>
+<tr><td><em>baile</em></td><td><em>bailte</em></td><td><em>cailíní na mbailteach</em></td></tr>
+<tr><td><em>dóigh</em></td><td><em>dóigheannaí</em></td><td><em>ar dhóigh na ndóigheann</em></td></tr>
+<tr><td><em>leith</em></td><td><em>leitheannaí</em></td><td><em>ag marbhadh leitheann</em></td></tr>
+<tr><td><em>taobh</em></td><td><em>taobhannaí</em></td><td><em>ar thaobh na dtaobhann</em></td></tr>
+<tr><td><em>luibh</em></td><td><em>luibheannaí</em></td><td><em>leigheas luibheann</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="46-the-dative-case"><a class="header" href="#46-the-dative-case">4.6 The Dative Case</a></h2>
+<p>There are some traits relating to the dative case which are worth describing. The first of those traits relates to the tendency to slenderise the final consonant in a feminine noun in the dative. This is a tendency that was very widespread in the dialect until recently. This tendency is declining bit my bit and now it is the norm for the dative case to be the same as the nominative case. Both versions are still heard. The old form is put first in the following examples. </p>
+<div class="table-wrapper"><table><thead><tr><th>The Nominative</th><th>The Dative</th></tr></thead><tbody>
+<tr><td><em>an fhuinneog</em></td><td><em>ag an <strong>fhuinneoig</strong>/fhuinneog</em></td></tr>
+<tr><td><em>mo thaobh</em></td><td><em>thart le mo <strong>thaoibh</strong>/thaobh</em></td></tr>
+<tr><td><em>an ghirseach</em></td><td><em>(agus mé) i mo <strong>ghirsigh</strong>//ghirseach</em></td></tr>
+<tr><td><em>an adharc</em></td><td><em>fuair sé greim ar an <strong>adhairc</strong>/adharc</em></td></tr>
+<tr><td><em>an chos</em></td><td><em>ar mo <strong>chois</strong>/chos</em></td></tr>
+<tr><td><em>an mhuc</em></td><td><em>píosa den mhuic/mhuc</em></td></tr>
+<tr><td><em>cluas</em></td><td><em>istigh i mo <strong>chluais</strong>/chluas</em></td></tr>
+<tr><td><em>lámh</em></td><td><em>isteach ina <strong>láimh</strong>/lámh</em></td></tr>
+<tr><td><em>cloigeann</em></td><td><em>ar a <strong>chloiginn</strong>/chloiginn</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="461-initial-mutations-in-the-dative"><a class="header" href="#461-initial-mutations-in-the-dative">4.6.1 Initial mutations in the dative</a></h3>
+<p>When one of the prepositions <em>ag, ar, as, chuig,d e, do, fá, faoi, ffríd, ionsar, le, ó, roimh, i,</em> and <em>thar</em>, and the singular article come before a noun in Ulster Irish, the following rules are applied:</p>
+<ul>
+<li>(a) the first consonant is <em>lenited</em> if it starts with <em>b, c, f, g, m</em> or <em>p.</em></li>
+<li>(b) <em>t</em> is put before the noun if it starts with <em>s, sl, sn,</em> or <em>sr</em>, regardless of whether it's masculine or feminine</li>
+<li>(c) No change is made to <em>d</em> or <em>t</em>.
+<ul>
+<li><em>ag an fhear/tsruthán/doras</em></li>
+<li><em>ar an chéidh/tsúil/drochuair</em></li>
+<li><em>chuig an mhaighistir/tsagart/táilliúr/damhsa</em></li>
+<li><em>thart fán Fhómhar/tsráid/teach</em></li>
+<li><em>faoin mhaide/tseol/díon</em></li>
+<li><em>ionsar an Gharda Síochána/tsagart/doc(h)túir</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="47-matters-of-pronunciation"><a class="header" href="#47-matters-of-pronunciation">4.7 Matters of pronunciation</a></h2>
+<h3 id="471-t-before-s-in-a-compound-word"><a class="header" href="#471-t-before-s-in-a-compound-word">4.7.1 <em>T</em> before <em>s</em> in a compound word</a></h3>
+<p>This note relates to compound words whose second part starts with <em>s</em> +  a vowel or <em>sr/sl/sn</em> + a vowel, and whose first part ends in <em>d, l, n</em> or <em>t.</em> When these kind of compound words are put in the dative/genitive, a <em>t</em> is put before the <em>s</em> that's at the start of their second part. This rule only applies to an <em>s</em> that isn't already lenited in the compound. Note that <em>tsn</em> is said /tr/.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>seansaol</em></td><td><em>ag caint ar an tseantsaol/lucht an tseantsaoil</em></td></tr>
+<tr><td><em>seansaighdiúir</em></td><td><em>ag scríobh chuig an tseantsaighdiúir</em></td></tr>
+<tr><td><em>seansluasaid</em></td><td><em>leis an tseantsluaid</em></td></tr>
+<tr><td><em>seansnáthad</em></td><td><em>leis an tseantsnáthad</em></td></tr>
+<tr><td><em>seansnáth</em></td><td><em>ag ceannach(t) an tseantsnátha</em></td></tr>
+<tr><td><em>bunsrath</em></td><td><em>thíos ag an bhuntsrath</em></td></tr>
+<tr><td><em>caolsáile</em></td><td><em>amuigh ar an chaoltsáile</em></td></tr>
+<tr><td>But:</td><td></td></tr>
+<tr><td><em>bunshlat</em></td><td><em>ar an bhunshlat</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="471-lenition-of-ln"><a class="header" href="#471-lenition-of-ln">4.7.1 Lenition of <em>l/n</em></a></h3>
+<p>A few things should be said now about the pronunciation of <em>l</em> and <em>n</em> at the start of nouns after the article and the prepositions that we mentioned above. This change happens after a lot of other particles, namely: <em>mo, do, char/níor, an</em> (feminine), in the Past Tense etc.</p>
+<p>Even though it's not clear from the spelling, the pronunciation of doubled <em>ll</em> and <em>nn</em> like in the words <em>geall, mill, teann</em> and <em>tinn</em> is what's used for <em>l</em> and <em>r</em> at the start of nouns like <em>lámh, leabhar, nóta</em> and <em>nead</em> when they stand alone. When the prepositions above and the article come before nouns of this sort, they have the pronunciation of the single <em>l</em> and <em>n</em> like in the words <em>geal, mil, mion</em> and <em>min</em>. It's not easy for the untrained ear to hear these changes but they do exist in speech. Note also that the <em>n</em> of the article is left out in speech when there is a word before it which ends in a consonant. This is shown in the examples by putting ( ) around that <em>n</em>. Even though these are common changes used by many speakers, there is every chance that there are people who don't apply them always and in every situation, depending on the age of the person and the context of the speech.</p>
+<div class="table-wrapper"><table><thead><tr><th>As <em>ll</em></th><th>As <em>l</em></th></tr></thead><tbody>
+<tr><td><em>lámh</em></td><td><em>thart ar a(n) lámh</em></td></tr>
+<tr><td><em>leabhar</em></td><td><em>istigh sa leabhar</em></td></tr>
+<tr><td><em>litir</em></td><td><em>Léigh sé fríd a(n) litir</em></td></tr>
+<tr><td><em>léana</em></td><td><em>thíos ar a(n) léana</em></td></tr>
+<tr><td><em>Liam</em></td><td><em>A Liam!</em></td></tr>
+<tr><td><em>nóta</em></td><td><em>D'imigh sí leis a(n) nóta</em></td></tr>
+<tr><td><em>nead</em></td><td><em>amach as a(n) nead</em></td></tr>
+<tr><td><em>Nóra</em></td><td><em>A Nóra!</em></td></tr>
+<tr><td><em>Niall</em></td><td><em>A Néill!</em></td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="the_copula.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="adjectives.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="the_copula.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="adjectives.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

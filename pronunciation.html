@@ -1,0 +1,704 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pronunciation - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html" class="active"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="1-pronunciation"><a class="header" href="#1-pronunciation">1. Pronunciation</a></h1>
+<h3 id="11-stress"><a class="header" href="#11-stress">1.1 Stress</a></h3>
+<p>In Ulster, stress is usually on the first syllable. There's a strong tendency because of that to shorten the vowels in the unstressed syllables. Even though there's a fada symbol on the vowels in the second/third syllable in the words below, they're said as short vowels usually. The same with the <em>eo(i)</em> in the second syllable of the words, it's said as a short <em>o</em>. In the samples bellow, <em>eô</em> shows that there's a short <em>o</em>. The <em>e</em> sound, like in the english word <em>let</em> is used for <em>éi/ae</em> in unstressed syllables. When the dialectal form of the word is different from the standard form, I give the standard version in parentheses.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Word</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><strong>á &gt; a</strong></td><td><em>amadán</em></td><td><em>amadan</em></td></tr>
+<tr><td></td><td><em>urlár</em></td><td><em>urlar</em></td></tr>
+<tr><td></td><td><em>sábháil</em></td><td><em>sábhail</em></td></tr>
+<tr><td></td><td><em>coimeád</em></td><td><em>coimead</em></td></tr>
+<tr><td></td><td><em>oileán</em></td><td><em>oilean</em></td></tr>
+<tr><td><strong>ó &gt; o</strong></td><td><em>bábóg</em></td><td><em>bábog</em></td></tr>
+<tr><td></td><td><em>siopadóir</em></td><td><em>siopadoir</em></td></tr>
+<tr><td></td><td><em>trioblóid</em></td><td><em>triobloid</em></td></tr>
+<tr><td></td><td><em>fuinneog</em></td><td><em>fuinneôg</em></td></tr>
+<tr><td></td><td><em>ainneoin</em></td><td><em>ainneôin</em></td></tr>
+<tr><td><strong>ú &gt; u</strong></td><td><em>galún</em></td><td><em>galun</em></td></tr>
+<tr><td></td><td><em>séasúr</em></td><td><em>séasur</em></td></tr>
+<tr><td></td><td><em>cosúil</em></td><td><em>cosuil</em></td></tr>
+<tr><td><strong>é &gt; e</strong></td><td><em>buidéil</em> (plural)</td><td><em>buideil</em></td></tr>
+<tr><td></td><td><em>sciléid (sciléad)</em></td><td><em>scileid</em></td></tr>
+<tr><td></td><td><em>bucaeid (buicéad)</em></td><td><em>buc(a)eid</em></td></tr>
+<tr><td><strong>éa &gt; ea = a</strong></td><td><em>coirnéal</em></td><td><em>coirneal</em></td></tr>
+<tr><td></td><td><em>buidéal</em></td><td><em>buideal</em></td></tr>
+<tr><td></td><td><em>leithscéal</em></td><td><em>leisceal</em></td></tr>
+<tr><td></td><td><em>suipéar</em></td><td><em>suipear</em></td></tr>
+</tbody></table>
+</div>
+<p>When a word ends in <em>-ín</em> or when <em>-ao(i)</em> is in an unstressed syllable in a word, the long vowel is shortened as well, but often it's often left long or half-length.</p>
+<div class="table-wrapper"><table><thead><tr><th>Word</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td>cipín</td><td>cipin/cipín</td></tr>
+<tr><td>cailín</td><td>cailin/cailín</td></tr>
+<tr><td>Nóirín</td><td>Nóirin/Nóirín</td></tr>
+<tr><td>cathaoir</td><td>caithir/caithír</td></tr>
+<tr><td>Dé Céadaoin</td><td>Dé Céadaine/Céadaoine</td></tr>
+</tbody></table>
+</div>
+<h2 id="shortening-of-long-vowels-generally"><a class="header" href="#shortening-of-long-vowels-generally">Shortening of Long Vowels Generally</a></h2>
+<p>Regarding the long vowels which are shortened in unstressed syllables, the following should be said about them.</p>
+<p>(a) In the southern half of Donegal, the quality of the vowel is kept when it's shortened and it's often half-length.</p>
+<p>(b) In the northern half of the county, in the Rosa, Gaoth Dobhair and in Cloch Cheannaola, the quality of the shortened vowel is kept as well. There is a tendency though to have a neutral vowel, as is in the first syllable of the words <em>anois/arís</em>, in place of the shortened vowels in those areas. This happens especially when <em>ú</em> and <em>í</em> are shortened.</p>
+<p>(c) This tendency of using a neutral vowel in the second syllable is stronger the further you go towards Ros Goill, An Tearmainn and Fhánada. This tendency was also found in East Ulster when it was still spoken.</p>
+<h3 id="12-compound-words"><a class="header" href="#12-compound-words">1.2 Compound Words</a></h3>
+<p>When a compound word is made with a long vowel in the second part of it, the vowel in that part is shortened if the first syllable of the compound word has the strongest stress.</p>
+<div class="table-wrapper"><table><thead><tr><th>Word</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td>leathshúil</td><td>leathshuil</td></tr>
+<tr><td>seanbhróg</td><td>seanbhrog</td></tr>
+<tr><td>muiceoil</td><td>muiceôil</td></tr>
+<tr><td>coiscéim</td><td>coisceim</td></tr>
+<tr><td>aimhréidh</td><td>aimhreidh</td></tr>
+</tbody></table>
+</div>
+<p>When the compound word ends on a vowel there is a tendency to keep that vowel half length.</p>
+<ul>
+<li><em>bunbhrí</em> <em>bunbhri/bunbhrí</em></li>
+<li>seanbhó seanbho/seanbhó</li>
+<li>corrlá corrla/corrlá</li>
+</ul>
+<h3 id="13-stressed-vowels"><a class="header" href="#13-stressed-vowels">1.3 Stressed Vowels</a></h3>
+<p>Stressed long vowels and diphthongs in the first syllable of words are shortened in many contexts. It's not quite the same in any two subdialects. This shortening regularly happens before <em>th</em> but it happens in many other contexts which aren't easy to describe. Below are representative samples of words where the change applies. Anywhere the shortening makes the word hard to recognise, the root version is given in parentheses. That form is not always in accordance with the Official Standard.</p>
+<p>(a) <em>'á'</em> go <em>a</em></p>
+<ul>
+<li><em>athas, mathair, faoi lathair, aiteacha</em> (áit+eacha), <em>sraiteacha</em> (sráid+theacha), <em>sraideog</em> (sráideog), <em>bainín</em> (báinín), <em>Manas Mór</em> (Mánas Mór).</li>
+</ul>
+<p>(b) <em>'é'</em> go <em>'e'</em></p>
+<ul>
+<li><em>ce(a)lacan, cre(a)fóg, e(a)drom, me(a)nar, sce(a)la, an che(a)d duine, b'eigean, e(a)dáil, cl(a)eifeacha</em> (plural of claíomh &lt; claidhimh+theacha), <em>b'fheidir, le(a)pacha</em> (leadhb+thacha), <em>seideán, seideog,</em></li>
+</ul>
+<p>(c) <em>í</em> go <em>i</em></p>
+<ul>
+<li><em>sil (síl), spi(o)nógaí, tchifidh, fi(o)dóir, diocacha</em> (díog+thacha), <em>trihú</em> (tríú)</li>
+</ul>
+<p>(d) <em>'ó'</em> go <em>'o'</em></p>
+<ul>
+<li>(ag baint) <em>monadh</em> (móna), <em>morán</em>, <em>cota mór</em>, <em>ogánach</em></li>
+</ul>
+<p>(e) <em>'ú'</em> to <em>'u'</em></p>
+<ul>
+<li><em>crubóg, curamach, duirt sé, Dun Fionnachaidh, Dun na nGall, Hiudaí, Na Dunaibh, munadh, sugán, suile buidhe, suiliní</em></li>
+</ul>
+<p>(f) long <em>'ao'</em> to short <em>'ao'</em></p>
+<ul>
+<li><em>caoradóir, faochóg, faoileog, gaothach, maoilín, saothar</em></li>
+</ul>
+<p>(g) <em>'ua'</em> to <em>'u/o'</em></p>
+<ul>
+<li><em>bochaill</em> (buachaill), <em>bu(a)iltín, bu(a)taise, fu(a)iscneach, gru(a)imhín), gu(a)lainn, ag cu(a)rtannaigh</em> (= ag airneán), <em>slu(a)said, tu(a)rastal, wochtar</em> (uachtar)</li>
+</ul>
+<p>(h) <em>'ia'</em> to <em>'i/yi'</em></p>
+<ul>
+<li><em>yi(o)d héin</em> (iad féin), <em>yirann</em> (iarann), <em>yirraidh</em> (iarraidh), <em>yiragúlta</em> (iargúlta), <em>yiróg</em> (iaróg), <em>yiscaire</em> (iascaire)</li>
+<li><em>bri(a)thar, sci(a)theán, mial (míol)</em> but <em>myiltóg</em> (míoltóg)</li>
+</ul>
+<p>Note that 'ia' + 'bh' has the /ou/ in the english word <em>sound</em> in certain areas, within words like these.</p>
+<ul>
+<li><em>cleabhán</em> (cliabhán), <em>deabhal</em> (diabhal), <em>feabhraigh</em> (fiafraigh), <em>feabhras</em> (fiabhras)</li>
+</ul>
+<h3 id="14-shortening-of-vowels-in-monosyllabic-words"><a class="header" href="#14-shortening-of-vowels-in-monosyllabic-words">1.4 Shortening of Vowels in Monosyllabic Words</a></h3>
+<p>(a) <em>Má/Dá</em> the vowels in these words are rarely long. If there's some emphasis on them, they're said with a short <em>a</em> like in the word <em>mac</em>. If there's no emphasis on them at all, they're said as a neutral vowel like in the first syllable of the word <em>arís</em>. The symbol [ə] is used bellow to represent the netural vowel. The <em>'d'</em> in <em>Dá</em> is often dropped.</p>
+<ul>
+<li><em>Ma/Mə bhíonn sé ann, labhair leis</em></li>
+<li><em>Da/Də mbeinn chugam féin, rachainn libh.</em></li>
+<li><em>Ba cheart duit a bheith ann (d)a/(d)ə dtiocfadh leat é.</em></li>
+</ul>
+<p>(b) <em>Dé</em> This is said as a short <em>e</em> or [ə].</p>
+<ul>
+<li><em>De/Də Luain/Máirt</em> etc.</li>
+</ul>
+<p>(c) Féile go <em>'(i)l/Feil'</em></p>
+<ul>
+<li><em>Lá(i)l Bríde/Pádraig (Lá Fhéile Bríde/Pádraig)</em></li>
+<li><em>Oícheil Eoin (Oíche Fhéile Eoin)</em></li>
+<li><em>Lá(i)l Muire Mór san Fhómhar (Lá Fhéile)</em></li>
+</ul>
+<p>but</p>
+<ul>
+<li><em>Rabharta na Feil Muire</em></li>
+<li>Oíche cheann Féile</li>
+<li>Mí na Feil Bríde</li>
+<li>Lá Féile an lá inniu</li>
+</ul>
+<p>(d) Ó in surnames. Ó in surnames isn't stressed and as a result of that, it's said as a short <em>a</em> or a neutral vowel [ə].</p>
+<ul>
+<li>Seán a/ə Gallchóir</li>
+<li>Jimí a/ə Dubhchon</li>
+</ul>
+<p>(e) Mac in surnames. It's not typical to pronounce the <em>M</em> in <em>Mac</em> except when the name is being called out officially or when the first name is omitted. There's a strong tendency to make a <em>g</em> out of the last <em>c</em> before vowels and before surnames that start with <em>r/l</em>. The <em>a</em> is often said as [ə].</p>
+<ul>
+<li><em>Tadhg (M)ac Pháidín/Suibhne</em></li>
+<li>Seán (M)ag Aodha</li>
+<li>(M)ag Aodha/Fhloinn/Lochlainn/Rabhartaigh (broad 'g')</li>
+<li>Mánas (M)ag Éidí/Fhionnaile/Íomhair (slender 'g')</li>
+<li>Eoghan (M)a Giolla Bhríde/Chóill ('c/g' dropped)</li>
+</ul>
+<h3 id="15-polysyllabic-words-ending-with--adh-amh-odh"><a class="header" href="#15-polysyllabic-words-ending-with--adh-amh-odh">1.5 polysyllabic Words Ending with <em>'-adh/-amh/-odh</em></a></h3>
+<p>-(e)adh/-odh/-(e)amh in polysyllabic words are said like the <em>u</em> at the end of <em>Zulu</em>. They're found words like the following. <em>ú</em> is used to show the pronunciation:</p>
+<p>(a) Nouns: <em>molú</em> (moladh), <em>bualú</em> (bualadh), <em>Samhrú</em> (Samhradh), <em>Geimhriú</em> (Geimhreadh), <em>talú/tolú</em> (talamh).</p>
+<p>(b) Verbal nouns: <em>ag glanú</em> (ag glanadh), <em>ag déanú</em> (ag déanamh).</p>
+<p>(c) Verb endings: <em>bíú</em> (bíodh), <em>crochú é</em> (crochadh), <em>brisiú iad</em> (briseadh), <em>mholhú Seán thú</em> (mholfadh).</p>
+<h3 id="16-idhigh-at-the-end-of-words"><a class="header" href="#16-idhigh-at-the-end-of-words">1.6 <em>Idh/Igh</em> at the End of Words</a></h3>
+<p>The <em>dh/gh</em> in single syllable words is said just how it's said at the start of words like <em>ghearr, dhíol a Dhia!</em> etc. We're showing the pronunciation of <em>dh/gh</em> in these words with the symbol /y/. It's almost the same as the <em>y</em> sound in the English word <em>yes.</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Word</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>chuaigh</em></td><td><em>chuay</em></td></tr>
+<tr><td><em>dóigh</em></td><td>dóy</td></tr>
+<tr><td><em>faigh</em>*</td><td>fáy</td></tr>
+<tr><td><em>léigh</em></td><td><em>léy</em></td></tr>
+<tr><td><em>nigh</em></td><td><em>niy</em></td></tr>
+<tr><td><em>luigh</em></td><td><em>loy/luíy</em></td></tr>
+</tbody></table>
+</div>
+<p>* The spelling <em>fagh</em> is often found in writings. It shows that <em>fa</em> is said, and that is a common pronunciation before words starting with a consonant, like this: <em>fa greim air, fa luach deich bpunta</em> etc. In cases of that kind, the verb receives little stress.</p>
+<p>Often the standard form of words leaves out this <em>-idh/-igh.</em> In the examples below the old spelling is given along with the standard.</p>
+<div class="table-wrapper"><table><thead><tr><th>Standard</th><th>Old Spelling</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td>crua</td><td>cruaidh</td><td>cruay</td></tr>
+<tr><td>bua</td><td>buaidh</td><td>buay(e)</td></tr>
+<tr><td>trua</td><td>truaighe</td><td>truaye</td></tr>
+<tr><td>pá</td><td>páigh(e)</td><td>páye</td></tr>
+</tbody></table>
+</div>
+<h3 id="17-broad-mhbh"><a class="header" href="#17-broad-mhbh">1.7 Broad <em>mh/bh</em></a></h3>
+<p>(i) <em>w</em> like in the English word <em>watch</em> is the normal sound for <em>mh/bh</em> (a) at the start of a word or after prefixes, and (b) after a long vowel or after the diphthongs <em>ia</em> and <em>ua</em> in the middle/end of a word. There is strong nasalisation on the <em>w</em> from <em>mh</em> usually.</p>
+<ul>
+<li>(a) <em>A Mháire, rómhaith, mharaigh; bhuail, bhain, róbhog, an bhó.</em></li>
+<li>(b) <em>ag léamh, ag snámh, An Fómhar, lámh, lámha, Mac Íomhair, (a)riamh, Niamh, sciamhach; ábhar, cliabh, sliabh, riabhóg</em></li>
+</ul>
+<p>(ii) <em>(e)amh</em> in the middle of words and at the end of monosyllabic words has a sound like the <em>ow</em> in the English word <em>cow</em>. The same diphthong is in some words which have <em>abh</em> in the middle, especially words which have a consonant after that <em>bh</em>, and in the words <em>domhan</em> in some areas, but read (iii) below.</p>
+<ul>
+<li><em>amhlaidh, damhsa, gamhain, Samhradh, sleamhain, ramhar; amh, Neamh, snamh; breabhsánta, cabhlach, cabhsa, fabhair, slabhra; domhan.</em></li>
+</ul>
+<p>(iii) <em>(e)abh, omh</em> and <em>obh</em> in the middle of words usually have the <em>ó</em> sound.</p>
+<ul>
+<li><em>abhainn, cabhair, gabhar, labhair, leabhar, meabhair, rabharta, seabhac.</em></li>
+<li><em>comhairle, comhrá, domhan, Domhnach, tomhas; lobhar dobharchú, Gaoth Dobhair</em></li>
+</ul>
+<h3 id="18-slender-mhbh"><a class="header" href="#18-slender-mhbh">1.8 Slender <em>mh/bh</em></a></h3>
+<p>Slender <em>mh/bh</em> are the same every where, at the start, middle, and end of a word. It's similar to the <em>v</em> sound in the English words <em>very, live</em> except that it's bilabial.</p>
+<ul>
+<li>Start of a word: <em>an mhín, mhionnaigh, sé mhí; an bhean, bhí, bhris</em></li>
+<li>Middle of a word: <em>ainmhí, cuimhne, roimhe, rómhinic, uimhir; aoibhneas, cuibhreann, róbheag, saibhir, taibhse; uibheacha</em></li>
+<li>End of a word: <em>nimh, scéimh, séimh; ar na mallaibh, bainne an linbh, daoibh, libh, luibh, sibh; arbh fhiú, seilbh, tairbh</em></li>
+</ul>
+<h3 id="19-aidh-aigh-eadh-eidh-eagh-eigh-oidh-oigh-in-the-middle-of-a-word"><a class="header" href="#19-aidh-aigh-eadh-eidh-eagh-eigh-oidh-oigh-in-the-middle-of-a-word">1.9 <em>a(i)dh, a(i)gh, eadh, eidh, eagh, eigh, oidh, o(i)gh in the Middle of a Word</em></a></h3>
+<h4 id="a-aidhaigh"><a class="header" href="#a-aidhaigh">(a) a(i)dh/a(i)gh</a></h4>
+<p><em>adh/agh</em> is pronounced as a long vowel in the middle of words. It's similar to the vowel sound <em>ae</em> in the word <em>Gael</em>. <em>aidh/aigh</em> and <em>adh/agh</em> are the same sound across Ulster, generally except that the dipthong in the English word <em>height</em> is used before dental consonants like <em>d, n, s</em> and <em>t,</em> in Donegal Irish. The Official Standard is in parentheses below when it would distort the pronunciation</p>
+<p>(i) Long Vowel
+<em>adharc, cladhaire, radharc, Tadhg; aghaidh, laghad, slaghdán; A Thaidhg, claidheamh</em> (claíomh), <em>saidhbhir</em> (saibhir), <em>saighead</em>, staighre</p>
+<p>(ii) Diphthong
+<em>maighdean, maighistir</em> (máistir), <em>saighdiúir, saighneán</em></p>
+<p>In East Ulster, they would have had a short vowel in these as well. Note the word <em>maidhean</em> in the well known poem &quot;Úr-Chnoc Chéin Mhic Cáinte&quot;.</p>
+<blockquote>
+<p>A phlúr na <em>maighdean</em> is úire <em>gné</em></p>
+<p>Thug clú le <em>scéimh</em> ón Adhamhchlainn</p>
+<p>A chúl na <em>bpéarla</em>, a rún na <em>héigse</em></p>
+<p>A dhúblas <em>féile</em> is fáilte</p>
+</blockquote>
+<p>(b) <em>ogh/oigh/oidh</em>
+These have the same sound as <em>agh/aigh/aidh.</em></p>
+<ul>
+<li><em>rogha, togha, foighid, oidhre</em></li>
+</ul>
+<p>(c) <em>eidh/eigh/eadh/eagh</em>
+<em>eidh/eigh</em> in the middle of a word is a long vowel like é, likewise with <em>eadh</em> before a consonant in a single syllable word:</p>
+<ul>
+<li>eidhneán, leigheas, leadhb, meadhg</li>
+</ul>
+<p>In polysyllabic with <em>eadh</em> in the middle, there are two ways to say it (a) as <em>agh</em> pronouncin the <em>gh</em> as it is at the start of a word, and (b) as a diphthong like in the English word <em>height</em>. Usually pronunciation (a) is found among those who have an unrounded <em>ú</em> for <em>ao</em> and pronunciation (b) among those who say <em>ao</em> as <em>í</em>.</p>
+<ul>
+<li><em>ar feadh, adhradh, is eadh</em> (is ea), <em>meadhar</em> (meidhir), <em>meadhrach</em> (meidhreach), <em>feadhnóg, sleagh</em> (sleá), <em>sniodh, teaghlach</em> and also in the words <em>saghart</em> (sagart), <em>teaghasc</em> (teagasc)</li>
+</ul>
+<p>In you also get a diphthong in <em>agam, agat, againn</em> and <em>agaibh</em> in Teileann and Gleann Cholm Cille in North Donegal.</p>
+<h3 id="110-fuaimniú-aoaoi"><a class="header" href="#110-fuaimniú-aoaoi">1.10 Fuaimniú <em>ao/aoi</em></a></h3>
+<p>There are two pronunciations used for the spelling <em>ao</em></p>
+<p>(a) unrounded <em>ú</em> and (b) <em>í.</em></p>
+<p>(i) (a) was the most common pronunciation across Ulster when Irish was strong, and it's still very common in donegal. <em>í</em> is a very common pronunciation in the south of the county, in Árainn Mhór, in a good bit of Gaoth Dobhair and in Ros Goill in the north of the county. It's what was in Cavan Irish when it was still spoken.</p>
+<ul>
+<li><em>aon, aos óg, braon, caol, caora, daor, gaol, naomh, ar maos, saol, saor, taobh</em></li>
+</ul>
+<p>(ii) In the subdialects which have unrounded <em>ú</em> as a pronunciation of <em>ao</em>, it's normal that it's also in the other forms of those words, for exxample the genitive case or the comparative adjectives.</p>
+<ul>
+<li><em>lá na gaoithe, tús an tsaoil, caoirigh, níos caoile/daoire/saoire</em></li>
+</ul>
+<p>(iii) The same unrounded <em>ú</em> is in words like these.</p>
+<ul>
+<li><em>aois, ar saoire, daoiní</em> (daoine), <em>faoileog</em> (faoileán), <em>saoirse, scaoil, smaoiteamh</em> (smaoineamh), snaoisín</li>
+</ul>
+<p>(iv) There's a few other words which have the unrounded <em>ú</em> even though you wouldn't expect it from their spelling</p>
+<ul>
+<li><em>oíche, choíche, iontach</em></li>
+</ul>
+<p>(v) The <em>u</em> in the following words is pronounced as an unrounded <em>u</em> by the people who have an unrounded <em>ú</em> for <em>ao/aoi</em>. It's usually half length. In the areas of Donegal where <em>ao</em> is said as <em>í</em>, this <em>u</em> is said as a half-length <em>i</em>. Note that these words all start with labial consonants <em>b, bh, f</em> etc.</p>
+<ul>
+<li><em>buail, buaidhe</em> (bua), <em>fuacht, fuar, fuáil, spuaic (bh)uaim, (bh)uait</em> etc.</li>
+</ul>
+<p>(vi) Long <em>í</em> for <em>aoi</em> is very common across Ulster when it's not followed by a consonant and in a few other words</p>
+<ul>
+<li><em>caoi, draoi, faoi, gnaoi, naoi, saoi, An Aoine, baois, Déardaoin, maoin, faoiside</em> (faoistin), <em>Taoiseach.</em></li>
+</ul>
+<h2 id="vowel-contrast-generally"><a class="header" href="#vowel-contrast-generally">Vowel Contrast Generally</a></h2>
+<h3 id="111-long-vowels"><a class="header" href="#111-long-vowels">1.11 Long Vowels</a></h3>
+<p>Note now that the following distinctions are found in the vowel system of Ulster Irish.</p>
+<p>(a) In the dialects which have unrounded <em>u</em> for <em>ao</em>, there's a distinction between <em>í - ao - ú</em>.</p>
+<ul>
+<li><em>thíos:aosta, ag guí:gaoth, caol:cúl, aol:úlla</em></li>
+</ul>
+<p>(b) In the same way there's a distinction between the two types of <em>é</em> in many subdialects, in pairs like these:</p>
+<ul>
+<li><em>éan:aon, ré:rogha, a théamh:a thoghadh</em></li>
+</ul>
+<p>(c) Note as well that two types of <em>ó</em> are heard in the dialects of the North. One is called closed <em>ó</em> (like the <em>o</em> in the English word <em>more</em>), the other is called open <em>ó</em> (like the <em>aw</em> in the English word <em>paw</em>). The closed <em>ó</em> is usually found beside the consonants <em>m, mh</em> or <em>n.</em> The closed ó comes first in these examples.</p>
+<ul>
+<li><em>tóg:óg, mór:ór, níos mó:bó, Eoin:a Eoghain, comhartha:cófra</em></li>
+</ul>
+<p>Especially note that the spellings <em>-(e)abha-, -obha-, -odha-,</em> and <em>-ogha-</em> use the closed <em>ó</em>. This historical change adds contributes a lot of distinctions between closed <em>ó</em> and open <em>ó</em>.</p>
+<ul>
+<li><em>leabhar:leor, cabhair:cóir, tabhair:tóir, gabhal:ag ól, bodhar:ór, lobhadh:lód, loghadh:dódh</em></li>
+</ul>
+<h3 id="112-short-vowels"><a class="header" href="#112-short-vowels">1.12 Short Vowels</a></h3>
+<p>Regarding short vowels, there are distinctions in Ulster Irish which aren't in other dialects. Pay particular attention to the distinction between closed <em>i</em> and open <em>i</em>. The latter is similar to English <em>i</em> in words like <em>hit, sin</em> etc. The closed <em>i</em> is closer to the sound in English words like <em>meet, seat</em> etc. The two types of <em>i</em> are shown in the following examples, the closed form coming first.</p>
+<ul>
+<li><em>aic<strong>i</strong> : aig<strong>e</strong>, síl : sil, ith : im, filí : file</em> etc.</li>
+</ul>
+<p>Just like with the long vowels, a distinction is made between the two short <em>o</em> sounds in Ulster Irish. In the examples below the open <em>o</em> is the one in the second spot.</p>
+<ul>
+<li><em>corr</em> (gob) <em>: corr</em> (aisteach), <em>ucht : ocht, ag cur : cor, ar gor : gorm, mothú : rotha</em></li>
+</ul>
+<h2 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h2>
+<h3 id="113-ao-roimh-ch"><a class="header" href="#113-ao-roimh-ch">1.13 <em>a/o</em> roimh <em>ch</em>.</a></h3>
+<p>(a) Note that a clear <em>a</em> like in the Irish word <em>mac</em> is said before <em>ch</em> in words like these below.</p>
+<ul>
+<li><em>cladach, ag ceannach(t), éadach, salach</em> etc.</li>
+<li><em>ainmneacha, loirgneacha</em> (lorgaí), <em>maidineacha</em> etc.</li>
+</ul>
+<p>(b) Even though <em>o</em> is written before <em>ch</em> in words like the following, it is pronounced a clear <em>a</em> in Ulster Irish. The pronunciation of the words is given between parentheses ().</p>
+<ul>
+<li>*buíoch (buí-ach), buíochas (buí-ach-as), gaiscíoch (gais-cí-ach), cleasaíocht (cleas-aí-acht), filíocht (fil-í-acht) etc.</li>
+</ul>
+<p>(c) There is a <em>h</em> in the middle of the following words and they have 3 syllables. The <em>í</em> in them is shortened but it keeps its original quality.</p>
+<ul>
+<li><em>rihachta</em> (ríocht), <em>druiheachta</em> (draíocht)</li>
+</ul>
+<p>but</p>
+<ul>
+<li>go dtige do rí-acht (in the Prayer)</li>
+</ul>
+<h3 id="114-change-between-o-and-a"><a class="header" href="#114-change-between-o-and-a">1.14 Change between <em>o</em> and <em>a</em></a></h3>
+<h3 id="1141-the-change-from-o-to-a"><a class="header" href="#1141-the-change-from-o-to-a">1.14.1 The Change from <em>o</em> to <em>a</em></a></h3>
+<p>This is a common change in many words. This change has been in the language since the time of old irish where you get both spellings. It most often happens before the consonants <em>l, r, s</em> and <em>t</em>. Here's some examples.</p>
+<ul>
+<li><em>arm</em> (orm)</li>
+<li><em>arthu</em> (orth<em>u</em>)</li>
+<li><em>ar char ar bith</em> (chor)</li>
+<li><em>ar scar ar bith</em> (scor)</li>
+<li><em>bas</em> (bos)</li>
+<li><em>brallach</em> (brollach)</li>
+<li><em>call</em> (coll)</li>
+<li><em>capógach</em> (copóg(ach))</li>
+<li><em>casán</em> (cosán)</li>
+<li><em>cras</em> (cros)</li>
+<li><em>craisbhealach</em> (crosbhealach)</li>
+<li><em>dailigh</em> (doiligh)</li>
+<li><em>daras</em> (doras)</li>
+<li><em>fasta</em> (fosta)</li>
+<li><em>fastaigh</em> (fostaigh)</li>
+<li><em>gaile</em> (goile)</li>
+<li><em>larg</em> (lorg)</li>
+<li><em>tarmán</em> (tormán),</li>
+<li><em>pata</em> (pota)</li>
+<li><em>pártán</em> (portán)</li>
+<li><em>spat(a)</em> (spota)</li>
+<li><em>táirneach</em> (toirneach)</li>
+</ul>
+<p><em>a</em> is also said in the following words.</p>
+<ul>
+<li><em>eanann</em> (ionann), <em>seamra</em> (seomra), <em>seapa</em> (siopa)</li>
+</ul>
+<h3 id="1142-the-change-from-a-to-o"><a class="header" href="#1142-the-change-from-a-to-o">1.14.2 The Change from <em>a</em> to <em>o</em></a></h3>
+<p>This is a change which is very widespread in the dialects of the north. It's usually found before a back <em>l</em>, but it's often found before a back <em>ll</em> too. The rule only rarely affects <em>ea</em> before those consonants. The new pronunciation is similar to the vowel in the Irish word <em>seo</em> or in the English word <em>hot</em> as it's said in Scotland.</p>
+<ul>
+<li><em>Olbain</em> (Albain), <em>bolbh</em> (balbh), <em>dolba</em> (dalba), <em>golánta</em> (galánta), <em>golar</em> (galar), <em>loch</em> (lacha), <em>molairt</em> (malairt), <em>solann</em> (salann) etc.</li>
+<li><em>ollas</em> (allas), <em>Ó Gollchóir</em> (Ó Gallchóir), <em>moll</em> (mall), <em>mollacht</em> (mallacht).</li>
+<li><em>los</em> (las), <em>oiteanach</em> (aiteannach), <em>moidin</em> (maidin)</li>
+</ul>
+<h3 id="115-raising-of-a-and-á"><a class="header" href="#115-raising-of-a-and-á">1.15 Raising of <em>a</em> and <em>á</em>.</a></h3>
+<h3 id="1151-the-pronunciation-of-short-a"><a class="header" href="#1151-the-pronunciation-of-short-a">1.15.1 The Pronunciation of Short <em>a</em></a></h3>
+<p>The short <em>a</em> changes a lot depending on the context it's in. Generally, there is a front <em>a</em> (like the <em>a</em> in English words like <em>hat, rap</em> etc.) in the first set of words below and a back <em>a</em> (which is more like the vowel in the English words <em>hot, stop</em> etc.) in the examples in the second set.</p>
+<ul>
+<li><strong><em>a</em> tosaigh</strong> <em>bean, cead, easóg, fear, nead, teas; cas, garbh, fada, fan, hata, tana; ainm, cailc, cailleach, caint, dainséar, gaineamh, Laidin, saill, taisme</em></li>
+<li><strong><em>a</em> cúil</strong> <em>abair, Anna, am, bacach, balla, callán, cam, canna, capall, carraig, sac, paca, taca</em></li>
+</ul>
+<h3 id="1152-raising-of-the-short-a"><a class="header" href="#1152-raising-of-the-short-a">1.15.2 Raising of the Short <em>a</em></a></h3>
+<p>In several subdialects, especially in the northwest and north of Donegal, and in other parts of Ulster when Irish was spoken in them, the <em>a</em> which was in the words below historically, was raised so that it became more like the <em>e</em> in English words like <em>get, help</em> etc. The raising most often happens before the consonants <em>d, n, l, t</em> and <em>s</em> both broad and slender.</p>
+<ul>
+<li><em>cas, cat, garbh, fada, fan, gadaí, hata, marbh, tana (tanaí)</em></li>
+<li><em>ainm, cailc, dainséar, gaineamh, gaisce, Laidin, saill, taisme</em></li>
+</ul>
+<p>The same sound is found in words like <em>bean, fear</em> etc. Of course it is a sound like this which was in these words historically, and in all likelihood the vowel in words of that sort haven't changed since the times of old irish. The historical vowel is most often kepped before the broad consonants <em>d, n, t, th, r</em> and <em>s.</em></p>
+<ul>
+<li><em>bean, bearach, cead, ceathair, easóg, fear, leat, leathar, meath, nead, peata, (uisce) reatha, sean, teas</em></li>
+</ul>
+<p>The historical vowel is lowered everywehre else. Short <em>a</em> is typical in words like those below and I would say the lowering is caused by the nature of the consonant which follows <em>ea</em> in the spelling.</p>
+<ul>
+<li><em>bealach, ceart, cearr, ceap, dream, feamnach</em> (feamainn), <em>fearthainn, geal, geall, leabaidh</em> (leaba), <em>peacadh</em> (peacadh), <em>seacht, seachtain, seang, teacht, teampall</em></li>
+</ul>
+<h3 id="back-a"><a class="header" href="#back-a">Back <em>a</em></a></h3>
+<p>There's a tendency to say back <em>a</em> in certain words. This is caused by the nature of the consonants before the <em>a</em>. <em>b, f, m</em> and <em>p</em> tend to be very broad, and often a glide like <em>w</em> is heard after them. The broadening and this <em>w</em> bring the vowel back.</p>
+<ul>
+<li><em>baile, bainis, faic, faill, maide, maidin, paidir</em></li>
+</ul>
+<h3 id="ai--i"><a class="header" href="#ai--i"><em>ai</em> = /i/</a></h3>
+<p>In some specific cases, the spelling <em>ai</em> is pronounced as /i/. The following is a list of the contexts where /i/ is found.</p>
+<p>In the base words</p>
+<ul>
+<li><em>aibhleog, aici, aige, aire, bail, bain(t), cnaipe, gairid, maise, saint</em></li>
+</ul>
+<p>In the genitive singular/nominative plural</p>
+<ul>
+<li><em>ag tógáil airm, cos an chait, bun an chrainn, barr na slaite</em></li>
+<li><em>na cait, na crainn, na daill, na hairm, na glais, na mairbh</em></li>
+</ul>
+<h3 id="ea--io"><a class="header" href="#ea--io"><em>ea</em> = <em>io</em></a></h3>
+<p>This pronunciation is mostly found before <em>g.</em></p>
+<ul>
+<li><em>beag, beagán, creag, eag</em> (eang), <em>ní heagal dó, eagla, An Eaglais, leag, seagal; ceann, leann, seangán</em></li>
+</ul>
+<h3 id="1153-the-raising-of-á"><a class="header" href="#1153-the-raising-of-á">1.15.3 The Raising of <em>á</em></a></h3>
+<p>The raising that happens to <em>á</em> is even more prevelant than the raising of short <em>a</em>. The change is gradiated from place to place. Little of the raising happens in the southern half of Donegal, in the Gaeltacht Láir, Gleann Cholmcille, and Teileann. In the northern half of the county, this change is abundant. The quality of the long <em>á</em> is the same as that of the short <em>a</em> which is raised and which is mentioned above in 1.15.2. The change is most often found before slender consonants and broad <em>d, r, s</em> and <em>t</em>.</p>
+<ul>
+<li><em>Áine, áit, áithe, báillí, cáil, cáin, cáis, ag fáil, fáilte, Gráinne, láidir, náire, páiste, bád, bás, cás, cár, cnádán, fás, lár, ráta, spás</em></li>
+</ul>
+<p>In much of the Gaoth Dobhair parish, for example, <em>á</em> is raised before every consonant, broad or slender.</p>
+<p>Often, even in the areas which don't raise the long <em>a</em> before broad consonants, the raising happens when the word is in the genitive, or when the comparative or superlative of an adjective is used, that is, when a slender consonant comes directly after the <em>á.</em></p>
+<div class="table-wrapper"><table><thead><tr><th>No raising</th><th>Raised</th></tr></thead><tbody>
+<tr><td><em>lámh</em></td><td><em>taobh na láimhe deise</em></td></tr>
+<tr><td><em>bán</em></td><td><em>níos báine</em></td></tr>
+<tr><td><em>bál</em></td><td><em>ag imirt báil</em></td></tr>
+<tr><td><em>sál</em></td><td><em>ar mo sháil</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="116-the-pronunciation-of-consonants"><a class="header" href="#116-the-pronunciation-of-consonants">1.16 The Pronunciation of Consonants</a></h3>
+<h3 id="1161-llnnrr-and-lnr"><a class="header" href="#1161-llnnrr-and-lnr">1.16.1 ll/nn/rr and l/n/r</a></h3>
+<p>(a) Anyone who wants to learn the Irish of the north has to grasp reasonably well the distinction between the pronunciations of <em>ll</em> and <em>l</em>, <em>nn</em> and <em>n</em>, and <em>rr</em> and <em>r</em>. This contrast is extremely important in the dialect. Often there is no difference between pairs of words except for the pronounciation of the consonants <em>ll/l</em>, nn/n or <em>rr/r</em> in them. In order to make <em>ll</em> and <em>nn</em>, <em>the whole front of the tongue</em> is put against the top teeth when they're broad, and against the bottom teeth and the ridge of the teeth when they're slender. To say <em>l</em> and <em>n</em>, <em>the tip of the tongue</em> is put against the ridge of the teeth. Of course, along with tip or the front part of the tongue, the back of the tongue is raised towards the soft palate when saying broad consonants the front of the tongue towards the hard palate when saying slender consonants. Note as well that the vowels in the monosyllabic words below aren't lengthened as they are in other dialects.</p>
+<ul>
+<li><em>gann/gan mionna/miona, donna/dona, leann/lean, léann/mo léan</em></li>
+<li><em>fáinne/Áine, sa bhinn/sa mhin, tinneas/tinidh</em> (tine), <em>crainn/bain</em></li>
+<li><em>geall/geal, olla/ola, Gall/gal, balla/geala, eallach/eala</em></li>
+<li><em>céille/céile, mill/mil, linn (uisce)/linn, leis (corp)/leis</em></li>
+</ul>
+<p>(b) Regarding the contrast between <em>rr</em> and <em>r</em>, it doesn't come up except for in a few words. The contrast doesn't exist except with broad consonants. To pronounce broad <em>rr</em>, strong hits are made on the back of the ridge of the teeth, and to make a broad <em>r</em> only one hit is done. This distinction may not be preserved in every subdialect.
+Here are some examples.</p>
+<ul>
+<li><em>corr</em> (gob)/<em>cur, tarraing/tar, carraig/cara, i gcarr/gar farraige/arm</em></li>
+<li><em>corr/cur/cuir, farraige/faraor/faire, urraim/orm/coirm, barr/ár/báire</em></li>
+</ul>
+<h3 id="1162-long-vowels-before-rr-rd-rn-and-rl"><a class="header" href="#1162-long-vowels-before-rr-rd-rn-and-rl">1.16.2 Long Vowels before <em>rr, rd, rn</em> and <em>rl</em></a></h3>
+<p>The vowel <em>a</em> is long in the following words before <em>rr</em> this length is often maintained when another syllable is added to the root. Note that the <em>a</em> is short before <em>rr</em> in words that don't come from a monosyllabic root.</p>
+<ul>
+<li>long <em>á</em> - <em>barr, carr, carrannaí</em> (carrannna), <em>is fearr, ghearr, gearrann,</em></li>
+<li>short <em>a</em> - <em>carraig, , an tEarrach, an fharraige, searrach, tarraing</em></li>
+</ul>
+<p>It's also normal to have a long vowel before the groups <em>rd, rn</em> and <em>rl</em> in the Irish of the North.</p>
+<ul>
+<li>long <em>á</em> - <em>ard, aird, in airde, bearna(idh), cairde, ceardaí, carn, marla, tairne, Tarlach, tharla(igh),</em></li>
+<li>long <em>ó</em> - <em>bord, dorn, dornán, ord, ordóg, Orla, orlach</em></li>
+<li>long <em>ú</em> - <em>murnán, tuirne</em></li>
+</ul>
+<p>The words below have a short vowel</p>
+<ul>
+<li><em>airde, mirlín, murlas, turdán, turlach, turn, uirlis, urnaí</em></li>
+</ul>
+<h3 id="117-the-pronunciation-of-ch"><a class="header" href="#117-the-pronunciation-of-ch">1.17 The Pronunciation of <em>ch</em></a></h3>
+<h3 id="1171-broad-ch"><a class="header" href="#1171-broad-ch">1.17.1 Broad <em>ch</em></a></h3>
+<p>(a) At the start of words a strong <em>ch</em> is heard.</p>
+<ul>
+<li><em>chaith, mo charr/chos/chluas</em> etc.</li>
+</ul>
+<p>(b) In the middle/end of words the <em>ch</em> is usually weakened to <em>/h/</em>.</p>
+<ul>
+<li><em>cladach, amach, easnacha, eochair, cloch(a)</em> etc.</li>
+</ul>
+<p>(c) Sometimes, <em>ch</em> has an <em>r</em> sound before <em>t</em> in some of the subdialects (Gaoth Dobhair, Toraigh, Tír Eoghain).</p>
+<ul>
+<li><em>lort</em> (locht), <em>ort</em> (ocht), <em>bort</em> (bocht), <em>ag teart</em> (ag teacht) etc.</li>
+</ul>
+<p>(d) <em>ch</em> is pronounced as <em>/h/</em>  in the preposition <em>chun/chuig</em> and sometimes it's completely left out.</p>
+<ul>
+<li><em>(h)ugam</em> (chugam), <em>(h)ugad</em> (chugat), <em>(h)uige</em> (chuige), <em>na bhaile</em> (chun an bhaile), <em>na scoile</em> (chun na scoile), <em>a naonaigh</em> (chun aonaigh) srl.</li>
+</ul>
+<h3 id="1172-slender-ch"><a class="header" href="#1172-slender-ch">1.17.2 Slender <em>ch</em></a></h3>
+<p>It's said as a strong <em>ch</em> in every position, at the start, middle, and end of words usually. There's a certain tendency however to make it into a <em>/h/</em> between two vowels</p>
+<ul>
+<li><em>cheannaigh, mícheart, mo chead, cluiche, droichead, fiche, Micheál, oíche, ar an chloich</em> (cloch)</li>
+</ul>
+<h3 id="118-the-pronunciation-of-slender-th"><a class="header" href="#118-the-pronunciation-of-slender-th">1.18 The Pronunciation of Slender <em>th</em></a></h3>
+<p>Like <em>h</em></p>
+<p>(i) At the start of a word</p>
+<ul>
+<li><em>thiar, thíos, thit, róthirim</em></li>
+</ul>
+<p>(ii) In the middle and at the end of a word, usually</p>
+<ul>
+<li><em>leithead, mithid, reithe, sceith, theith, ar bith</em></li>
+</ul>
+<p>Like <em>h</em> or slender <em>ch</em></p>
+<p>(iii) There's a large tendency to turn slender <em>th</em> into slender <em>ch</em> in words where the letters <em>ai/ei/oi</em> or <em>ái/éi</em> are in the stressed syllable. <em>ai/ei/oi</em> before <em>th</em> is pronounced as a diphthong like in the English word <em>my</em></p>
+<ul>
+<li><em>caith, maith, Na Flaithis, ar leith, léithe</em> (léi), <em>ráithe, scoith, snáithe</em> etc.</li>
+</ul>
+<h3 id="119-n-to-r"><a class="header" href="#119-n-to-r">1.19 <em>n</em> to <em>r</em></a></h3>
+<p>(a) Although <em>n</em> is written in words like those below, <em>r</em> is said. </p>
+<ul>
+<li><em>cnámh, cnoc, gnách, gnaíúil, gníomh, gnoithe mná, tnúth</em> etc.</li>
+</ul>
+<p>(b) <em>tsn</em> is said as <em>tr</em> in forms like the following:</p>
+<ul>
+<li><em>snaidhm/an tsnaidhm, snagaireacht/an tsnagaireacht, snámh/ar an tsnámh, snáithe/leis an tsnáithe, sneachta/sa tseachta</em></li>
+</ul>
+<h3 id="120-missing-n"><a class="header" href="#120-missing-n">1.20 Missing <em>n</em></a></h3>
+<p>The <em>n</em> is dropped in the following words.</p>
+<ul>
+<li><em>áró</em> (anró), <em>bárín</em> (banrí(o)n), <em>ichinn</em> (inchinn), <em>muichille</em> (muinchille), <em>muitir</em> (muintir), <em>scáraigh</em> (scanraigh), <em>sórú</em> (sonrú), <em>sóraitheach</em> (sonraitheach) etc.</li>
+</ul>
+<h3 id="121-slenderisation-of-consonants"><a class="header" href="#121-slenderisation-of-consonants">1.21 Slenderisation of Consonants</a></h3>
+<p>Slender consonants are typical at the start of the words below.
+<em>dheá</em> (dhá), <em>a dheath</em> (a dhath), <em>cliú</em> (clú), <em>dreabhlás</em> (drabhlás), <em>driúchta</em> (drúchta), <em>scriúdú</em> (scrúdú), <em>seórt</em> (sórt), <em>tilleadh</em> (tuilleadh)</p>
+<h3 id="122-the-ending--aithe"><a class="header" href="#122-the-ending--aithe">1.22 The Ending <em>-(a)ithe</em></a></h3>
+<h3 id="1221-second-conjugation-verbs-ending-in--aigh"><a class="header" href="#1221-second-conjugation-verbs-ending-in--aigh">1.22.1 Second Conjugation Verbs ending in <em>-(a)igh.</em></a></h3>
+<p>There are two ways in Ulster Irish to make verbal adjective endings from verbs which have <em>-(a)igh</em> in the second person singular imperative. I show the two ways using the spelling <em>-(a)í</em> and <em>-(a)iste/-(a)íste.</em> The sound in <em>-(a)í</em> in these endings is the same as the <em>aí</em> in the word <em>urnaí.</em> In the Official Standard you get the ending <em>-(a)ithe</em>.</p>
+<ul>
+<li><em>ceannaí/ceannaiste/ceannaíste</em> (ceannaithe), <em>ordaí/ordaiste/ordaíste</em> (ordaithe), <em>cruinní/cruinniste/cruinníste</em> (cruinnithe)</li>
+</ul>
+<h3 id="1222-syncopated-verbs"><a class="header" href="#1222-syncopated-verbs">1.22.2 Syncopated Verbs</a></h3>
+<p>The endings mentioned in 1.22.1 above are added to syncopated verbs ending in <em>-ir, -in,</em> for example, <em>díbir, cogain, imir, rómhair</em> etc. as well. <em>-tha</em> isn't added to them as in the Standard.</p>
+<ul>
+<li><em>díbrí/díbriste/díbríste</em> (díbeartha)</li>
+<li><em>cognaí/cognaiste/cognaíste</em> (coganta)</li>
+<li><em>imrí/imriste/imríste</em> (imeartha)</li>
+<li><em>rómhraí/rómhraiste/rómhraíste</em> (rómhartha)</li>
+</ul>
+<p>The same system applies to syncopated verbs ending in <em>-il</em> except that in their case there is a third choice, that is, using one of the endings <em>-te</em> or <em>-ta.</em> That much agrees with the decisions of the Standard.</p>
+<ul>
+<li><em>ceanglaí/ceanglaiste/ceanglaíste</em></li>
+<li><em>ceagailte/ceangalta</em> (ceangailte)</li>
+<li><em>cuimlí/cuimliste/cuimlíste</em></li>
+<li><em>cuimilte/cuimealta</em> (cuimilte)</li>
+<li><em>fosclaí/fosclaiste/fosclaíste</em></li>
+<li><em>foscailte/foscalta</em> (oscailte)</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="verbs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="verbs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

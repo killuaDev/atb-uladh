@@ -1,0 +1,1506 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Verbs - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html" class="active"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="2--verbs"><a class="header" href="#2--verbs">2.  Verbs</a></h1>
+<h2 id="20-verb-classification"><a class="header" href="#20-verb-classification">2.0 Verb Classification</a></h2>
+<p>The verbs are traditionally classified into 2 conugations. Monosyallbic verbs and those ending in <em>-(e)áil</em> and a couple of other verbs in the first conjugation. Other verbs which have more than one syllable in their root are put in the second conjugation. The following are samples of the traditional conjugations.</p>
+<p>1st Conjugation <em>bris, mol, faigh, suigh, sábháil, péinteáil, tiomáin, taispeáin.</em><br />
+2nd Conjugation <em>ceannaigh, imigh, ceangail, imir, foghlaim.</em></p>
+<p>In the Standard, the endings added to the first and second conjugation verbs are not the same. Those differences apply to the Habitual Present, Habitual Past, Future, the Conditional, especially. Although these differences demanded by the Standard are a reflection of Irish generally, they don't align exactly or entirely with some of the distinctions made in Ulster Irish. We'll describe now the main differences between Ulster Irish and the Standard.</p>
+<h2 id="the-present-tense"><a class="header" href="#the-present-tense">The Present Tense</a></h2>
+<p>Classification of the Standard<br />
+1st Conjugation - <em>briseann, molann, faigheann, suíonn, sábhálann, péinteálann, tiomáineann, taispeánann.</em><br />
+2nd Conjugation - <em>ceannaíonn, imíonn, ceanglaíonn, imríonn, foghlaimíonn.</em></p>
+<p>Regarding Ulster Irish and verb conjugation, there's three types of dialects to distinguish:</p>
+<p>(i) Dialects where there's a long or half-length <em>í</em> in the ending <em>-(a)íonn</em>. This dialects tend to be in the south of Donegal, and this was the norm in Cavan Irish when it was spoken. This pronunciation will be shown with <em>í.</em></p>
+<ul>
+<li><em>ceannaíonn, imíonn, imríonn, ceanglaíonn</em> etc.</li>
+</ul>
+<p>(ii) Dialects where the long <em>í</em> is shortened in the ending <em>-(a)íonn.</em> Note that this short <em>i</em> is pronounced similar to the <em>ee</em> in English words like <em>meet, seat</em> etc. and not like in words like <em>sin, sit</em> etc. These dialects are found in west Donegal. This pronunciation will be shown with <em>-(a)io-</em> if needed.</p>
+<ul>
+<li><em>ceannaionn, imionn, imrionn, ceanglaionn</em> srl.</li>
+</ul>
+<p>(iii) Other dialects where there's a neutral vowel in the second syllable. It could be said that the <em>-(e)ann</em> ending from the first dialect is used in the second conjugation in these dialects. These dialects are mostly in the east of Donegal, and the east of Ulster. There are areas where there's a mix of (ii) and (iii) in the north west of Donegal. This pronunciation will be shown with the spelling <em>-(e)ann.</em></p>
+<ul>
+<li><em>ceannann, imeann, éireann, ceanglann, codlann</em> etc.</li>
+</ul>
+<h2 id="21-conjugation-of-verbs-which-have--igh"><a class="header" href="#21-conjugation-of-verbs-which-have--igh">2.1 Conjugation of Verbs which have <em>-igh</em></a></h2>
+<h3 id="211-monosyllabic-verbs-ending-with--igh"><a class="header" href="#211-monosyllabic-verbs-ending-with--igh">2.1.1 Monosyllabic verbs ending with <em>-igh</em></a></h3>
+<p>The <em>-igh</em> is only seen in the Standard spelling within the 2nd person singular imperative, and in the past tense. The <em>-igh</em> is dropped in the present and future tense for example, and in other tenses and moods. This tendency doesn't fit too well with the pronunciation of these verbs in Ulster Irish generally. Attention should be directed to two traits of this pronunciation:</p>
+<p>(a) that the <em>gh</em> in the middle of the word is said when there is no other consonant after it. This happens in the Present, Past Habitual, and in the Imperative. There are two syllables in the forms below in Ulster Irish though The Standard doesn't show that.</p>
+<div class="table-wrapper"><table><thead><tr><th>The Standard</th><th>Ulster Irish</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>léim</em></td><td><em>léighim</em></td><td><em>léyim</em></td></tr>
+<tr><td><em>léadh</em></td><td><em>léigheadh</em></td><td><em>léyú</em></td></tr>
+<tr><td><em>suíonn</em></td><td><em>suigheann</em></td><td><em>suiyann</em> *</td></tr>
+<tr><td>dódh</td><td>dóigheadh</td><td>dóyú</td></tr>
+</tbody></table>
+</div>
+<p>* In the case of verbs like <em>suigh, luigh</em> etc. which have a short <em>i</em>, there's a tendency to make a long <em>í</em> out of the <em>iy</em>. Often the two syllables are kept in these verbs even when they have the long <em>í</em>, like this: <em>suí-ann</em>, <em>luí-ann</em>, and so on.</p>
+<p>(b) In the Future and Conditional the <em>ghf</em> is changed as follows:</p>
+<p>(i) The <em>ghf</em> is made into a <em>ch</em>, usually. It is pronounced as a slender <em>ch</em> or a <em>h</em>.<br />
+(ii) In Teileann it's pronounced as a slender <em>f</em>.</p>
+<div class="table-wrapper"><table><thead><tr><th>The Standard</th><th>Ulster Irish</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>léifidh</em></td><td>léighfidh</td><td>léichí/léifí</td></tr>
+<tr><td>léifeadh</td><td>léighfeadh</td><td>léichiú/léifiú</td></tr>
+<tr><td>suífidh</td><td>suighfidh</td><td>suichí/suifí</td></tr>
+<tr><td>dófaidh</td><td>dóighfidh</td><td>dóichí/dóifí</td></tr>
+<tr><td>dhóifeadh</td><td>dhóighfeadh</td><td>dhóichiú/dhóifiú</td></tr>
+</tbody></table>
+</div>
+<h3 id="212--idhigh-before-pronouns"><a class="header" href="#212--idhigh-before-pronouns">2.1.2 <em>-idh/igh</em> Before Pronouns</a></h3>
+<p>There are two pronunciations of <em>-idh/igh</em> at the end of a word.</p>
+<p>(i) Short or half-length <em>i</em> as in the English word <em>body</em> is how they're pronounced in answers to questions or when there isn't a personal pronoun after the verb.</p>
+<p>(ii) they're made into a neutral vowel, like at the end of the English word <em>banana</em>, when before personal pronouns like <em>mé, tú, sé, sí</em> etc.</p>
+<p><strong>(i) Short or half-length <em>i.</em></strong>
+Remember that there are two syllables in the endings that correspond to the Standard's <em>-óidh/-eoidh</em> in Ulster Irish, in the (b) samples below. They will all use the spelling <em>-(e)ochaidh.</em></p>
+<p>(a) </p>
+<ul>
+<li><em>Ar chualaidh Séan é? Níor/Char chualaidh.</em> (chuala)</li>
+<li><em>An bhfacaidh Máire an litir? Ní/Chan fhacaidh.</em> (bhfaca, fhaca)</li>
+<li><em>An mbuailfidh do mháthair leo? Buailfidh.</em></li>
+</ul>
+<p>(b)</p>
+<ul>
+<li><em>An gceannochaidh Pádraig iad? Ní cheannochaidh.</em> (gceannóidh, cheannóidh).</li>
+<li><em>An inseochaidh Síle dó é? Inseochaidh</em> (inseoidh).</li>
+</ul>
+<p>(c)</p>
+<ul>
+<li><em>Ar cheannaigh an fear an carr? Níor/Char cheannaigh.</em></li>
+<li><em>Ceannaigh amárach é.</em></li>
+</ul>
+<p><strong>Neutral vowel.</strong>
+What's between the () isn't said.
+(a) </p>
+<ul>
+<li><em>Ar chuala(idh) tú an scéal? Chualaidh.</em></li>
+<li><em>An bhfaca(idh) sí fear an bhus? Ní fhacaidh.</em></li>
+</ul>
+<p>(b)</p>
+<ul>
+<li><em>Brisfi(dh) tú an fhuinneog.</em></li>
+<li><em>An gceannocha(idh) sibh an leabhar?</em> (gceannóidh)</li>
+<li><em>Tá súil agam nach n-inseocha(idh) siad é.</em> (n-inseoidh)</li>
+</ul>
+<p>(c)</p>
+<ul>
+<li><em>Cheanna(igh) siad teach eile.</em></li>
+<li><em>Ar imi(gh) sé go fóill?</em></li>
+</ul>
+<p>(d)</p>
+<ul>
+<li><em>Be(idh) mé leat anois</em></li>
+<li><em>Lé(igh) muid an leabhar.</em></li>
+<li><em>Chua(igh) sé a luí luath.</em></li>
+</ul>
+<h3 id="213-pronunciation-of-broad-dh-before-certain-pronouns"><a class="header" href="#213-pronunciation-of-broad-dh-before-certain-pronouns">2.1.3 Pronunciation of broad <em>dh</em> before certain pronouns</a></h3>
+<p>There's an important rule about the pronunciation fo the endings <em>-adh/-odh</em> in Ulster irish before pronouns/adjectives starting with <em>s</em>, when they are a <strong>subect</strong> in the sentence.</p>
+<p>The <em>dh</em> is made into a slender <em>t</em> before the personal pronouns <em>sé/sí/sinn/sibh/siad</em> and the demonstrative pronouns <em>sin/seo/siúd.</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Spelling</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>Mholfadh sé/sí thú.</em></td><td><em>Mholhait sé/sí thú.</em></td></tr>
+<tr><td><em>Buaileadh siad bóthar</em></td><td><em>Buailit siad bóthar.</em></td></tr>
+<tr><td><em>Bhíodh sí ann</em></td><td><em>Bhít sí ann.</em></td></tr>
+<tr><td><em>Ná cuireadh sin isteach ort.</em></td><td><em>Ná cuirit sin isteach ort.</em></td></tr>
+</tbody></table>
+</div>
+<p>This change doesn't happen before any other words starting with <em>s</em> and it doesn't happen before <em>sinn/sibh/sin/seo/siúd</em> when they are an <strong>object</strong> in the sentence.</p>
+<div class="table-wrapper"><table><thead><tr><th>Spelling</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>D'íosfadh Seán é</em></td><td><em>D'íosú Seán é.</em></td></tr>
+<tr><td><em>Bhíodh Síle ann.</em></td><td><em>Bhíú Síle ann.</em></td></tr>
+<tr><td><em>Ar buaileadh sibh aréir?</em></td><td><em>Ar buailiú sibh aréir?</em></td></tr>
+<tr><td><em>Cuireadh sin ina leith</em></td><td><em>Cuiriú sin ina leith.</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="22-polysyllabic-verbs"><a class="header" href="#22-polysyllabic-verbs">2.2 Polysyllabic Verbs</a></h2>
+<h3 id="221-the-endings--eochaidh-eochadh"><a class="header" href="#221-the-endings--eochaidh-eochadh">2.2.1 The endings <em>-(e)ochaidh/-(e)ochadh</em></a></h3>
+<p>Regarding verbs like <em>ceannaigh, éirigh, ceangail, inis, iompair</em> etc. there are two syllables in the endings that go with them in the Future and Conditional. These are historical endings, of course, and they are written as <em>-(e)ochaidh</em> here. The <em>ch</em> in them is usually pronounced as a <em>h</em>. The endings could be written as <em>-(e)achaidh</em> as well, because they're said like that often. According to Wagner's Atlas, Volume IV, however, the two pronunciations are common.</p>
+<div class="table-wrapper"><table><thead><tr><th>The Standard</th><th>Ulster Irish</th><th>Pronunciation</th></tr></thead><tbody>
+<tr><td><em>ceannóidh</em></td><td><em>ceannochaidh</em></td><td><em>ceannohí/ceannahí</em></td></tr>
+<tr><td><em>cheannódh</em></td><td><em>cheannochadh</em></td><td><em>cheannohú/cheannahú</em></td></tr>
+<tr><td><em>ceanglóidh</em></td><td><em>ceanglochaidh</em></td><td><em>ceanglohí/ceanglahí</em></td></tr>
+<tr><td><em>cheanglódh</em></td><td><em>cheanglochadh</em></td><td><em>cheanglohú/cheanglahú</em></td></tr>
+<tr><td><em>inseoidh</em></td><td><em>inseochaidh</em></td><td><em>inseohí/inseahí</em></td></tr>
+<tr><td><em>d'inseoinn</em></td><td><em>d'inseochainn</em></td><td><em>dinseohinn/dinseahinn</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="222-syncopated-verbs"><a class="header" href="#222-syncopated-verbs">2.2.2 Syncopated verbs</a></h3>
+<p>Verbs like <em>ceangail, inis, imir, iompair</em> etc. are called syncopated verbs because the second syllable is dropped when another syllable starting with a vowel is added to them in various tenses. The Official Standard puts these verbs in the second conjugation, which means that <em>-(e)oidh/-óidh</em> and <em>-eodh/ódh</em> are the endings that go with them in the Future and Conditional, respectively. That's the conjugation that they're in in Ulster Irish for the most part too. In certain subdialects, Teileann for example, they are conjugated in a different way as shown below.</p>
+<div class="table-wrapper"><table><thead><tr><th>The Standard</th><th>Teileann Irish</th></tr></thead><tbody>
+<tr><td><em>ceanglóidh</em></td><td><em>ceangalaidh</em></td></tr>
+<tr><td><em>imreoidh</em></td><td><em>imeraidh</em></td></tr>
+<tr><td><em>cosain</em></td><td><em>cosanaidh</em></td></tr>
+</tbody></table>
+</div>
+<p>The vowel in the second syllable of those verbs above is like <em>a</em> in the word <em>mac</em>. These versions are only said by old speakers. The endings discussed in 2.2.1 were said by young speakers.</p>
+<h2 id="2-3-personal-endings"><a class="header" href="#2-3-personal-endings">2. 3 Personal endings</a></h2>
+<h3 id="231-the-first-conjugation"><a class="header" href="#231-the-first-conjugation">2.3.1 The first conjugation</a></h3>
+<ul>
+<li><em>-(e)am, -(a)imid/-(e)amaid, -(a)imis(t)/-(e)amais(t).</em><br />
+These are the most common personal endings in Ulster Irish outside of the specific endings in the Conditional Mood. Independent pronouns can be used in place of any of them as well.</li>
+<li><em>briseam - briseann mé</em></li>
+<li><em>brisimid/briseamaid - briseann muid</em></li>
+<li><em>brisfimid/brisfeamaid - brisfidh muid</em></li>
+<li><em>bhrisfimis(t)/bhrisfeamais(t) - bhrisfeadh muid</em></li>
+</ul>
+<h3 id="232-the-second-conjugation"><a class="header" href="#232-the-second-conjugation">2.3.2 The second conjugation</a></h3>
+<p>This is how the endings are with second conjugation verbs.</p>
+<ul>
+<li><em>ceannaíom/ceannam - ceannaíonn/ceannann mé</em></li>
+<li><em>ceannaímid/ceannaimid - ceannaíonn/ceannann muid</em></li>
+<li><em>ceannaíomaid/ceannamaid</em> - <em>ceannaíonn/ceannann muid</em></li>
+<li>ceannochaimid/ceannochamaid - ceannocha(idh) muid</li>
+<li><em>cheannochaimis(t)/cheannochamais(t) - cheannochadh muid</em></li>
+</ul>
+<h2 id="24-synthetic-endings"><a class="header" href="#24-synthetic-endings">2.4 Synthetic endings</a></h2>
+<p>In a few subdialects, special forms are used in answers. Wagner (1959) mentions this about Teileann Irish. The forms are found in the same model in the writing of Ulster Authors. These forms end in <em>-as</em> (Past) and <em>-ad</em> (Future). Here's how they're used and remember that they are common to every verb.</p>
+<ul>
+<li><em>Ar thuig tú sin? - Thuigeas/Níor thuigeas.</em></li>
+<li><em>An bhfaca tú an bád? - Chonaiceas.</em></li>
+<li><em>An ndéanfaidh tú é? - Dhéanfad</em></li>
+</ul>
+<p>Regarding the Standard's <em>-idís,</em> the analytic form is used in the Conditional/Imperative/Past Habitual across Ulster. </p>
+<ul>
+<li><em>Dhíolfadh siad an teach</em></li>
+<li><em>Bíodh siad agat ar maidin.</em></li>
+<li><em>D'olfadh siad a sáith</em></li>
+<li><em>Thigeadh siad chun an bhaile san Fhómhar.</em></li>
+<li><em>Óladh siad a sáith.</em></li>
+<li><em>Bhíodh siad ag caint air.</em></li>
+</ul>
+<h2 id="25-the-historical-present"><a class="header" href="#25-the-historical-present">2.5 The Historical Present</a></h2>
+<p>Something which is still alive in many Ulster consonants is the historical ending <em>-idh</em> in verbs. Even though it's a part of a specific register of the language (story telling, describing an event which happened already), it's heard fairly often. It's typical to use this form in the third person singular/plural.</p>
+<ul>
+<li><em>T(ch)í sé an fear ag teacht chuige.</em></li>
+<li><em>T(ch)í Dia go bhfuil dóigh chéasta orainn.</em></li>
+<li><em>Leis sin buailidh sé a bhuille.</em></li>
+<li><em>Leanaidh an t-éan daoithe mar sin. Tigidh siad Dé Luain agus an t-airgead leo.</em></li>
+</ul>
+<p>The form <em>t(ch)í</em> is used in every person of the verb except perhaps the first person singular.</p>
+<ul>
+<li><em>T(ch)í sibh féin é, nach bhfeiceann?</em></li>
+<li><em>T(ch)í muid go leor dó.</em></li>
+<li><em>T(ch)í tú féin iad chomh maith liomsa.</em></li>
+</ul>
+<h2 id="26-the-relative-ending"><a class="header" href="#26-the-relative-ending">2.6 The Relative Ending</a></h2>
+<p>Although this is referenced in the Standard, it barely displayed through examples. Despite that, it is common in Ulster Irish when there's a direct relative clause. These endings apply to the Present and Future.</p>
+<ul>
+<li>
+<p><em>Sin an fear a <strong>bhíos</strong> anseo.</em></p>
+</li>
+<li>
+<p><em>Ní hiad na fir mhóra a <strong>bhaineas</strong> an Fómhar.</em></p>
+</li>
+<li>
+<p><em>Is beag an rud a <strong>níos</strong> cuidiú.</em></p>
+</li>
+<li>
+<p><em>Is iomaí rud a <strong>thógas</strong> cian de dhaoine.</em></p>
+</li>
+<li>
+<p><em>Goidé a dhéanfas tú nuair <strong>thiocfas</strong> an geimhreadh?</em></p>
+</li>
+<li>
+<p><em>Cé a <strong>déarfas</strong> nach bhfuil an ceart agat?</em></p>
+</li>
+<li>
+<p><em>Is iomaí duine a <strong>cheannochas</strong> iad.</em></p>
+</li>
+<li>
+<p><em>Cén uair a <strong>imreochas</strong> siad a chéile?</em></p>
+</li>
+<li>
+<p><em>Is é an Taoiseach a <strong>(fh)osclochas</strong> An Fhéile.</em></p>
+</li>
+</ul>
+<h3 id="261-option"><a class="header" href="#261-option">2.6.1 Option</a></h3>
+<p>When time phrases or words referencing time like <em>uair, am, lá, oíche, bliain</em> etc. are used, there's an option for whether to use the relative ending or not.</p>
+<ul>
+<li><em>Nuair a <strong>bheas/bheidh</strong> tú ann, ceannaigh an páipéar.</em></li>
+<li><em>Cén t-am a <strong>thiocfas/thiocfaidh</strong> tú amárach?</em></li>
+<li><em>Cé acu lá a <strong>bhíos/bhíonn</strong> sé anseo?</em></li>
+<li><em>Sin an uair a <strong>cheannochas/cheannochaidh</strong> daoine iad</em>.</li>
+</ul>
+<p>The forms <em>a dtiocfaidh/mbíonn/gceannochaidh</em> can also be used with <em>nuair.</em></p>
+<h3 id="262-other-traits"><a class="header" href="#262-other-traits">2.6.2 Other Traits</a></h3>
+<p>(a) Often, the relative ending <em>s</em> is put after <em>-(e)ann/-(a)íonn.</em></p>
+<ul>
+<li><em>An té a <strong>bhíonns</strong> thíos inniu beidh sé thuas amárach.</em></li>
+<li><em>Is cuma cé a <strong>cheannaíonns</strong> iad faigheann siad locht orthu.</em></li>
+<li><em>Is iomaí duine a <strong>théanns</strong> ar strae ann.</em></li>
+</ul>
+<p>(b) Often the first consonant of the verb isn't lenited when the relative ending is used, this happens especially with the forms of the verb <em>'Bí'.</em></p>
+<ul>
+<li><em>Is minic a <strong>b(h)íos</strong> sé ag caint air.</em></li>
+<li><em>Nuair a <strong>t(h)iocfas</strong> sé.</em></li>
+<li><em>An té a <strong>c(h)oinneochas</strong> an phingin coinneochaidh sé an punt.</em></li>
+</ul>
+<h2 id="27-the-subjunctive-pastpresent-mode"><a class="header" href="#27-the-subjunctive-pastpresent-mode">2.7 The subjunctive past/present mode</a></h2>
+<p>There are many artifacts of this mode found in Ulster Irish. They are in 2nd conjugation verbs.</p>
+<h3 id="271-the-present-subjunctive"><a class="header" href="#271-the-present-subjunctive">2.7.1 The present subjunctive</a></h3>
+<p>Although there are two spellings for the following verb endings, they're pronounced the same. They're pronounced like a short i, but with the quality of the long vowel <em>í.</em></p>
+<p>(a) The first conjugation</p>
+<ul>
+<li><em>Fan go <strong>mbrisidh</strong> an aimsir.</em> (mbrise)</li>
+<li><em>Fan go <strong>gcuiridh</strong> Seán as an solas.</em> (gcuire)</li>
+<li><em>Fan go <strong>n-ólaidh</strong> Máire an tae.</em> (n-óla)</li>
+<li><em>Fan go <strong>ndéanaidh</strong> na páistí a ndinnéar.</em> (ndéana)</li>
+<li><em>Fan go <strong>n-ithidh</strong> Síle a cuid.</em> (n-ithe)</li>
+</ul>
+<p>(b) The second conjugation
+<em>Suigh ansin go <strong>n-imí</strong> na páistí; go <strong>gceannaí</strong> do mháthair na bróga.</em></p>
+<p>(c) Special form
+<em>Mur(a) <strong>mbidh</strong> an lá amárach maith ní rachaidh mé go Leitir Ceanainn.</em></p>
+<p>When a pronoun follows the verb, the last vowel in the verb is like <em>e</em> in the word <em>míl<strong>e</strong></em> or <em>a</em> in the word <em>mál<strong>a</strong>.</em> This change before pronouns is shown using the spelling in the above examples. This last rule is the most common in Donegal Irish but it seems like the <em>-aí</em> in verbs isn't reduced before pronouns in Teileann Irish according to Wagner (1959, 83-84).</p>
+<p>The first declension</p>
+<ul>
+<li><em>Suigh go <strong>n-óla</strong> mé mo chuid tae.</em></li>
+<li><em>Fan go <strong>bhfeice</strong> tú an dtiocfaidh sé.</em></li>
+<li><em>Mur(a) <strong>dtuga</strong> sé ar ais an t-airgead cuirfear chun an phríosúin é.</em></li>
+<li><em>Mur(a) <strong>dtige</strong> sé roimh i bhfad imeochaimid chun an bhaile.</em></li>
+<li><em>Suigh síos go ndéana muid ár scríste tamall.</em></li>
+</ul>
+<p>The second declension</p>
+<ul>
+<li><em>Fan go <strong>gceanna mé/gceannaí mé</strong> cúpla buidéal bainne.</em></li>
+<li><em>Mur(a) <strong>n-ime/nimí</strong> sé go luath caillfimid an bus</em></li>
+</ul>
+<h3 id="272-the-past-subjunctive"><a class="header" href="#272-the-past-subjunctive">2.7.2 The past subjunctive</a></h3>
+<p>The endings for the past subjunctive and past habitual are the same. It's most used with <em>dá</em> but it's also used with <em>go/nach.</em></p>
+<ul>
+<li><em><strong>Dá dtéadh</strong> sé chun an bhaile in am bhí sé sábháilte.</em></li>
+<li><em><strong>Dá gcuireadh</strong> sé isteach ar an jab seans go bhfaigheadh sé é.</em></li>
+<li><em>Hobair <strong>go n-itheadh</strong> an madadh mé.</em></li>
+<li><em>Mo thrua <strong>go mbíodh</strong> sé amhlaidh.</em></li>
+<li><em><strong>Dá mbíodh</strong> iomrá air, a chroí, ach cha raibh.</em></li>
+</ul>
+<h2 id="28-regular-verb-forms"><a class="header" href="#28-regular-verb-forms">2.8 Regular Verb Forms</a></h2>
+<p>The inflected forms of the verbs <em>cuireann, dóigheann</em> (dónn), <em>ceannaíonn</em> and <em>ceanglaíonn</em> are given in the tables below. There are other forms called <em>compound tenses</em>. The Verbal Noun or Verbal Adjective are used in these compound tenses, and a form of the verb <em>bí</em> is used as an auxilliary verb.</p>
+<h3 id="281-verb-tables"><a class="header" href="#281-verb-tables">2.8.1 Verb tables</a></h3>
+<p>At the top of every table below, the form used when a personal noun or normal noun is the subject of the sentence is shown. The forms are put into three columns, the singular on the lefthand side, the plural in the centre and the autonomous in the third column.</p>
+<h3 id="282-the-first-conjugation"><a class="header" href="#282-the-first-conjugation">2.8.2 The first conjugation</a></h3>
+<p><strong>Cuir</strong>
+<strong>Present:</strong> <em>cuireann</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. cuirim/cuiream/cuireann mé</em></td><td><em>cuirimid/cuireamaid/cuireann muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. cuireann tú</em></td><td><em>cuireann sibh</em></td><td></td></tr>
+<tr><td><em>3. cuireann sé/sí</em></td><td><em>cuireann sibh</em></td><td><em>cuirtear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>chuir</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. chuir mé</em></td><td><em>chuir muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. chuir tú</em></td><td><em>chuir sibh</em></td><td></td></tr>
+<tr><td><em>3. chuir sé/sí</em></td><td><em>chuir siad</em></td><td><em>cuiriú/cuireas</em> *</td></tr>
+</tbody></table>
+</div>
+<p><strong>Habitual Past:</strong> <em>chuiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Auotonomous</th></tr></thead><tbody>
+<tr><td><em>1. chuirinn</em></td><td><em>chuirimis(t)/chuireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. chuirteá/cuirtheá</em></td><td><em>chuirit sibh</em></td><td></td></tr>
+<tr><td><em>3. chuirit sé/sí</em></td><td><em>chuirit siad</em></td><td><em>chuirtí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>cuirhí</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. cuirhe mé</em></td><td><em>cuirhimid/cuirhe muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. cuirhe tú</em></td><td><em>cuirhe sibh</em></td><td></td></tr>
+<tr><td><em>3. cuirhe sé/sí</em></td><td><em>cuirhe siad</em></td><td><em>cuirhear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Conditional:</strong> <em>chuirhiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. chuirhinn</em></td><td><em>chuirhimis(t)/chuirheamaist/chuirhiú/chuirheas muid/sinn</em> *</td><td></td></tr>
+<tr><td><em>2. chuirheá</em></td><td><em>chuirhit sibh</em></td><td></td></tr>
+<tr><td><em>3. chuirhit sé/sí</em></td><td><em>chuirhit siad</em></td><td><em>chuirhí/chuirfí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Imperative</strong>: <em>cuiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. -----</em></td><td><em>cuirimis(t)/cuireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. cuir</em></td><td><em>cuirigí</em></td><td></td></tr>
+<tr><td><em>3. cuirit sé/sí</em></td><td><em>cuirit siad</em></td><td><em>cuirtear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go gcuirí</em></p>
+<ul>
+<li><em>Fan go gcuirí Seán as an solas.</em></li>
+<li><em>Fan go gcuire mé as an solas.</em></li>
+<li><em>go gcuirtear</em></li>
+</ul>
+<p><strong>Past subjunctive:</strong> <em>dá gcuiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. dá gcuirinn</em></td><td><em>dá gcuirimis(t)/gcuireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá gcuirteá/guirtheá</em></td><td><em>dá gcuirit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá gcuirit sé/sí</em></td><td><em>dá gcuirit siad</em></td><td><em>dá gcuirtí</em></td></tr>
+</tbody></table>
+</div>
+<p>* <em>s</em> is very common in these endings. In the case of the Past tense  it's probably the <em>s</em> from the irregular verbs <em>chonaiceas, fuarthas</em> etc. In the case of the Conditional Mode it's hard to say what causes the <em>s.</em> <em>cuiriús/chuirhiús</em> are also said.</p>
+<p><strong>Verbal Noun:</strong> <em>ag cur</em><br />
+<strong>Verbal Adjective:</strong> <em>curtha</em></p>
+<h3 id="283-the-second-conjugation"><a class="header" href="#283-the-second-conjugation">2.8.3 The second conjugation</a></h3>
+<p><strong>Ceannaigh</strong>
+<strong>Present:</strong> <em>ceannann</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1. ceannam/ceannann mé</em></td><td><em>ceannaimid/ceannamaid/ceannann muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. ceannann tú</em></td><td><em>ceannann sibh</em></td><td></td></tr>
+<tr><td><em>3. ceannann sé/sí</em></td><td><em>ceannann sibh</em></td><td><em>ceannaíthear/ceannaítear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ceannaíonn</em></p>
+<div class="table-wrapper"><table><thead><tr><th>Singular</th><th>Plural</th><th>Autonomous</th></tr></thead><tbody>
+<tr><td><em>1 ceannaíom/ceannaíonn mé</em></td><td><em>ceannaímid/ceannaíomaid</em></td><td></td></tr>
+<tr><td><em>2. ceannaíonn tú</em></td><td><em>ceannaíonn sibh</em></td><td></td></tr>
+<tr><td><em>3. ceannaíonn sé/sí</em></td><td><em>ceannaíonn siad</em></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>cheannaí</em></p>
+<ul>
+<li><em>Cheanna mé/tú/sí</em> etc.</li>
+<li><em>Ceannaíú(s)/ceannú(s)/ceannas</em></li>
+</ul>
+<p><strong>Past Habitual:</strong> <em>cheannú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheannainn</em></td><td><em>cheannú muid, cheannait sinn</em></td><td></td></tr>
+<tr><td>2. <em>cheannathá</em></td><td><em>cheannait sibh</em></td><td></td></tr>
+<tr><td><em>3. cheannait sé/sí</em></td><td><em>cheannait siad</em></td><td><em>cheannaití</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>cheannaíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheannaínn</em></td><td><em>cheannaíú muid</em></td><td></td></tr>
+<tr><td><em>2 cheannaítheá</em></td><td><em>cheannaít sibh</em></td><td></td></tr>
+<tr><td><em>3. cheannaít sé/sí</em></td><td><em>cheannaít siad</em></td><td><em>cheannaítí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>ceannochaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ceannocha mé</em></td><td><em>ceannochaimid/ceannochamaid</em></td><td></td></tr>
+<tr><td><em>2 ceannocha tú</em></td><td><em>ceannocha sibh</em></td><td></td></tr>
+<tr><td><em>3. ceannoch sé/sí</em></td><td><em>ceannocha siad</em></td><td><em>ceannochar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Conditional:</strong> <em>cheannochú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheannochainn</em></td><td><em>cheannochaimis(t)/cheannochús muid</em></td><td></td></tr>
+<tr><td><em>2. cheannochá</em></td><td><em>cheannochait sibh</em></td><td></td></tr>
+<tr><td><em>3. cheannochait sé/sí</em></td><td><em>cheannochait siad</em></td><td><em>cheannochaí, cheanno(ch)fí</em> * (Teileann)</td></tr>
+</tbody></table>
+</div>
+<p>* Consider that usually the <em>och</em> in <em>-ocha-</em> is pronounced as <em>ah</em> in the Future and Conditional. The pronunciation with <em>f</em> is given in relation to <em>Teileann</em> and areas in the south of Donegal.</p>
+<p><strong>Imperative:</strong> <em>ceannú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ___________</em></td><td><em>ceannaimis(t)/ceannamais(t) ceannú muid/ceannait sinn</em></td><td></td></tr>
+<tr><td><em>2. ceannaí é</em></td><td><em>ceannaigí</em></td><td></td></tr>
+<tr><td><em>3. ceannait sé/sí</em></td><td><em>ceannait siad</em></td><td><em>ceannaít(h)ear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ceannaí/ceannaígí/ceanaímis(t)/ceannaít sé/sí</em> etc.</p>
+<p><strong>Present subjunctive:</strong> <em>go gceannaí</em></p>
+<ul>
+<li><em>Fan go gceannaí Seán an carr.</em></li>
+<li><em>Suigh síos go gceanna mé ceapaire.</em></li>
+<li><em>go gceannaít(h)ear</em></li>
+</ul>
+<p><strong>Past subjunctive:</strong> <em>dá gceannú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá gceanainn</em></td><td><em>dá gceannaimis(t)/gceannamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá gceannathá</em></td><td><em>dá gceannait sibh</em></td><td></td></tr>
+<tr><td><em>3. dá gceannait sé/sí</em></td><td><em>dá gceannait siad</em></td><td><em>dá gceannaití</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dá gceannaíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá gceannaínn</em></td><td><em>dá gceannaímis(t)/gceannaíomais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá gceannaítheá</em></td><td><em>dá gceannaít sibh</em></td><td></td></tr>
+<tr><td><em>3. dá gceannaít sé/sí</em></td><td><em>dá gceannaít siad</em></td><td><em>dá gceannaítí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag ceannach(t)</em></p>
+<p><strong>Verbal adjective:</strong> <em>ceannaí/ceannaiste/ceannaíste</em></p>
+<p><strong>Ceangail</strong></p>
+<p><strong>Present:</strong> <em>ceanglann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ceanglam</em></td><td><em>ceanglaimid/ceanglamaid/ceanglann muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. ceanglann tú</em></td><td><em>ceanglann sibh</em></td><td></td></tr>
+<tr><td><em>3. ceanglann sé</em></td><td><em>ceanglann siad</em></td><td><em>ceangailtear/ceangaltar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ceanglaíonn</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ceanglaíom</em></td><td><em>ceanglaímid/ceanglaíomaid/ceanglaíonn muid</em></td><td></td></tr>
+<tr><td><em>2. ceanglaíonn tú</em></td><td><em>ceanglaíonn sibh</em></td><td></td></tr>
+<tr><td><em>3. ceanglaíonn sé/sí</em></td><td><em>ceanglaíonn siad</em></td><td><em>ceanglaít(h)ear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>cheangail</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheangail mé</em></td><td><em>cheangail muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. cheangail tú</em></td><td><em>cheangail sibh</em></td><td></td></tr>
+<tr><td><em>3. cheangail sé/sí</em></td><td><em>cheangail siad</em></td><td><em>ceanglú/ceanglaíú</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past habitual:</strong> <em>cheanglú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheanglainn</em></td><td><em>cheanglaimis(t)/cheanglamais(t)</em></td><td></td></tr>
+<tr><td><em>2. cheanglathá</em></td><td><em>cheanglait sibh</em></td><td></td></tr>
+<tr><td><em>3. cheannglait sé/sí</em></td><td><em>cheanglait siad</em></td><td><em>cheangailtí/cheangaltaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>cheanglaíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheanglaínn</em></td><td><em>cheanglaímis(t)/cheanglaíomais(t)</em></td><td></td></tr>
+<tr><td><em>2. cheanglaítheá</em></td><td><em>cheanglaít sibh</em></td><td></td></tr>
+<tr><td><em>3. cheanglaít sé/sí</em></td><td><em>cheanglaít siad</em></td><td><em>cheanglaítí/cheanglaístí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>ceanglochaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ceanglocha mé</em></td><td><em>ceanglochaimid/ceanglochamaid</em></td><td></td></tr>
+<tr><td><em>2. ceangloch tú</em></td><td><em>ceanglocha sibh</em></td><td></td></tr>
+<tr><td><em>3. ceanglocha sé/sí</em></td><td><em>ceanglocha siad</em></td><td><em>ceanglochar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ceangal(h)aí</em></p>
+<ul>
+<li><em>ceangal(h)a mé/tú</em> srl.</li>
+</ul>
+<p><strong>Conditional mood:</strong> <em>cheanglochú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cheanglochainn</em></td><td><em>cheanglochaimis(t)/cheanglochamaist/cheanglochú(s) muid</em></td><td></td></tr>
+<tr><td><em>2. cheanglochá</em></td><td><em>cheanglochait sibh</em></td><td></td></tr>
+<tr><td><em>3. cheanglochait sé/sí</em></td><td><em>cheanglochait siad</em></td><td><em>cheanglochaí, cheangóilfí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Imperative mood:</strong> <em>ceanglú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. _____</em></td><td><em>ceanglaimis(t)/ceanglamais(t)</em></td><td></td></tr>
+<tr><td><em>2. ceangail</em></td><td><em>ceanglaigí</em></td><td></td></tr>
+<tr><td><em>3. ceanglait sé/sí</em></td><td><em>ceanglait siad</em></td><td><em>ceangailtear/ceangaltar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann</strong></p>
+<ul>
+<li><em>ceangail/ceanglaígí/ceanglaímis(t)/ceanglaít sé/sí /siad, ceanglít(h)ear.</em></li>
+</ul>
+<p><strong>Present Subjunctive:</strong> *go gceanglaí</p>
+<ul>
+<li><em>go gceangla mé/tú</em> etc.</li>
+<li><em>go gceanglaí Seán</em></li>
+<li><em>go gceangailtear/gceangaltar/gceanglít(h)ear</em></li>
+</ul>
+<p><strong>Caite:</strong> <em>dá gceanglú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá gceanglaínn</em></td><td><em>dá gceanglaímis(t)/gceanglaíomaist</em></td><td></td></tr>
+<tr><td><em>2. dá gceanglathá</em></td><td><em>dá gceanglait sibh</em></td><td></td></tr>
+<tr><td><em>3. dá gceanglait sé/sí</em></td><td><em>dá gceanglait siad</em></td><td><em>dá gceangailtí/gceangaltaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dá gceangalú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá gceanglaínn</em></td><td><em>dá gceanglaímis(t)/gceanglaíomaist</em></td><td></td></tr>
+<tr><td><em>2. dá gceanglaítheá</em></td><td><em>dá gceanglaít sibh</em></td><td></td></tr>
+<tr><td>*3. <em>dá gceangláit sé/sí</em></td><td><em>dá gceanglaít siad</em></td><td><em>dá gceanglaítí/gceanglaístí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag ceangal</em><br />
+<strong>Verbal adjective:</strong> <em>ceangailte/ceangalta, ceanglaí/ceanglaiste/ceanglaíste</em></p>
+<h3 id="284-monosyllabic-verbs-ending-in--igh"><a class="header" href="#284-monosyllabic-verbs-ending-in--igh">2.8.4 Monosyllabic verbs ending in <em>-igh</em></a></h3>
+<p><strong>Dóigh</strong></p>
+<p><strong>Present:</strong> <em>dóyann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dóyam/dóyann mé</em></td><td><em>dóyimid/dóyeamaid</em></td><td></td></tr>
+<tr><td><em>2. dóyann tú</em></td><td><em>dóyann sibh</em></td><td></td></tr>
+<tr><td><em>3. dóyann sé/sí</em></td><td><em>dóyann siad</em></td><td><em>dóitear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>dhóy</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dhó(y) mé</em></td><td><em>dhó(y) muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. dhó(y) tú</em></td><td><em>dhó(y) sibh</em></td><td></td></tr>
+<tr><td><em>3. dhó(y) sé/sí</em></td><td><em>dhó(y) siad</em></td><td><em>dóyú/dóyas</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Habitual Past:</strong> <em>dhóyú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dhóyinn</em></td><td><em>dhóyimis(t)/dhóyeamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dhóit(h)eá</em></td><td><em>dhóyit sibh</em></td><td></td></tr>
+<tr><td><em>3. dhóyit sé/sí</em></td><td><em>dhóyit siad</em></td><td><em>dhóití/dhóytí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>dóichí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dóiche mé</em></td><td><em>dóichimid/dóicheamaid</em></td><td></td></tr>
+<tr><td><em>2. dóiche tú</em></td><td><em>dóiche sibh</em></td><td></td></tr>
+<tr><td><em>3. dóiche sé/sí</em></td><td><em>dóiche siad</em></td><td><em>dóichear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dóifí</em></p>
+<ul>
+<li><em>dóife mé/tú</em> etc.</li>
+<li><em>dóifimid/dóifeamaid</em></li>
+<li><em>dóifear</em></li>
+</ul>
+<p><strong>Conditional Mood:</strong> <em>dhóichiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dhóichinn</em></td><td><em>dhóichimis(t)/dhóicheamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dhóicheá</em></td><td><em>dhóichit sibh</em></td><td></td></tr>
+<tr><td><em>3. dhóichit sé/sí</em></td><td><em>dhóichit siad</em></td><td><em>dhóichí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dhóifiú</em></p>
+<ul>
+<li><em>dhóifinn, dhóifeá</em> etc.</li>
+<li><em>dhóifí</em></li>
+</ul>
+<p><strong>Imperative Mood:</strong> <em>dóyú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>dóyimis(t)/dóyeamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dóy</em></td><td><em>dóyigí</em></td><td></td></tr>
+<tr><td><em>3. dóyit sé/sí</em></td><td><em>dóyit siad</em></td><td>dóitear</td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go ndóyí</em></p>
+<ul>
+<li><em>Fan go ndóye mé/tú</em> etc.</li>
+<li><em>Go ndóitear go talamh é.</em></li>
+</ul>
+<p><strong>Past Subjunctive:</strong> <em>dá ndóyú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá ndóyinn</em></td><td><em>dá ndóyimis(t)/ndóyeamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá ndóit(h)eá</em></td><td><em>dá ndóyit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá ndóyit sé/sí</em></td><td><em>dá ndóyit siad</em></td><td><em>dá ndóití</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag dóú</em><br />
+<strong>Verbal adjective:</strong> <em>dóite, dóití</em></p>
+<h3 id="285-irregular-verbs"><a class="header" href="#285-irregular-verbs">2.8.5 Irregular Verbs</a></h3>
+<p>There's a lot of parts of the irregular verbs which aren't irregular at all. Still, for the sake of being as complete as possible, the paradigm of all of the versions are given in the tables below.</p>
+<p><strong>Cluin</strong></p>
+<p><strong>Present:</strong> <em>cluin(eann)</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1 cluineam / cluineann mé</em></td><td><em>cluinimid/cluineamaid</em></td><td></td></tr>
+<tr><td><em>2. cluin(eann) tú</em></td><td><em>cluin(eann) muid/sinn</em></td><td></td></tr>
+<tr><td><em>3. cluin(eann) sé/sí</em></td><td><em>cluin(eann) siad</em></td><td><em>cluintear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>chualaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. chuala mé</em>  *</td><td><em>chuala muid/sinn</em> **</td><td></td></tr>
+<tr><td><em>2. chuala tú</em></td><td><em>chuala sibh</em></td><td></td></tr>
+<tr><td><em>3. chuala sé/sí</em></td><td><em>chuala siad</em></td><td><em>chualas, cluiniú(s)</em></td></tr>
+</tbody></table>
+</div>
+<p>* <em>chula/hula mé/tú</em> etc. is often said<br />
+** It's normally said as one word, <em>chualamaid</em></p>
+<p><strong>Future:</strong> <em>cluinhí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. cluinhe mé</em></td><td><em>cluinhimid/cluinheamaid</em></td><td></td></tr>
+<tr><td><em>2. cluinhe tú</em></td><td><em>cluinhe sibh</em></td><td></td></tr>
+<tr><td><em>3. cluinhe sé/sí</em></td><td><em>cluinhe siad</em></td><td><em>cluinhear</em> *</td></tr>
+</tbody></table>
+</div>
+<p>* The <em>ea</em> in <em>hear</em> is pronounced like the <em>ea</em> in <em>fear.</em></p>
+<p><strong>Conditional:</strong> <em>cluinhiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. chluinhinn</em></td><td><em>chluinhimis(t)/cluinheamais(t)</em></td><td></td></tr>
+<tr><td><em>2. chluinfeá</em></td><td><em>chluinhit sibh</em></td><td></td></tr>
+<tr><td><em>3. chluinhit sé/sí</em></td><td><em>chluinhit siad</em></td><td><em>chluinhí/chluinfí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go gcluiní</em><br />
+<em>Fan go gcluine mé/tú</em> etc. <em>a bhfuil le rá aige.</em>
+<em>Mur gculiní Pádraig amárach é.</em> (mura gcluine)</p>
+<p><strong>Past subjunctive:</strong> <em>dá gcluiniú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá gcluininn</em></td><td><em>dá gcluimimis(t)/gcluineamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá gcluint(h)eá</em></td><td><em>dá gcluinit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá gcluinit sé/sí</em></td><td><em>dá gcluinit siad</em></td><td><em>dá gcluintí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag cluinstin/cluinstean</em><br />
+<strong>Verbal adjective:</strong> <em>cluinste/cluinstí</em></p>
+<p><strong>Faigh</strong></p>
+<p><strong>Present:</strong> <em>fánn, gheibheann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. fám/gheibheam</em></td><td>fáimíd/famaíd; fánn/gheibh muid/sinn</td><td></td></tr>
+<tr><td><em>2. fánn/gheibh tú</em></td><td><em>fánn/gheibh sibh</em></td><td></td></tr>
+<tr><td><em>3. fánn/gheibh sé/sí</em></td><td><em>fánn/gheibh siad</em></td><td><em>fathar, gheifear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>fuair</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. fuair mé</em>*</td><td><em>fuair muid/sinn</em>***</td><td></td></tr>
+<tr><td>2. <em>fuair tú</em>**</td><td><em>fuair sibh</em>***</td><td></td></tr>
+<tr><td>3. <em>fuair sé/sí</em>***</td><td><em>fuair siad</em>***</td><td><em>fuaras/fuaireas/fuarthas/fuairtheas</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní bhfuair, chan fhuair.</em></p>
+<p>* Often the diphthong <em>ua</em> is shortened to <em>u.</em> In those cases <em>fuir mé/tú</em> etc. is what's said. <em>ia</em> is heard as a pronunciation of <em>ua</em> in some of the subdialects as well.<br />
+** the <em>r</em> is broad before <em>tú.</em><br />
+*** The <em>r</em> and the <em>s</em> affect each other and the pair is made at the back of the dental ridge.</p>
+<p><strong>Past habitual</strong><br />
+Independent: <em>gheibhiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. gheibhinn</em></td><td><em>gheibhimis(t)</em></td><td><em>gheibheamais(t)</em></td></tr>
+<tr><td><em>2. gheifeá</em></td><td><em>gheibhit sibh</em></td><td></td></tr>
+<tr><td><em>3. gheibhit sé/sí</em></td><td><em>gheibhit siad</em></td><td><em>gheifí</em></td></tr>
+</tbody></table>
+</div>
+<p>Dependent: <em>An bhfáú? Ní fháú.</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. An bhfáinn? Ní fháinn.</em></td><td><em>An bhfáimis(t)/bhfámais(t)? Ní fháimis(t)/fhámais(t).</em></td><td></td></tr>
+<tr><td><em>2. An bhfahá? Ní fhahá</em></td><td><em>An bhfáit sibh? Ní fháit sibh.</em></td><td></td></tr>
+<tr><td>3. <em>An bhfáit sé/sí? Ní fháit sé/sí.</em></td><td><em>An bhfáit siad? Ní fháit siad</em></td><td><em>An bhfahaí? Ní fhahaí.</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future</strong><br />
+Independent: <em>gheoí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. gheo mé</em></td><td><em>gheoimid/gheomaid, gheo muid</em></td><td></td></tr>
+<tr><td><em>2. gheo tú</em></td><td><em>gheo sibh</em></td><td></td></tr>
+<tr><td><em>3. gheo sé/sí</em></td><td><em>gheo siad</em></td><td><em>gheohar</em></td></tr>
+</tbody></table>
+</div>
+<p>Dependent: <em>An bhfaí? Ní bhfaí. Chan fhánn/fhaíonn.</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. An bhfaí mé? Ní bhfaí mé. Chan fhám/fhaíom. Chan fhánn/fhaíonn mé.</em></td><td><em>An bhfaímid/bhfaíomaid? An bhfaí muid? Ní bhfaímid/bhfaíomaid. Ní bhfaí muid. Chan fháimid/fhámaid. Chan fhánn/fhaíonn muid.</em></td><td></td></tr>
+<tr><td><em>2. An bhfaí tú? Ní bhfaí tú. Chan fhánn/fhaíonn tú.</em></td><td><em>An bhfaí sibh? Ní bhfaí sibh. Chan fhánn/fhaíonn sibh.</em></td><td></td></tr>
+<tr><td><em>3. An bhfaí sé/sí? Ní bhfaí sé/sí. Chan fhánn/fhaíonn sé/sí.</em></td><td><em>An bhfaí siad? Ní bhfaí siad. Chan fhánn/fhaíonn siad</em></td><td><em>An bhfaíhar/bhfahar? Ní bhfaíhar. Chan fhaíhar/fhahar.</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Conditional</strong></p>
+<p>Independent: <em>gheoú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. gheoinn</em></td><td><em>gheoimis(t)/gheomais(t)/gheos muid</em></td><td></td></tr>
+<tr><td><em>2. gheohá</em></td><td><em>gheoit sibh</em></td><td></td></tr>
+<tr><td>3. <em>gheoit sé/sí</em></td><td><em>gheoit siad</em></td><td><em>gheohí</em></td></tr>
+</tbody></table>
+</div>
+<p>Dependent: <em>ní bhfaíú, chan fhaíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ní bhfaínn. chan fhaínn</em></td><td><em>ní bhfaímis(t)/bhfaíomais(t). chan fhaímis(t)/fhaíomais(t). chan fhaíú muid/sinn, chan fhaíos muid</em></td><td></td></tr>
+<tr><td><em>2. ní bhfaíheá. chan fhaíheá</em></td><td><em>ní bhfaít sibh. chan fhaít sibh</em></td><td></td></tr>
+<tr><td><em>3. ní bhfaít sé/sí. chan fhaít sé/sí</em></td><td><em>ní bhfaít siad. chan fháit siad</em></td><td><em>ní bhfaíhí, chan fhaíhí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Imperative:</strong> <em>fáú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>fáimis(t)/fámais(t)</em></td><td></td></tr>
+<tr><td>2. <em>fáy/fay/fa</em></td><td><em>fáigí/fayigí/faigí</em></td><td></td></tr>
+<tr><td>3. <em>fáit/fait sé/sí</em></td><td><em>fáit/fait siad</em></td><td><em>fáitear/faitear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go bhfáy/bhfay/bhfaí</em><br />
+<em>Fan go bhfá/go bhfaí mé/tú</em> etc.<br />
+<em>Is gairid go bhfathar/bhfáithar iad.</em></p>
+<p><strong>Past subjunctive:</strong> <em>dá bhfáú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá bhfáinn</em></td><td><em>dá bhfáimis(t)/bhfámais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá bhfathá</em></td><td><em>dá bhfáit sibh</em></td><td></td></tr>
+<tr><td><em>3. dhá bhfáit sé/sí</em></td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag fáil(t)</em></p>
+<h2 id="ith"><a class="header" href="#ith">Ith</a></h2>
+<p><strong>Present:</strong> <em>itheann/íosann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. itheam/íosam, itheann/íosann mé</em></td><td><em>ithimid/íosaimid, itheann/íosann muid</em></td><td></td></tr>
+<tr><td><em>2. itheann tú/íosann tú</em></td><td><em>itheann/íosann sibh</em></td><td></td></tr>
+<tr><td><em>3. itheann/íosann sé/sí</em></td><td><em>itheann/íosann siad</em></td><td><em>itear/ithear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní/chan itheam/íosam</em> etc.</p>
+<p><strong>Past:</strong> <em>d'ith</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. d'ith mé</em></td><td><em>d'ith muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. d'ith tú</em></td><td><em>d'ith sibh</em></td><td></td></tr>
+<tr><td><em>3. d'ith sé/sí</em></td><td><em>d'ith siad</em></td><td><em>hithiú</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>níor/char ith mé</em> etc., <em>níor/char hithiú.</em></p>
+<p><strong>Past habitual:</strong> <em>d'ithiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. d'ithinn</em></td><td><em>d'ithimis(t)/d'itheamais(t)</em></td><td></td></tr>
+<tr><td><em>2. d'itheá</em></td><td><em>d'ithit sibh</em></td><td></td></tr>
+<tr><td><em>3. d'ithit sé/sí</em></td><td><em>d'ithit siad</em></td><td><em>d'ití</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>íosaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. íosa mé</em></td><td><em>íosaimid/íosa muid</em></td><td></td></tr>
+<tr><td><em>2. íosa tú</em></td><td><em>íosa sibh</em></td><td></td></tr>
+<tr><td><em>3. íosa sé/sí</em></td><td><em>íosa siad</em></td><td><em>íosar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní íosa mé</em> etc., <em>chan ithim/íosaim</em> etc., <em>chan ithear/íosar</em></p>
+<p><strong>Conditional mood:</strong> <em>d'íosú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. d'íosainn</em></td><td><em>d'íosaimis(t)/d'íosamais(t), díosas/d'íosú(s) muid</em></td><td></td></tr>
+<tr><td><em>2. d'íosá</em></td><td><em>d'íosait sibh</em></td><td></td></tr>
+<tr><td><em>3. díosait sé/sí</em></td><td><em>d'íosait siad</em></td><td><em>d'íosaí/d'íosfí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní/chann íosainn</em> etc.</p>
+<p><strong>Present subjunctive:</strong> <em>go n-ithí</em><br />
+<em>Fan go n-ithe mé/tú</em> etc..<br />
+<em>Fan go n-ithí Cormac a dhinnéar</em></p>
+<p><strong>Past subjunctive:</strong> <em>dá n-ithiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá n-ithinn</em></td><td><em>dá n-ithimis(t)/n-itheamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá n-itheá</em></td><td><em>dá n-ithit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá n-ithit sé/sí</em></td><td><em>dá n-ithit siad</em></td><td><em>dá n-ití</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Imperative Mood:</strong> <em>ithiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>ithimis(t)/íosaimis(t); itheamais(t)/íosamais(t)</em></td><td></td></tr>
+<tr><td><em>2. ith</em></td><td><em>ithigí</em></td><td></td></tr>
+<tr><td><em>3. ithit/íosait sé/sí</em></td><td><em>ithit/íosait siad</em></td><td><em>itear/ithear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ná hith</em> etc.</p>
+<p><strong>Verbal noun:</strong> <em>ag ithe</em><br />
+<strong>Verbal adjective:</strong> <em>ite, ití</em></p>
+<h2 id="tabhair"><a class="header" href="#tabhair">Tabhair</a></h2>
+<p><strong>Present:</strong> <em>bheir(eann), tugann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bheiream</em>* <em>bheir(eann)/tugann mé</em></td><td><em>bheirimid/bheireamaid,  bheir(eann)/tugann muid</em></td><td></td></tr>
+<tr><td><em>2. bheir/tugann tú</em></td><td><em>bheir(eann)/tugann sibh</em></td><td></td></tr>
+<tr><td><em>3. bheir(eann)/tugann sé/sí</em></td><td><em>bheir(eann)/tugann siad</em></td><td><em>bheirt(e)ar/tugtar</em></td></tr>
+</tbody></table>
+</div>
+<p>* Note that <em>bheir(eann)</em> isn't used with the negative.</p>
+<p><strong>The negative:</strong> <em>ní thugam/thugann mé</em> etc.; <em>cha dtugam/dtugann mé</em> etc.</p>
+<p>The following forms are also found but they're only used as dependent versions. It's clear that they're based on versions like <em>tabhaiream/tabhram</em> etc. Remember that this verb stem is said as <em>tóir</em> in Ulster.</p>
+<ul>
+<li><em>ní/má thóiream/thóram, ní/má thóireann/thórann mé/ tú</em> etc. </li>
+<li><em>cha dtóiream/dtóram</em> etc.</li>
+</ul>
+<p><strong>Past:</strong> <em>thug</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. (ní(or)) thug mé, cha dtug mé</em></td><td><em>(ní(or)) thug muid/sinn, cha dtug muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. (ní(or)) thug tú, cha dtug tú</em></td><td><em>(nío(or)) thug sibh, cha dtug sibh</em></td><td></td></tr>
+<tr><td><em>3. (ní(or)) thug sé/sí, cha dtug sé/sí</em></td><td><em>(ní(or)) thug tú, cha dtug siad</em></td><td><em>ní(or)/char tugú</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past habitual:</strong> <em>bheiriú/thugú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bheirinn/thugainn</em></td><td><em>bheirimist/bheireamais(t), (thugaimis(t)/thugamais(t)), bheiriú/thugú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bheirt(e)á/thugtá</em></td><td><em>bheirit/thugait sibh</em></td><td></td></tr>
+<tr><td><em>3. bheirit/thugait sé/sí</em></td><td><em>bheirit/thugait siad</em></td><td><em>bheirt(a)í/thugtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>bhéarhaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bhéarha mé</em></td><td><em>bhéarhaimid/bhéarhamaid, bhéarha muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bhéarha tú</em></td><td><em>bhéarha sibh</em></td><td></td></tr>
+<tr><td><em>3. bhéarha sé/sí</em></td><td><em>bhéarha siad</em></td><td><em>bhéarhar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní thóirthe/thórha mé/tú</em> etc., <em>ní thó(i)rhí Seán, ní thóirhear/thórhar, cha dtugam/dtugann mé/tú srl.; cha dtóiream/dtóireann mé/tú</em> etc. <em>cha dtóram/dtórann mé/tú</em> etc.; <em>cha dtóirhear/dtórhar.</em></p>
+<p><strong>Conditional mood:</strong> <em>bhéarhú/thóirhiú/thórhú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bhéarhainn</em></td><td><em>bhéarhaimis(t)/bhéarhamais(t), bhéarhú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bhéarhá</em></td><td><em>bhéarhait sibh</em></td><td></td></tr>
+<tr><td><em>3. bhéarhait sé/sí</em></td><td><em>bhéarhait siad</em></td><td><em>bhéarhí/bhéarfí/thó(i)rhí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>The negative:</strong> <em>ní thóirhinn/thórhainn</em> etc.; <em>ní thóirhí/thóorhaí, cha dtóirhinn/dtórhainn</em> etc.; <em>cha dtóirhí/dtórhaí</em></p>
+<p><strong>Imperative mood:</strong> <em>tugú/tóiriú/tórú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>tóirimis(t)/tóireamais(t), tóraimis(t), tóramais(t), tugaimis(t), tugamais(t)</em></td><td></td></tr>
+<tr><td><em>2. tóir</em>*</td><td><em>tóirigí, tóraigí, tugaigí</em></td><td></td></tr>
+<tr><td><em>3. tugait/tóirit/tórait sé/sí</em></td><td><em>tugait/tóirit/tórait siad</em></td><td><em>tugtar</em></td></tr>
+</tbody></table>
+</div>
+<p>* There's a special set version of <em><strong>tabhair dom.</strong></em> It's said as **<em>taem, taigheam</em>.</p>
+<p><strong>Present subjunctive:</strong> <em>go dtugaí/dtóirí/dtóraí</em><br />
+<em>Fan go dtuga/dtóire/dtóra mé/tú</em> etc.<br />
+<em>Fan go dtugaí/dtóirí/dtóraí fear an tsiopa an briseadh duit.</em></p>
+<p><strong>Past subjunctive:</strong> <em>dá dtugú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá dtugainn</em></td><td><em>dá dtugaimis(t)/dtugamais(t), dá dtugú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. dá dtugtá</em></td><td><em>dá dtugait sibh</em></td><td></td></tr>
+<tr><td><em>3. dá dtugait sé/sí</em></td><td><em>dá dtugait siad</em></td><td><em>dá dtugtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag tóirt</em><br />
+<strong>Verbal adjective:</strong> <em>tuca/tucaí</em> (in certain phrases)</p>
+<h2 id="beir"><a class="header" href="#beir">Beir</a></h2>
+<p><strong>Present:</strong> <em>beireann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. beiream / beireann mé</em></td><td><em>beirimid/beireamaid/beireann muid</em></td><td></td></tr>
+<tr><td><em>2. beireann tú</em></td><td><em>beireann sibh</em></td><td></td></tr>
+<tr><td><em>3. beireann sé/sí</em></td><td><em>beireann siad</em></td><td><em>beirtear/beirtar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>bheir</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bheir/rug mé</em></td><td><em>bheir/rug muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bheir/rug tú</em></td><td><em>bheir/rug sibh</em></td><td></td></tr>
+<tr><td><em>3. bheir/rug sé/sí</em></td><td><em>bheir/rug siad</em></td><td><em>beiriú/rugú</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní(or)/char bheir/rug mé/tú</em> etc.</p>
+<p><strong>Past Conditional:</strong> <em>bheiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bheirinn</em></td><td><em>bheirimis(t)/bheireamais(t)/bheiriú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bheirteá/bheirheá</em></td><td><em>bheirit sibh</em></td><td></td></tr>
+<tr><td><em>3. bheirit sé/sí</em></td><td><em>bheirit siad</em></td><td><em>bheirtí/bheirtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Future:</strong> <em>beirhí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. beirhe mé</em></td><td><em>beirhimid/beirheamaid/beirhe muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. beirhe tú</em></td><td><em>beirhe sibh</em></td><td></td></tr>
+<tr><td><em>3. beirhe sé/sí</em></td><td><em>beirhe siad</em></td><td><em>beirhear/rucar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní bheirhe mé</em> etc.; <em>cha bheiream/bheireann mé/tú</em> srl.</p>
+<p><strong>Conditional Mood:</strong> <em>bheirhiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td>1. <em>bheirfinn</em></td><td><em>bheirimis(t)/bheirheamais(t)</em></td><td></td></tr>
+<tr><td><em>2. bheirheá</em></td><td><em>bheirhit sibh</em></td><td></td></tr>
+<tr><td><em>3. bheirhit sé/sí</em></td><td><em>bheirhit siad</em></td><td><em>bheirhí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Imperative mood:</strong> <em>beiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ______</em></td><td><em>beirimis(t)/beireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. beir</em></td><td><em>beirigí</em></td><td></td></tr>
+<tr><td><em>3. beirit sé/sí</em></td><td><em>beirit siad</em></td><td><em>beirt(e)ar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Foshuiteach láithreach:</strong> <em>go mbeirí</em></p>
+<ul>
+<li><em>Fan go mbeire mé/tú</em> etc.</li>
+<li><em>Fan bomaite go mbeirí an madadh ar an chaora.</em></li>
+<li><em>Fan go mbeirt(e)ar orthu.</em></li>
+</ul>
+<p><strong>Foshuiteach caite:</strong> <em>dá mbeiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá mbeirinn</em></td><td><em>dá mbeireamais(t)/mbeirimis(t)/mbeiriú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. dá mbeirt(h)eá</em></td><td><em>dá mbeirit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá mbeirit sé/sí</em></td><td><em>dá mbeirit siad</em></td><td><em>dá mbeirtí/mbeirtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Ainm briathartha:</strong> <em>ag breith</em>
+<strong>Aidiacht bhriathartha:</strong> <em>bertha</em> (broad 'r' in this form)</p>
+<h2 id="abair"><a class="header" href="#abair">Abair</a></h2>
+<p><strong>Present:</strong> <em>deir(eann), abrann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. deiream/abram/ deireann/abrann mé</em> <sup class="footnote-reference"><a href="#1">1</a></sup></td><td><em>deirimid/deireamaid/abramaid deir(eann)/abrann muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. deir(eann) tú / abrann tú</em></td><td><em>deir(eann) sibh / abrann sibh</em></td><td></td></tr>
+<tr><td><em>3. deir(eann) sé/sí / abrann sé/sí</em></td><td><em>deir(eann) siad / abrann siad</em></td><td><em>deirt(e)ar, abartar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> (ní) <em>abraíom, abraíonn tú/sé</em> etc., <em>abraít(h)ear</em></p>
+<p><strong>Negative:</strong> <em>ní dheiream/dheir(eann) mé/tú</em> etc.; <em>cha deiream/ndeiream, cha deir(eann)/ndeir(eann) mé/tú</em> etc.; <em>cha deirt(e)ar/ndeirt(e)ar, chan abram, chan abrann mé/tú</em> etc., <em>chan abartar</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>The forms without the ending <em>-eann</em> are the most common when the verb <em>deir</em> is being used. <em>Deir mé/tú/sé</em> etc. is what's heard most. Often the <em>d</em> in <em>deir</em> is broad. The form with <em>abr-</em> all the way through are very common too.</p>
+</div>
+<p><strong>Past:</strong> <em>dúirt/dúrt</em><sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dúirt/dúrt mé</em></td><td><em>dúirt/dúrt muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. dúirt/dúrt tú</em></td><td><em>dúirt/dúrt sibh</em></td><td></td></tr>
+<tr><td><em>3. dúirt/dúrt sé/ní</em></td><td>dúirt/dúrt siad</td><td><em>dúrú/húrú, dúras/húras</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>níor/char úirt mé</em> etc. (&lt; níor/char dhúirt srl.); <em>níor/char húrú/húras</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>The <em>dúrt</em> form is what's used most in normal conversation. When the verb and the pronoun get equal stress, the form <em>dúirt</em> is what's used. <em>Dúirt</em> is also what's used in answers not followed by any pronoun.</p>
+</div>
+<p><strong>Past Habitual:</strong> <em>deiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. deirinn</em></td><td><em>deirimis(t)/deireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. deirt(e)á</em></td><td><em>deirit sibh</em></td><td></td></tr>
+<tr><td>3. <em>deirit sé/sí</em></td><td><em>deirit siad</em></td><td><em>deirtí/deirtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ní abraínn, ní abraítheá</em> etc., <em>ní abraítí</em></p>
+<p><strong>An diúltach:</strong> <em>ní dheirinn</em> etc., <em>ní dheirt(a)í; cha deirinn</em> etc., <em>cha deirt(a)í; cha ndeirinn</em> etc., <em>cha ndeirt(a)í</em></p>
+<p><strong>Fáistineach:</strong> <em>déarhaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. déarha mé</em></td><td>déarhaimid/déarhamaid; déarha muid</td><td></td></tr>
+<tr><td><em>2. déarha tú</em></td><td><em>déarha sibh</em></td><td></td></tr>
+<tr><td><em>3. déarha sé/sí</em></td><td><em>déarha siad</em></td><td><em>déarhar</em></td></tr>
+<tr><td><em>1. abrocha mé</em></td><td><em>abrochaimid/abrochamaid/abrocha muid</em></td><td></td></tr>
+<tr><td><em>2. abhrocha tú</em><sup class="footnote-reference"><a href="#1">1</a></sup></td><td><em>abrocha sibh</em></td><td></td></tr>
+<tr><td><em>3. abrocha sé/sí</em></td><td><em>abrocha siad</em></td><td><em>abrochar</em></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Translator's note, this might be a typo</p>
+</div>
+<p><strong>Teileann:</strong> <em>abar(h)a mé/tú</em> etc.</p>
+<p><strong>Negative:</strong> <em>cha deiream, cha deir(eann) mé/tú</em> etc.; <em>cha ndeiream/ndeir(eann) mé/tú</em> etc., <em>cha déarhar/ndéarhar, chan abram, chan abrann mé/tú</em> srl., <em>chan abrochar</em>.</p>
+<p><strong>Conditional Mood:</strong> <em>déarhú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. déarhainn</em></td><td><em>déarhaimis(t)/déarhamais(t) déarhú/déarhas muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. déarhá</em></td><td><em>déarhait sibh</em></td><td></td></tr>
+<tr><td><em>3. déarhait sé/sí</em></td><td><em>déarhait siad</em></td><td><em>déarhaí/déarfí</em></td></tr>
+<tr><td><em>1. d'abrochainn</em></td><td><em>d'abrochaimis(t)/d'abrochamais(t)</em></td><td></td></tr>
+<tr><td><em>2. d'abrochá</em></td><td><em>d'abrochait sibh</em></td><td></td></tr>
+<tr><td><em>3. d'abrochait sé/sí</em></td><td><em>d'abrochait siad</em></td><td><em>d'abrochaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>ní abar(h)ainn, ní abarhá</em> etc., <em>ní abarhaí/abarfí</em></p>
+<p><strong>Negative:</strong> <em>ní dhéarfainn/dhéarhá</em> etc.; <em>cha déarhainn, chá<sup class="footnote-reference"><a href="#1">1</a></sup> déarhá</em> etc.; <em>cha ndéarhainn, cha ndéarhá</em> etc.; <em>ní chann abrochainn/abrochá</em> etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Translator's note: might be a typo</p>
+</div>
+<p><strong>Imperative Mood:</strong> <em>abrú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>abraimis(t)/abramais(t)</em></td><td></td></tr>
+<tr><td><em>2. abair</em></td><td><em>abraigí</em></td><td></td></tr>
+<tr><td><em>3. abrait sé/sí</em></td><td><em>abrait siad</em></td><td><em>abraít(h)ear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go ndeirí, go n-abraí</em></p>
+<ul>
+<li><em>Fan go ndeirie/n-abra mé m'urnaí.</em></li>
+<li><em>Fan go ndeirt(e)ar/ndeirthear linn imeacht.</em></li>
+</ul>
+<p><strong>Past subjunctive:</strong> <em>dá ndeiriú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá ndeirinn</em></td><td><em>ndeirimis(t)/dá ndeireamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá ndeirt(e)á/ndeirtheá</em></td><td><em>dá ndeirit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá ndeirit sé/sí</em></td><td><em>dá ndeirit siad</em></td><td><em>dá ndeirtí/ndeirtaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dá n-abraínn, dá n-abraítheá, dá n-abraít sé/sí/sibh/siad, dá n-abraímis(t), dá n-abraítí, dá n-abraíú Seán.</em></p>
+<p><strong>Verbal Noun:</strong> <em>ag rá, ag ráit</em>
+<strong>Verbal Adjective:</strong> <em>ráite, ráití</em></p>
+<h2 id="feic"><a class="header" href="#feic">Feic</a></h2>
+<p><strong>Present</strong></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. tím / tíonn mé</em></td><td><em>tímid/tíomaid / tíonn muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. tíonn tú</em></td><td><em>tíonn sibh</em></td><td></td></tr>
+<tr><td><em>3. tíonn sé/sí</em></td><td><em>tíonn siad</em></td><td><em>títhear/títear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní fheiceam, ní fheiceann tú</em> etc., <em>ní fheicear/fheict(e)ar chan fheiceam, chan fheiceann tú</em> etc., <em>chan fheicear/fheic(e)ar</em></p>
+<p><strong>Past:</strong> <em>hanaic, ní/chan fhacaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. hanaic mé</em></td><td><em>hanaic muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. hanaic tú</em></td><td><em>hanaic sibh</em></td><td></td></tr>
+<tr><td><em>3. hanaic sé/sí</em></td><td><em>hanaic siad</em></td><td><em>hanaiceas</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní fhaca mé/tú</em> etc. <em>ní fhacas, ní fhacaí Máire é chan fhaca mé/tú</em> etc., <em>chan fhacas, chan fhacaí Seán iad.</em></p>
+<p><strong>Past habitual:</strong> <em>tíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. tínn</em></td><td><em>tímis(t)/tíomais(t) / tíú muid, tít sinn</em></td><td></td></tr>
+<tr><td><em>2. títheá</em></td><td><em>tít sibh</em></td><td></td></tr>
+<tr><td><em>3. tít sé/sí</em></td><td><em>tít siad</em></td><td><em>títí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>tíwinn, tífeá, tíwit sé/sí</em> etc.</p>
+<p><strong>Negative:</strong> <em>ní/chan fheicinn, ní fheiceá, ní fheicit sé/sí</em> etc., <em>ní/chan fheicí. ní/chan fheiciú duine ar bith é.</em></p>
+<p><strong>Future:</strong> <em>tifí, tífí, tiuhaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. tife mé</em><sup class="footnote-reference"><a href="#1">1</a></sup>, tiuha mé</td><td><em>tifimid/tifeamaid / tiuhaimid/tiuhamaid / tife/tiuha muid</em></td><td></td></tr>
+<tr><td><em>2. tife/tiuha tú</em></td><td><em>tife/tiuha sibh</em></td><td></td></tr>
+<tr><td><em>3. tife/tiuha sé/sí</em></td><td><em>tife/tiuha siad</em></td><td><em>tifear/tiuhar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní fheice mé/tú</em> etc. <em>ní fheicí Máire é. chan fheicim, chan fheiceann mé/tú</em> etc., <em>chan fheicear.</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Although the short <em>i</em> is most come in the form <em>tife</em>, <em>tífe</em> is heard too.</p>
+</div>
+<p><strong>Conditional Mood:</strong> <em>t(h)ifiú/chifiú/t(h)iuhú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. t(h)ifinn / chifinn / t(h)iuhainn</em></td><td><em>t(h)ifimis(t)/t(h)ifeamais(t) / chifimis(t)/chifeamais(t) / t(h)iuhaimis(t)/t(h)iuhamais(t)</em></td><td></td></tr>
+<tr><td><em>2. t(h)ifeá/t(h)iuhá</em></td><td><em>t(h)ifit/t(h)iuhait sibh</em></td><td></td></tr>
+<tr><td><em>3. t(h)ifit/t(h)iuhait sé/sí</em></td><td><em>t(h)ifit/t(h)iuhait siad</em></td><td><em>t(h)ifí/t(h)iuhaí</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="tar"><a class="header" href="#tar">Tar</a></h2>
+<p><strong>Present:</strong> <em>tig, tigeann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. t(h)igeam / t(h)ig mé / tigeann mé</em></td><td><em>t(h)igimid/t(h)igeamaid/t(h)ig muid/sinn tigeann muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. t(h)ig tú / tigeann tú</em></td><td><em>t(h)ig sibh / tigeann sibh</em></td><td></td></tr>
+<tr><td><em>3. t(h)ig sé/sí / tigeann sé/sí</em></td><td><em>t(h)ig siad / tigeann siad</em></td><td><em>tigt(e)ar/ticear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní thigeam, ní thig(eann) mé/tú</em> etc.; <em>cha dtigeam, cha dtig(eann) mé/tú</em> etc.</p>
+<p><strong>Past:</strong> <em>thanaic, thanaig</em><sup class="footnote-reference"><a href="#1">1</a></sup></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. thanaic/thanaig mé</em></td><td><em>thanaic/thanaig muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. thanaic/thanaig tú</em></td><td><em>thanaic/thanaig sibh</em></td><td></td></tr>
+<tr><td><em>3. thanaic/thanaig sé/sí</em></td><td><em>thanaic/thanaig siad</em></td><td><em>thanaiceas/thanaigeas</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní(or) thanaic/thanaig mé/tú</em> etc.; <em>cha dtanaic/dtanaig mé/tú</em> etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>These two versions with a broad <em>n</em> are the most common ones in speech. </p>
+</div>
+<p><strong>Future:</strong> <em>tiocaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. tioca mé</em></td><td><em>tiocaimid/tiocamaid / tioca muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. tioca tú</em></td><td><em>tioca sibh</em></td><td></td></tr>
+<tr><td>3. <em>tioca sé/sí</em></td><td><em>tioca siad</em></td><td><em>tiocar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní thioca mé/tú</em> etc.; <em>cha dtigeam, cha dtig(eann) mé/tú</em> etc., <em>cha dticear/dtigtear. Sílim nach dtioca/dtic/dtigeann sé níos mó.</em></p>
+<p><strong>Conditional Mood:</strong> <em>thiocú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. thiocainn</em></td><td><em>thiocaimist/thiocamaist</em></td><td></td></tr>
+<tr><td><em>2. thiocá</em></td><td><em>thiocait sibh</em></td><td></td></tr>
+<tr><td><em>3. thiocait sé/sí</em></td><td><em>thiocait siad</em></td><td><em>thiocaí, thiocfí</em> (Teileann)</td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní thiocainn/thiocá</em> etc.; <em>cha dtiocainn/dtiocá</em> etc.</p>
+<p><strong>Imperative mood:</strong> <em>tarú, góú, tigiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>taraimis(t)/taramais(t)/tigimis(t)/tigeamais(t)</em></td><td></td></tr>
+<tr><td><em>2. tar, gó (&lt; gabh)</em></td><td><em>taraigí, góigí</em></td><td></td></tr>
+<tr><td>3. tarait sé/sí / tigit sé/sí / <em>góit sé/sí</em></td><td><em>tarait siad / tigit siad / góit siad</em></td><td><em>tigtear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go dtigí, go dtaraí</em></p>
+<ul>
+<li><em>fan go dtige mé/tú</em> etc.,</li>
+<li><em>fan go dtara mé/tú</em> etc.</li>
+<li><em>suigh go dtigí/dtaraí Máire</em></li>
+<li><em>go dticear/dtigtear</em></li>
+</ul>
+<p><strong>Past subjunctive:</strong> <em>dá dtigiú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá dtiginn</em></td><td><em>dá dtigimis(t)/dtigeamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá dtigeá/dticeá/dtigt(e)á</em></td><td><em>dá dtigit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá dtigit sé/sí</em></td><td><em>dá dtigit siad</em></td><td><em>dá dtigt(a)í</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal noun:</strong> <em>ag teacht</em></p>
+<h2 id="gabhtéigh"><a class="header" href="#gabhtéigh">Gabh/Téigh</a></h2>
+<p><strong>Láithreach:</strong> <em>t(h)éid, téann</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. t(h)éim/t(h)éam</em> / t(h)éann mé <sup class="footnote-reference"><a href="#1">1</a></sup></td><td><em>t(h)éamaid/t(h)éimid</em> / t(h)éann muid/sinn</td><td></td></tr>
+<tr><td><em>2. t(h)éid tú / t(h)éann tú</em></td><td><em>t(h)éid sibh / t(h)éann sibh</em></td><td></td></tr>
+<tr><td><em>3. t(h)éid sé/sí / t(h)éann sé/sí</em></td><td><em>t(h)éid siad / t(h)éann siad</em></td><td><em>t(h)éithear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní théim/théam, ní théann mé/tú</em> etc.; <em>cha dtéim/dtéam, cha dtéid/dtéann mé tú</em> etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><em>th</em> is more common in <em>téid</em> than in <em>téann</em></p>
+</div>
+<p><strong>Past:</strong> <em>chuay</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. chua mé</em> <sup class="footnote-reference"><a href="#1">1</a></sup></td><td><em>chuaimid/chuamaid / chua muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. chua tú</em></td><td><em>chua sibh</em></td><td></td></tr>
+<tr><td><em>3. chua sé/sí</em></td><td><em>chua siad</em></td><td><em>chuathas</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní theacha mé</em> etc., <em>cha dteacha mé</em> etc.; <em>ní theachaí/cha dteachaí Seán; ní theachas/cha dteachas.</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>When the verb and the pronouns <em>mé/tú</em> etc. are heavily emphasised, both <em>chua</em> and <em>chuay</em> can be said.</p>
+</div>
+<p><strong>Past Habitual:</strong> <em>théú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. théinn</em></td><td><em>théimis(t)/théamais(t) / théú muid/théit sinn</em></td><td></td></tr>
+<tr><td><em>2. théitheá</em></td><td><em>théit sibh</em></td><td></td></tr>
+<tr><td><em>3. théit sé/sí</em></td><td><em>théit siad</em></td><td><em>théití/théataí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>théwinn/théitheá, théwit sé/sí</em> etc., <em>théití/théifí</em></p>
+<p><strong>Future:</strong> <em>rachaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. racha mé</em></td><td><em>rachaimid/rachamaid; racha muid</em></td><td></td></tr>
+<tr><td><em>2. racha tú</em></td><td><em>racha sibh</em></td><td></td></tr>
+<tr><td><em>3. racha sé/sí</em></td><td><em>racha siad</em></td><td><em>rachar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní racha mé/tú</em> etc.; <em>cha dtéim/dtéam, cha dtéann mé/tú</em> etc.; <em>cha dtéid mé/tú</em> etc.</p>
+<p><strong>Conditional Mood:</strong> <em>rachú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. rachainn</em></td><td><em>rachaimist/rachamaist / rachú/rachas muid</em></td><td></td></tr>
+<tr><td><em>2. rachá</em></td><td><em>rachait sibh</em></td><td></td></tr>
+<tr><td><em>3. rachait sé/sí</em></td><td><em>rachait siad</em></td><td><em>rachaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní/cha rachainn</em> etc.</p>
+<p><strong>Imperative mood:</strong> <em>téú, góú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>téamais(t)/téimis(t) / gómais(t)/góimis(t)</em></td><td></td></tr>
+<tr><td><em>2. téigh/gó (&lt; gabh)</em></td><td><em>téigí/góigí</em></td><td></td></tr>
+<tr><td><em>3. téit/góit sé/sí</em></td><td><em>téit/góit siad</em></td><td><em>téithear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present Subjunctive:</strong> <em>go dtéy</em></p>
+<ul>
+<li><em>go dté mé/tú</em> <em>etc.</em> <em>slán! go dtéy Máire slán!</em></li>
+<li><em>nár thé tú</em> etc. <em>nár théy Máire</em> etc.</li>
+</ul>
+<p><strong>Past Subjunctive:</strong> <em>dá dtéú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá dtéinn</em></td><td><em>dá dtéamais(t)/dtéimis(t)</em></td><td></td></tr>
+<tr><td><em>2. dá dtéitheá</em></td><td><em>dá dtéit sibh</em></td><td></td></tr>
+<tr><td><em>3. dá dtéit sé/sí</em></td><td><em>dá dtéit siad</em></td><td><em>dá dtéití/dtéataí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>dá dtéwinn/dtéitheá, dá dtéwit sé/sí</em> etc., <em>dtá dtéití/dtéifí</em></p>
+<p><strong>Verbal Noun:</strong> <em>ag goil, ag gol</em></p>
+<h2 id="déan"><a class="header" href="#déan">Déan</a></h2>
+<p>In the Present Tense and Past Habitual, the stem <em>ní</em> is used in Ulster dialects, especially in the indepedent form. <em>déan</em> is found in the dependent forms. Often <em>deán</em> is heard in place of <em>déan</em>.</p>
+<p><strong>Láithreach</strong></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. níom / níonn mé</em></td><td><em>nímid/níomaid níonn muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. níonn tú</em></td><td><em>níonn sibh</em></td><td></td></tr>
+<tr><td><em>3. níonn sé/sí</em></td><td><em>níonn siad</em></td><td><em>níthear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní théanam/theánam, ní théanamaid/theánamaid, ní théanaimid/theánaimid, ní théan(ann)/theán(ann) tú/sé/sí</em> etc., <em>ní théantar/theántar, cha (n)déanam, cha déan(ann) mé/tú/sé/sí</em> etc. <em>cha ndéan(ann) mé/tú</em> etc., <em>cha (n)déanam etc., cha déantar/cha ndéantar, cha deántar/ndeántar</em></p>
+<p><strong>Past:</strong> <em>rinn</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. rinn mé</em></td><td><em>rinn muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. rinn tú</em></td><td><em>rinn sibh</em></td><td></td></tr>
+<tr><td><em>3. rinn sé/sí</em></td><td><em>rinn siad</em></td><td><em>rinniú</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní theárn/theárr mé/tú</em> etc.; <em>ní theárnú/theárrú, ní theárnas/theárras, cha dteárn/dteárr<sup class="footnote-reference"><a href="#1">1</a></sup> mé/tú</em> etc.; <em>cha dteárnú/dteárrú, cha dteárnús/dtearnas, dteárrús/dteárras</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>These can be written as <em>cha dearn</em> etc., as well but I kept with the spelling here because of the <em>th</em> in the forms <em>ní thearn</em> etc.</p>
+</div>
+<p><strong>Past Habitual:</strong> <em>níú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. nínn</em></td><td><em>nímist/níomaist</em></td><td></td></tr>
+<tr><td><em>2. níhá</em></td><td><em>nít sibh</em></td><td></td></tr>
+<tr><td><em>3. nít sé/sí</em></td><td><em>nít siad</em></td><td><em>nítí/nítí/níthí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Teileann:</strong> <em>níwinn, níthá, níwit sé/sí</em> etc., <em>nífí</em></p>
+<p><strong>Future:</strong> <em>dhéanhaí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dhéanha mé</em></td><td><em>dhéanhaimid/dhéanhamaid</em></td><td></td></tr>
+<tr><td><em>2. dhéanha tú</em></td><td><em>dhéanha sibh</em></td><td></td></tr>
+<tr><td><em>3. dhéanha sé/sí</em></td><td><em>dhéanha siad</em></td><td><em>dhéanhar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní théanha mé/tú</em> etc., <em>ní théanhar, ní theánha mé</em>
+etc.; <em>cha déanam, cha déan(ann) mé/tú</em> etc., <em>cha déanhar, cha ndéanam, cha ndéan(ann) mé/tú</em> etc., <em>cha ndéanhar; cha (n)deánam</em> etc.</p>
+<p><strong>Conditional mood:</strong> <em>dhéanhú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dhéanhainn</em></td><td><em>dhéanhaimis(t)/dhéanhamais(t) / dhéanhas/dhéanhús muid</em></td><td></td></tr>
+<tr><td><em>2. dhéanhá</em></td><td><em>dhéanhait sibh</em></td><td></td></tr>
+<tr><td><em>3. dhéanhait sé/sí</em></td><td><em>dhéanhait siad</em></td><td>dhéanhaí/dhéanf(a)í</td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní théanhainn/théanhá</em> etc., <em>ní theánhainn</em> etc.; <em>cha (n)déanhainn</em> etc., <em>cha (n)deánhainn</em> etc.</p>
+<p><strong>Imperative mood:</strong> <em>déanú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>déanaimis(t)/déanamais(t)</em></td><td></td></tr>
+<tr><td><em>2. déan</em></td><td><em>déanaigí</em></td><td></td></tr>
+<tr><td><em>3. déanait sé/sí</em></td><td><em>déanait siad</em></td><td><em>déantar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present subjunctive:</strong> <em>go ndéanaí</em></p>
+<ul>
+<li><em>fan go ndéana mé/tú</em> etc.</li>
+<li><em>go ndéantar do thoil ar an talamh</em></li>
+</ul>
+<p><strong>Past subjunctive:</strong> <em>dá ndéanú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá ndéanainn</em></td><td><em>dá ndéanaimis(t)/ndéanamais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá ndéanta</em></td><td><em>dá ndéanait sibh</em></td><td></td></tr>
+<tr><td><em>3. dá ndéanait sé/sí</em></td><td><em>dá ndéanait siad</em></td><td><em>dá ndéantaí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Verbal Noun:</strong> <em>ag déanú</em></p>
+<p><strong>Verbal Adjective:</strong> <em>déanta(í), deánta(í)</em></p>
+<h2 id="bí"><a class="header" href="#bí">Bí</a></h2>
+<p><strong>Present:</strong> <em>tá</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ta<sup class="footnote-reference"><a href="#1">1</a></sup> mé</em></td><td><em>táimid/támaid; tá muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. tá tú</em></td><td><em>tá sibh</em></td><td></td></tr>
+<tr><td><em>3. tá sé/sí</em></td><td><em>tá siad</em></td><td><em>táthar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní fhuil/fhail/fheil</em> (two syllables, like this: <em>ní-il, ní-ail, ní-eil</em>), <em>ní fhuilthear/thailthear/fheilthear; go bhfuilthear</em> (wil-har) <em>chan fhuil mé/tú</em> etc.; <em>mur buil, mura/muna bhfuil/buil</em></p>
+<p><strong>Present Habitual:</strong> <em>bíonn</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bíom / bíonn mé</em></td><td><em>bímid, bíomaid / bíonn muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bíonn tú</em></td><td><em>bíonn sibh</em></td><td></td></tr>
+<tr><td><em>3. bíonn sé/sí</em></td><td><em>bíonn siad</em></td><td><em>bíthear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>cha/ní bhíom/bhíonn mé</em> etc. <em>cha/ní bhíthear, cha mbíom/mbíonn mé/tú</em> etc. <em>cha mbíthear</em></p>
+<p><strong>Interrogative:</strong> <em>Cá bhfuil? Cóil</em> and <em>Couil</em> are what are said most.</p>
+<p><strong>Past Habitual:</strong> <em>bhíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bhínn</em></td><td><em>bhímis(t)/bhíomais(t); bhíú muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bhítheá</em></td><td><em>bhít sibh</em></td><td></td></tr>
+<tr><td><em>3. bhít sé/sí</em></td><td><em>bhít siad</em></td><td><em>bhíthí, bhífí</em> (Teileann)</td></tr>
+</tbody></table>
+</div>
+<p><strong>Past:</strong> <em>bhí</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bhí mé</em></td><td><em>bhí muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. bhí tú</em></td><td><em>bhí sibh</em></td><td></td></tr>
+<tr><td><em>3. bhí sé/sí</em></td><td><em>bhí siad</em></td><td><em>bhíothas/bhíothar</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>cha/ní ro mé/tú</em> etc., <em>cha/ní rohar/rohas, cha/ní roh</em></p>
+<p><strong>Future:</strong> <em>béy/béi</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. be mé, béy mé<sup class="footnote-reference"><a href="#1">1</a></sup></em></td><td><em>beimid/be(a)maid, béy muid/sinn</em></td><td></td></tr>
+<tr><td><em>2. be tú, béy tú</em></td><td><em>be sibh, béy sibh</em></td><td></td></tr>
+<tr><td><em>be sé/sí, béy sé/sí</em></td><td><em>be siad, béy siad</em></td><td><em>behar, beifear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní bhe mé/tú</em> etc. <em>ní bhéy mé/tú</em> etc. <em>ní bhehar/bheifear, cha bhíom, cha bhíonn mé/tú/sé/sí</em> etc.; <em>cha bhíthear, cha bhethar<sup class="footnote-reference"><a href="#2">2</a></sup>, nach mbe mé/tú</em>
+etc.; <em>nach mbíom/mbíonn mé/tú</em> etc.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>The form <em>be</em> is used when the sentence isn't particularly stressed. If an answer is especially stressed the form <em>béy/béi</em> is used. In these last cases, the verb and the pronoun are equally stressed, and none of the vowels in them are reduced.</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>This usage is an exception because the present habitual usually comes after <em>cha.</em> No other form of the future is used with <em>cha</em> except the autonomous.</p>
+</div>
+<p><strong>Conditional Mood:</strong> <em>bhéú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. bhéinn</em></td><td><em>bhéimis(t)/bhéamais(t)</em></td><td></td></tr>
+<tr><td><em>2. bhéiheá/bhéifeá</em></td><td><em>bhéit sibh</em></td><td></td></tr>
+<tr><td><em>3. bhéit sé/sí</em></td><td><em>bhéit siad</em></td><td><em>bhéihí/bhéifí</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Negative:</strong> <em>ní/cha bhéinn</em> etc.</p>
+<p><strong>Imperative Mood:</strong> <em>bíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. ____</em></td><td><em>bímis(t)/bíomais(t)</em></td><td></td></tr>
+<tr><td><em>2. bí</em></td><td><em>bígí</em></td><td></td></tr>
+<tr><td><em>3. bít sé/sí</em></td><td><em>bít siad</em></td><td><em>bíthear</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Present Subjunctive:</strong> <em>go mbí/mbé/ro(h)</em></p>
+<ul>
+<li><em>fan go mbí/go mbé mé/tú</em> etc. <em>réidh, fuirigh go roh an chaint thart.</em></li>
+<li><em>dheamhan i bhfad go rohar ag caint air.</em></li>
+</ul>
+<p><strong>Past Subjunctive:</strong> <em>dá mbíú</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>1. dá mbínn</em></td><td><em>dá mbímis(t)/mbíomais(t)</em></td><td></td></tr>
+<tr><td><em>2. dá mbítheá</em></td><td><em>dá mbít sibh</em></td><td></td></tr>
+<tr><td><em>3. dá mbít sé/sí</em></td><td><em>dá mbít siad</em></td><td><em>dá mbíthí/mbífí</em></td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="pronunciation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="the_copula.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="pronunciation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="the_copula.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

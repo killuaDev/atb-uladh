@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Copula - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html" class="active"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="3-the-copula"><a class="header" href="#3-the-copula">3. The Copula</a></h1>
+<h2 id="31-the-copular-sentence"><a class="header" href="#31-the-copular-sentence">3.1 The Copular Sentence</a></h2>
+<p>There are various types of copular sentences in this dialect. The following are the main forms that are used in them.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th>Present</th><th>Past/Conditional Mood</th></tr></thead><tbody>
+<tr><td>Statement</td><td>positive</td><td><em>is</em></td><td><em>ba, b', badh</em></td></tr>
+<tr><td></td><td>negative</td><td><em>ní, ní h-, cha, chan</em></td><td><em>níor, níorbh, char, charbh</em></td></tr>
+<tr><td>Question</td><td>positive</td><td><em>an, ab</em></td><td><em>ab, ar, arbh, an mb'</em></td></tr>
+<tr><td></td><td></td><td><em>cé</em></td><td><em>cár, cérbh</em></td></tr>
+<tr><td></td><td>negative</td><td><em>nach, ná nach</em></td><td><em>nár, nárbh, nach ba/b'</em></td></tr>
+<tr><td>Reported speech</td><td>positive</td><td><em>gur, gurb</em></td><td><em>gur, gurbh, go mb'</em></td></tr>
+<tr><td></td><td>negative</td><td><em>nach, nach b'</em></td><td><em>nár, nárbh</em></td></tr>
+<tr><td>Relative</td><td>positive</td><td><em>is, ar</em></td><td><em>a ba, ab', ar, arbh, a mb'</em></td></tr>
+<tr><td></td><td>negative</td><td><em>nach</em></td><td><em>nár, nárbh</em></td></tr>
+</tbody></table>
+</div>
+<p>Regarding with the above forms, this much can be said. The forms ending in <em>b/bh</em> are used before the pronouns <em>é, í, iad, ea(dh)</em> and words starting with <em>fh</em> + a vowel. There's a tendency to drop the <em>r</em> in the forms before words starting with a consonant. From a pronunciation perspective, the <em>b/bh</em> in the forms join with the next word and there's a tendency there too to drop the <em>r.</em> <em>chan</em>is used before pronouns and nouns, and <em>cha</em> before adjectives. Here, we focus on classification and identification sentences, possessive sentences, and on the use of adjectives and prepositions with the copula.</p>
+<h2 id="32-the-basic-forms-is-and-ba"><a class="header" href="#32-the-basic-forms-is-and-ba">3.2 The basic forms <em>is</em> and <em>ba</em></a></h2>
+<p>These two forms are used in sentences of the sort below. Note that an adjective follows the copula in each case.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Is mór an t-airgead/gar é</em></td><td><em>Ba mhór an t-airgead/gar é</em></td></tr>
+<tr><td><em>Is deas an áit é</em></td><td><em>Ba d(h)eas an áit é</em></td></tr>
+<tr><td><em>Is breá an bhó í</em></td><td><em>Ba bhreá an bhó í</em></td></tr>
+<tr><td><em>Is iontach an rud é</em></td><td><em>B'iontach an rud é</em></td></tr>
+<tr><td><em>Is amaideach an fear é</em></td><td><em>B'amaideach an fear é</em></td></tr>
+<tr><td><em>Is doiligh éirí ar maidin</em></td><td><em>Ba d(h)oiligh éirí ar maidin</em></td></tr>
+<tr><td><em>Is furast(A) labhairt leis</em></td><td><em>B'fhurast(a) labhairt leis</em></td></tr>
+<tr><td><em>Is maith/breá liom é cinnte</em></td><td><em>Ba mhaith/bhreá liom é cinnte</em></td></tr>
+<tr><td><em>Is daor liom iad</em></td><td><em>Ba d(h)aor liom iad</em></td></tr>
+<tr><td><em>Is fearr dúin féin é</em></td><td><em>B'fhearr dúin féin é</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="33-classification-and-identification-sentences"><a class="header" href="#33-classification-and-identification-sentences">3.3 Classification and Identification Sentences</a></h2>
+<h3 id="331-classification-sentences"><a class="header" href="#331-classification-sentences">3.3.1 Classification Sentences</a></h3>
+<p>It's typical to leave out the copula in classification sentences.</p>
+<ul>
+<li><em>Fear deas Seán/é.</em></li>
+<li><em>Tithe daora iad.</em></li>
+<li><em>Bó bhreá í.</em></li>
+<li><em>Doc(h)túir mise.</em></li>
+</ul>
+<p>When the past tense is to be expressed, that's done in two ways. The verb <em>bí</em> is used plus the preposition <em>i</em> in the two cases. The verb can be put at the end of the sentence but it's often in the middle or at the end when special emphasis is being used.  <em>ba</em> is not put at the start of the sentence.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Bhí Máire ina múinteoir</em></td><td><em>Múinteoir a bhí i(n) Máire/inti</em></td></tr>
+<tr><td><em>Bhí Seán ina fhear dheas</em></td><td><em>Fear deas a bhí i(n) Seán/ann</em></td></tr>
+<tr><td><em>Bhí siad ina dtithe daora</em></td><td><em>Tithe daora a bhí iontu</em></td></tr>
+<tr><td><em>Bhí sí ina bó bhreá</em></td><td><em>Bó bhreá a bhí inti</em></td></tr>
+<tr><td><em>Bhí mé i mo dhoc(h)túir</em></td><td>Doc(h)túir a bhí ionam</td></tr>
+</tbody></table>
+</div>
+<p>In the same way, the present can be expressed using <em>tá/atá + i</em></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Tá Máire ina múinteoir</em></td><td><em>Múinteoir atá i(n) Máire</em></td></tr>
+<tr><td><em>Tá sé ina bhuchaill óg</em></td><td><em>Buachaill óg atá ann</em></td></tr>
+<tr><td><em>Tá sí ina scoil mhaith</em></td><td><em>Scoil mhaith atá inti</em></td></tr>
+</tbody></table>
+</div>
+<p>Using sentences like <em>Is ainmhí an coinín</em> isn't typical in Ulster Irish except as part of longer sentences. Usually the copula is dropped.</p>
+<ul>
+<li><em>Ainmhí an coinín a bhíonn beo ar fhéar.</em></li>
+<li><em>Fear (é) Dónall a bhfuil tréan airgid aige.</em></li>
+<li><em>Ciarógaí iad a bhíonn iontach fairsing sa tsamhradh.</em></li>
+</ul>
+<h3 id="332-identification-sentences"><a class="header" href="#332-identification-sentences">3.3.2 Identification Sentences</a></h3>
+<p>The copula is often dropped in identification sentences in the Present Tense.</p>
+<div class="table-wrapper"><table><thead><tr><th>Present</th><th>Past</th></tr></thead><tbody>
+<tr><td><em>(Is é) Pádraig an gréasaí</em></td><td><em>Badh é/Ba Pádraig an gréasaí</em></td></tr>
+<tr><td><em>(Is é) Anocht Oíche Nollag</em></td><td><em>Badh é/Ba aréir Oíche Nollag</em></td></tr>
+<tr><td><em>(Is í) An bhean is óige an doc(h)túir</em></td><td><em>Badh í/Ba an bhean ab óige an doc(h)túir</em></td></tr>
+</tbody></table>
+</div>
+<p>Often <em>atá/a bhí i</em> is found in sentences like those above too. When those are used, often the copula and pronoun are left out completely in both tenses.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>(Is é) Pádraig atá ina ghréasaí</em></td><td><em>(Badh é/Ba) Pádraig a bhí ina ghréasaí</em></td></tr>
+<tr><td><em>(Is é) Oíche Nollag atá anocht</em></td><td><em>(Badh é/Ba) Oíche Nollag a bhí aréir ann</em></td></tr>
+<tr><td><em>(Is í) an bhean is óige atá ina doc(h)túir</em></td><td><em>(Badh í/Ba) an bhean ab óige a bhí ina doc(h)túir</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="333-the-copula-before-seosinsiod"><a class="header" href="#333-the-copula-before-seosinsiod">3.3.3 The copula before <em>seo/sin/siod</em></a></h3>
+<p>The copula is not found before <em>seo/sin/siod</em> (siúd), normally, except in the Past Tense.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Sin an teach</em></td><td><em>Ba sin an teach</em></td></tr>
+<tr><td><em>Seo an leabhar úr</em></td><td><em>Ba seo an leabhar úr</em></td></tr>
+<tr><td><em>Siod an teach s'aige</em></td><td><em>Ba siod an teach s'aige</em></td></tr>
+<tr><td><em>(Is é) Seo an áit aige</em></td><td><em>Badh é/Ba sin an áit aige</em></td></tr>
+<tr><td><em>(Is í) Seo mo cheannsa</em></td><td><em>Badh í/Ba sin mo cheannsa</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
+<ul>
+<li>
+<ol>
+<li><em>badh é/í</em> is said and <em>ba yé/ba yí.</em></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>
+<ul>
+<li>(a) <em>Is</em> is said as a slender <em>s</em> (i) before <em>é, í, iad, eadh</em> and <em>ioma(í),</em> (ii) before the slender consonants <em>d, t, l</em> and <em>n,</em> normally: <em>'sé, 'siad, 's deise, 's teo, 's leithne, 's nimhní</em> etc.</li>
+<li>(b) The <em>s</em> is broad in all other cases: <em>'s mé/tú/muid, 's cuma/doiligh/f(h)earr/iontach</em> etc. and in <em>'s liom/leat/leis</em> etc.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="34-the-negative-sentence"><a class="header" href="#34-the-negative-sentence">3.4 The negative sentence</a></h2>
+<p>The copula has the following negative forms in the dialect.</p>
+<div class="table-wrapper"><table><thead><tr><th>Present</th><th>Past/Conditional mood</th></tr></thead><tbody>
+<tr><td><em>ní, ní h-</em></td><td><em>níor, níorbh</em></td></tr>
+<tr><td><em>cha, chan</em></td><td><em>char, charbh</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="341-rules-of-use"><a class="header" href="#341-rules-of-use">3.4.1 Rules of use</a></h3>
+<p>(a) The Present is expressed mostly with <em>Ní/Chan</em> or with <em>Ní/Chan</em> plus <em>atá i</em> and The Past with the use of <em>Ní/Chan</em> plus <em>a bhí i,</em> as below.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Ní/Chan múinteoir Máire</em></td><td><em>Ní/Chan múinteoir a bhí i Máire</em></td></tr>
+<tr><td><em>Ní/Chan doc(h)túir atá ionam</em></td><td><em>Ní/Chan doc(h)túir a bhí ionamsa</em></td></tr>
+<tr><td><em>Ní/Chan Pádraig an gréasaí</em></td><td><em>Ní/Chan Pádraig a bhí ina ghréasaí</em></td></tr>
+</tbody></table>
+</div>
+<p>(b) The forms with <em>r/rbh</em> aren't used right before nouns. They are used:</p>
+<ul>
+<li>(i) when there's an adjective after the copula.</li>
+<li>(ii) When the pronouns <em>é, í, iad,</em> and <em>ea(dh)</em> or an adjective/form of an adjective starting with <em>f</em> + a vowel is in the copular sentence.</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Ní/Cha doiligh éirí ar maidin</em></td><td><em>Níor/Char dhoiligh éirí ar maidin</em></td></tr>
+<tr><td><em>Ní/Cha maith liom é</em></td><td><em>Níor/Char maith liom é</em></td></tr>
+<tr><td><em>Ní (hé)/Chan (é) Pádraig an gréasaí</em></td><td><em>Níorbh/Charbh é Pádraig an gréasaí</em></td></tr>
+<tr><td><em>Ní (hé)/Chan (é) seo an áit aige</em></td><td><em>Níorbh/Charbh é sin an áit aige</em></td></tr>
+<tr><td><em>Ní fearr/Chan fhearr dúin é</em></td><td><em>Níorbh/Charbh fhearr dúinn é</em></td></tr>
+</tbody></table>
+</div>
+<p>(c)  When a positive answer to a question is expected, the negative particle <em>Nach</em> is used in the Present, and <em>Nár, Nárbh</em> in the Past and Conditional Mood. This is how they are in this dialect</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Nach mór an t-airgead é</em></td><td><em>Nár mhór an t-airgead é?</em></td></tr>
+<tr><td><em>Nach doiligh éirí ar maidin</em></td><td><em>Nár dhoiligh éirí ar maidin?</em></td></tr>
+<tr><td><em>Nach (é) Pádraig an gréasaí</em></td><td><em>Nárbh é Pádraig an gréasaí?</em></td></tr>
+<tr><td><em>Nach fearr dúin fanacht?</em></td><td><em>Nárbh fhearr dúinn fanacht?</em></td></tr>
+</tbody></table>
+</div>
+<p><strong>Notes</strong><br />
+(a) <em>cha</em> is used before a consonant and <em>chan</em> before a vowel or <em>f</em> + a vowel, normally. <em>chan</em> is the negative form of the copula in classification and identification before vowels and before consonants.</p>
+<p>(b) The last consonant in the particles <em>chan/níorbh/charbh</em> is slender before <em>é, í, iad, ea(dh)</em> and words starting with <em>fhe/fhé/fhi/fhí.</em> </p>
+<p>(c) A pronoun must always be placed between <em>nárbh/níorbh/charbh</em> and nouns in sentences like <em>Nárbh/Níorbh/Charbh í Máire a bhean?</em></p>
+<h2 id="35-question-sentences"><a class="header" href="#35-question-sentences">3.5 Question Sentences</a></h2>
+<p>The copula has the following question forms in the dialect.</p>
+<div class="table-wrapper"><table><thead><tr><th>Present</th><th>Past/ Conditional Mood</th></tr></thead><tbody>
+<tr><td><em>an, ab</em></td><td><em>ab, ar, arbh, an mb'</em></td></tr>
+<tr><td><em>nach, ná nach</em></td><td><em>nár, ná nár, nárbh, nach b'</em></td></tr>
+<tr><td><em>cé</em></td><td><em>cár, cérbh</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="351-rules-of-use"><a class="header" href="#351-rules-of-use">3.5.1 Rules of use</a></h3>
+<p>(i) <em>an</em> and <em>nach</em> are used referring to the Present Tense, normally. </p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>An (é) Seán an gréasaí</em></td><td><em>Sé, Sea, Seadh, Seh</em><sup class="footnote-reference"><a href="#note">1</a></sup></td></tr>
+<tr><td><em>An/Nach (í) Máire an múinteoir?</em></td><td><em>Sí, Sea, Seadh, Seh</em></td></tr>
+<tr><td><em>An/Nach as Meiriceá iad?</em></td><td><em>Sea, Seadh, Seh</em></td></tr>
+<tr><td><em>Seán an gréasaí, nach é/ea/eadh?</em></td><td><em>Sé, Sea, Seadh, Seh</em></td></tr>
+</tbody></table>
+</div>
+<p>The present or the past can also be expressed through use of the phrases <em>atá i/ a bhí i,</em> respectively.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>An/Nach (é) Seán atá ina ghréasaí?</em></td><td><em>Sé, Sea, Seadh, Seh</em></td></tr>
+<tr><td><em>An/Nach (í) Máire a bhí ina múinteoir?</em></td><td><em>Sí, Sea, Seadh, Seh</em></td></tr>
+</tbody></table>
+</div>
+<p>(ii) <em>ab</em> is used to express an action in the Present or Future. This form is most used in the north half of Donegal.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Ab é/eadh tusa an gréasaí?</em><sup class="footnote-reference"><a href="#note">1</a></sup></td><td><em>Smé, Seadh, Seh</em></td></tr>
+<tr><td><em>Ab é/eadh Seán an doc(h)túir?</em></td><td><em>Sé, Seadh, Chan é, Ní hea</em></td></tr>
+<tr><td><em>Ab í/eadh Máire an múinteoir?</em></td><td><em>Sí, Seadh, Seh</em></td></tr>
+<tr><td><em>Ab í/eadh Máire atá ina múinteoir</em></td><td><em>Ní hí/headh/heh</em></td></tr>
+<tr><td><em>Ab í/eadh Máire a bhí ina múinteoir?</em></td><td><em>Chan í/eadh</em></td></tr>
+<tr><td><em>Ab iad/eadh na páistí an trioblóid</em></td><td><em>Siad, Seadh</em></td></tr>
+<tr><td><em>Ab eadh as Doire iad?</em></td><td><em>Seadh, Seh</em></td></tr>
+<tr><td><em>Nach b'as Doire iad?</em></td><td><em>Ní hea, Chan eadh, Ní heh</em></td></tr>
+<tr><td><em>Ab eadh leis an t-airgead?</em></td><td><em>Sleis, Ní/Chan leis, Seh, Ní heh</em></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>The <em>I</em> in <em>Is</em> isn't said at the start of a sentence. The <em>s</em> is combined with the next word as we've shown in the spelling. There are two pronunciations for stressed <em>eadh</em>. It's said as the <em>eigh</em> in the English <em>height</em> in many subdialects, and in the dialects which have unrounded <em>ú</em> as a pronunciation of <em>ao</em> it's said like <em>a</em> or <em>e</em> + unrounded 'u'. In the central part and west part of the Gaoth Dobhair parish, <em>seh, ní heh, cha neh</em> etc. are the answers to copular questions.</p>
+</div>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>There usually isn't stress on <em>eadh</em> after <em>ab</em>. It has two pronunciations (a) <em>a</em> as in the word <em>teach</em> or (b) a weak vowel  like at the start of the English words <em>about, arise</em> etc. Since <em>é</em> can also be pronounced like <em>a</em>, often <em>Ab é?</em> and <em>Ab eadh?</em> are the same. The two are said <em>bea</em>. The <em>b</em> in <em>Ab?</em> is always slender and in <em>Nach b'</em>.</p>
+</div>
+<p>(iii) The versions with <em>r</em> are used in the Past/ Conditional Mood before adjectives and prepositions. They're not normally used before nouns.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Ar mhaith leat imeacht</em></td><td><em>Ba/Níor/Char mhaith.</em></td></tr>
+<tr><td><em>Ar leis an t-airgead?</em></td><td><em>Ba leis, Badh ea/eadh, Seh, Ní heh.</em></td></tr>
+<tr><td><em>Nár cheart do Mháire a bheith ann?</em></td><td><em>Ba/Níor/Char cheart.</em></td></tr>
+<tr><td><em>Nár bhreá an fear é</em></td><td><em>Ba bhreá.</em></td></tr>
+</tbody></table>
+</div>
+<p>(iv) <em>arbh/nárbh</em> are used before the pronoyns <em>é/í/iad</em> and before words which arent nouns starting with <em>fh</em> + a vowel. Regarding <em>an mb'</em><sup class="footnote-reference"><a href="#note">1</a></sup> it's an alternative to <em>arbh</em> before words starting with <em>fh</em> + a vowel.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Arbh fhiú a gabháil</em></td><td><em>B'fhiú, Níorbh/Charbh fhiú.</em></td></tr>
+<tr><td><em>Ar(bh) as an áit seo é</em></td><td><em>Níorbh ea, Charbh eadh, Ní heh.</em></td></tr>
+<tr><td><em>Nárbh iontach an rud é?</em></td><td><em>Badh ea/eadh.</em></td></tr>
+<tr><td><em>Nárbh í a choinnigh le baisteadh thú?</em></td><td><em>Badh/Níorbh/Charbh í, Seh.</em></td></tr>
+<tr><td><em>An mb'fhiú a ghoil ann?</em></td><td><em>B'fhi', Charbh/Níorbh fhiú</em></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>The <em>bh</em> in <em>arbh? nárbh?</em> is slender or broad depending on the vowel following it. The <em>bh</em> combines with the word after it in speech, <em>arbh fhiú = ar bhiú</em> etc. As said already often the <em>r</em> is dropped like this: <em>arbh fhiú = a'bhiú? arbh fhearr? = a'bhearr?</em></p>
+</div>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>The <em>n</em> in <em>an mb'</em> is dropped in speech.</p>
+</div>
+<p>(v) <em>Nach b'</em> is the negative version corresponding to <em>ab</em> which was discussed in 3.5.1 (ii). It has Present and Past meaning This form is used before questions in identification sentences with pronouns.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Nach b'eadh le Seán an leabhar seo?</em></td><td><em>Ní hea/headh, Chan ea/eadh, Ní/Chan leis, Ní heh</em></td></tr>
+<tr><td><em>Nach b'í/eadh Áine a bhí ann?</em></td><td><em>Ní hí/Chan í, Níorbh/Charbh í, Sí, Seh</em></td></tr>
+<tr><td><em>Nach b'é/b'eadh Mánas a tháinig?</em></td><td><em>Ní hé, Chan é, Badh é/eadh, Charbh/Níorbh é, Seh, Ní heh</em></td></tr>
+<tr><td><em>Nach b'iad a bhí leis?</em></td><td><em>Ní hiad, Siad, (I)s siad, Chan/Níorbh/Charbh iad.</em></td></tr>
+<tr><td><em>Nach b'eadh tusa atá ag goill?</em></td><td><em>Ní/Chan mé, Ní hea, Sea, Seh, Ní heh Seadh, Ní headh/Chan eadh, Smé.</em></td></tr>
+<tr><td><em>Nach b'aige/aici/acu atá an t-airgead</em></td><td><em>Ní hea/headh, Chan eadh, Ní heh.</em></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>The <em>ch</em> in <em>nach</em> is very weak or dropped entirely, <em>nah/na</em> is what's said.</p>
+</div>
+<p>(vi) The forms <em>ná nach, ná nár, ná nach b'</em> in contexts where the speaker is expecting a negative answer from the listener. This happens because it's clear to the speaker from something that the listener says/said that whatever thing that was being discussed wasn't as they thought.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>Ná nach doc(h)túir í?</em></td><td><em>Ní hea/headh, Chan eadh, Ní heh</em></td></tr>
+<tr><td><em>Ná nár mhaith leat a bheith leo</em></td><td><em>Níor/Char mhaith.</em></td></tr>
+<tr><td><em>Ná nach b'í a bhean</em></td><td><em>Ní hí, Chan í.</em></td></tr>
+</tbody></table>
+</div>
+<p>(vii) The forms <em>cé, cár, cérbh</em> and <em>goidé</em> (&lt; cad é) are used as follows:</p>
+<ul>
+<li><em>Cé thú héin?</em> </li>
+<li><em>Cé muidinne le bheith ag caint?</em></li>
+<li><em>Cén bhean Máire? Máire bean na fuála.</em></li>
+<li><em>Cén sloinneadh í</em></li>
+<li><em>Cérbh é/í an doc(h)túir</em></li>
+<li><em>Cár shloinneadh é?</em></li>
+<li><em>Goidé an aois/t-am é?</em></li>
+</ul>
+<h2 id="36-indirect-speech"><a class="header" href="#36-indirect-speech">3.6 Indirect Speech</a></h2>
+<p>The following are the forms found in indirect speech with the copula</p>
+<div class="table-wrapper"><table><thead><tr><th>Present</th><th>Past/ Conditional Mood</th></tr></thead><tbody>
+<tr><td><em>gur, gurb</em></td><td><em>gur, gurbh, go mb'</em></td></tr>
+<tr><td><em>nach, nach b'</em></td><td><em>nár, nárbh</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="361"><a class="header" href="#361">3.6.1</a></h3>
+<p>(i) <em>gur/gurb</em> is used with the Present Tense. <em>gurb</em> is only used before pronouns starting in a vowel.</p>
+<ul>
+<li><em>Dúirt sé liom gurb é a mhac é.</em></li>
+<li><em>Tá daoine ag rá gurb í.</em></li>
+<li><em>Síleann sé gurb eadh leatsa na heochracha.</em></li>
+</ul>
+<p><em>Gur</em> is what's used before nouns/adjectives/adverbs whether they start with a vowel or a consonant.</p>
+<ul>
+<li><em>Dúirt sé gur iontach/olc an scéal é.</em></li>
+<li><em>Sílim gur ionann an dá rud.</em></li>
+<li><em>Tá siad ag rá gur Máire a bhain an duais.</em></li>
+<li><em>Dúirt sé gur maith leis an tae.</em></li>
+<li><em>Síleann siad gur fiú é a dhéanamh.</em></li>
+<li><em>Dúirt sí gur fearr fanacht bomaite.</em></li>
+<li><em>D'inis sé dúinn gur amuigh ag siúl a bhí sé.</em></li>
+</ul>
+<p>There's a choice between <em>gur/gurb</em> before prepositions starting on a vowel in speech.</p>
+<ul>
+<li><em>Sílim gur(b) as Meiriceá a tháinig siad.</em></li>
+<li><em>Tá mé ag déanamh gur(b) orthu héin a bhí an locht.</em></li>
+</ul>
+<p><em>nach b'/nach</em> are the forms used in negative sentences.</p>
+<ul>
+<li><em>Dúirt Anna nach léithe féin an t-airgead.</em></li>
+<li><em>Tá Seán ag rá nach b'eadh leisean é ach oiread.</em></li>
+<li><em>Bíodh a fhios acu nach (b'eadh) amadáin ar bith muidinne.</em></li>
+<li><em>Dúirt sé nach b'eadh/nach acu sin a bhí sé.</em></li>
+<li><em>Tá eagla orm nach (b'eadh) Mánas is ciontaí leis an troid.</em></li>
+</ul>
+<p>(ii) <em>Gur</em> and <em>gurbh</em> are the versions used when reported speech is used in the past tense. <em>Nár/Nárbh</em> are the negative versions. The forms with <em>bh</em> are used before pronouns beginning in a vowel or before words like <em>éigean, fiú, fearr</em> etc. The versions with <em>bh</em> aren't used before nouns starting with vowels.</p>
+<ul>
+<li><em>Dúirt Seán gur cheart é a dhíol.</em></li>
+<li><em>Tá sé ag rá gur mhaith/bhreá leis deor tae a ól.</em></li>
+<li><em>Síleann sí gurbh fhiú/fhearr/éigean labhairt leo.</em></li>
+<li><em>Shíl siad ag an am gurbh ionann é.</em></li>
+<li><em>Dúirt sé gurbh é.</em></li>
+</ul>
+<p><em>go mb'</em> exists as a variant of <em>gurbh</em> before <em>fearr, féidir, fiú</em> etc.</p>
+<ul>
+<li><em>Tá siad ag rá liom go mb'fhearr domh a ghoil chun an bhaile.</em></li>
+<li><em>Tá siad ag déanamh anois go mb'fhéidir nach raibh an scéal fíor.</em></li>
+<li><em>Dúirt sí go mb'fhiú an t-airgead é.</em></li>
+<li><em>Sílim go mb'fhusa labhairt leis an athair.</em></li>
+</ul>
+<p>(iii) Often the <em>r</em> is dropped in speech, especially in the two forms <em>gurb/gurbh</em>. I write <em>go</em> for the version without an <em>r</em>.</p>
+<ul>
+<li><em>Sílim go (gur) cheart duit é a cheannach(t).</em></li>
+<li><em>Dúirt sí go bí (gurb í) a bhí ann.</em></li>
+<li><em>Mheas sé go bhfearr (gurbh fhearr) an teach a dhíol.</em></li>
+</ul>
+<h2 id="37-relative-forms-of-the-copula"><a class="header" href="#37-relative-forms-of-the-copula">3.7 Relative forms of the copula</a></h2>
+<p>Again a distinction must be made between the Present and the Past/Conditional Mood when we're dealing with relative forms of the copula. Here they are.</p>
+<div class="table-wrapper"><table><thead><tr><th>Present</th><th>Past/Conditional Mood</th></tr></thead><tbody>
+<tr><td><em>is, ar</em></td><td><em>a ba, ab', ar, arbh, a mb'</em></td></tr>
+<tr><td><em>nach</em></td><td><em>nár, nárbh</em></td></tr>
+</tbody></table>
+</div>
+<h3 id="371-rules-of-use"><a class="header" href="#371-rules-of-use">3.7.1 Rules of use</a></h3>
+<p>(i) <em>is</em> is used in a direct relative clause, and <em>ar</em> is used in an indirect relative clause. The indirect relative clause has a pronoun (personal or prepostional) referring to the noun coming before <em>ar</em>. The words referencing each other are <strong>in bold</strong> in the examples below.</p>
+<ul>
+<li><em>Sin an rud is fearr/ceart/fusa a dhéanamh</em></li>
+<li><em>Seo an cineál is maith liom.</em></li>
+<li><em>Cá bhfuil <strong>an fear</strong> ar <strong>leis</strong> é?</em></li>
+<li><em>Sin <strong>rud</strong> ar cuma <strong>fá dtaobh dó</strong>.</em></li>
+<li><em>Is í <strong>Máire</strong> ar cheart duit labhairt <strong>léithe</strong>.</em></li>
+</ul>
+<p>(ii) <em>nach</em> is used in the two types of clauses.</p>
+<ul>
+<li><em>Tae é nach maith liom mórán de a ól.</em></li>
+<li><em>Is iomaí <strong>rud</strong> nach furast(a) <strong>é</strong> a dhéanamh.</em></li>
+</ul>
+<p>(iii) <em>a ba</em> and <em>ab'</em> are used in the direct relative clause and <em>ar, arbh, a mb'</em> are used in the indirect. The forms <em>arbh</em> and <em>a mb'</em> are in variation with each other. The forms with <em>bh</em> go with words which start with a vowel or <em>fh</em> + a vowel.</p>
+<ul>
+<li><em>Is í Bríd a ba cheart imeacht.</em></li>
+<li><em>Sin an rud ab fhearr/fhiú/fhusa a dhéanamh.</em></li>
+<li><em>Sin <strong>rud</strong> arbh fhearr/a mb'fhearr duit gan <strong>é</strong>.</em></li>
+<li><em>Is iomaí <strong>rud</strong> arbh éigean/a mb'éigean díol go daor ar <strong>a</strong> shon.</em></li>
+</ul>
+<p>(iv) <em>nár, nárbh</em> are used with both kinds of clause.</p>
+<ul>
+<li><em>Sin <strong>rud</strong> nár cheart glacadh <strong>leis</strong>.</em></li>
+<li><em>Bhí <strong>rudaí</strong> ann nárbh fhiú <strong>(iad)</strong> a cheannach.</em></li>
+<li><em>Is beag <strong>duine</strong> acu nárbh éigean labhairt <strong>leis</strong>.</em></li>
+</ul>
+<h2 id="38-other-forms-of-the-copula"><a class="header" href="#38-other-forms-of-the-copula">3.8 Other forms of the Copula</a></h2>
+<h3 id="381-the-particles-mur-munab-murbh-más-and-darbh"><a class="header" href="#381-the-particles-mur-munab-murbh-más-and-darbh">3.8.1 The particles <em>mur, munab, murbh, más</em> and <em>darbh</em></a></h3>
+<p>The copula is used with other particles as well. The forms with <em>b</em> and <em>bh</em> at the end are used before words starting with a vowel or <em>fh</em> + a vowel. In speecch the <em>b</em> or <em>bh</em> are combined with the word after them. This is shown in the examples by separating <em>b</em> and <em>bh</em> from the particle.</p>
+<ul>
+<li><em>mur</em>
+<ul>
+<li><em>Mur Seán a bhí ann.</em></li>
+<li><em>Mur b'í/b'é/b'iad féin a dúirt é.</em></li>
+</ul>
+</li>
+<li><em>muna/munab</em>
+<ul>
+<li><em>Muna b'é/b'í/b'iad a bhí ann, cé a bhí ann?</em></li>
+<li><em>Muna b'eadh an gamhain a bhris amach.</em></li>
+</ul>
+</li>
+<li><em>mu(r)b</em>
+<ul>
+<li><em>Mur b'í/b'é/b'iad féin a dúirt é, cé a dúirt é?</em></li>
+<li><em>Mur b'iad na páistí a rinne é, níl a fhios agam cé a rinne é.</em></li>
+</ul>
+</li>
+<li><em>mu(r)bh</em>
+<ul>
+<li><em>Beidh sé anseo ar ball mu(r) bh'éigean dó bus eile a fháil.</em></li>
+<li><em>Dúirt sé mu(r) bh'fhiú éisteacht leis gan a ghoil ann.</em></li>
+</ul>
+</li>
+<li><em>más</em>
+<ul>
+<li><em>Más é a dúirt é.</em></li>
+</ul>
+</li>
+<li>slender <em>s</em>
+<ul>
+<li><em>Más eadh, is fearr duit fanacht go maidin.</em></li>
+</ul>
+</li>
+<li>broad <em>s</em>
+<ul>
+<li><em>Más Máire atá ann abair léithe a theacht isteach.</em></li>
+<li><em>Más fearr/fhearr leat fanacht beidh fáilte romhat.</em></li>
+</ul>
+</li>
+<li><em>darbh</em>
+<ul>
+<li><em>Bhí duine ann dar bh'ainm Mac Giolla Chóill.</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="381-emphasisstress-and-the-copula"><a class="header" href="#381-emphasisstress-and-the-copula">3.8.1 Emphasis/Stress and the copula</a></h3>
+<p>There are ways to add emphasis or stress using copular sentences. Here are some of those ways.</p>
+<p>(a)  Stressed pronoun<br />
+A very strong emphasis is put on the pronouns in bold here below.</p>
+<ul>
+<li><em>Is <strong>í</strong> iníon an doc(h)túra cinnte.</em></li>
+<li><em>Badh <strong>é</strong> sin an doc(h)túir agat.</em></li>
+<li><em>Badh <strong>í</strong> an t-oibrí <strong>í</strong>.</em></li>
+<li><em>Badh <strong>iad</strong> na préataí maithe <strong>iad</strong>.</em></li>
+</ul>
+<p>(b) <em>Ní/chan</em> + <em>ar bith</em><br />
+A particular emphasis or stress is put on the words in bold.</p>
+<ul>
+<li><em>Ní <strong>fear</strong> ar bith é (agus) a bheith ag caint mar sin.</em></li>
+<li><em>Chan <strong>duine</strong> ar bith é le cur ar a leithéid de theachtaireacht.</em></li>
+<li><em>Chan/Ní <strong>sagart</strong> ar bith é.</em></li>
+<li><em>Chan/Ní <strong>Garda</strong> ar bith a bhí ann.</em></li>
+<li><em>Chan/Ní <strong>cara</strong> ar bith liomsa é.</em></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="verbs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="nouns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="verbs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="nouns.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

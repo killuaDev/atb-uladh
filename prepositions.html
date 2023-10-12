@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Prepositions - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html" class="active"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="7--prepositions"><a class="header" href="#7--prepositions">7.  Prepositions</a></h1>
+<h2 id="71-simple-prepositions"><a class="header" href="#71-simple-prepositions">7.1 Simple prepositions</a></h2>
+<p>There will be an account in this first section of the most basic group of prepositions. Most of them affect the start of the noun following them, especially when the article is used with them. A compound is often made out of the preposition and the possessive adjective. Nouns were put in the dative after these adjectives once, and feminine nouns often still are. In the examples below, the Standard version is given between ( ).</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>eig</em> (ag)</td><td><em>eig Bríd</em></td></tr>
+<tr><td><em>eir</em> (ar)</td><td><em>eir Mháire, eir thiní, fear eir fhear</em></td></tr>
+<tr><td><em>ios</em> (as)</td><td><em>ios mála, ios bealach, ios Seán</em></td></tr>
+<tr><td><em>eig</em> (chuig)</td><td><em>eig damhsa/bainis, eig sagart, eig Síle</em></td></tr>
+<tr><td><em>de</em></td><td><em>da/ də* dhuine amháin, da/də Sheán</em></td></tr>
+<tr><td><em>do</em></td><td><em>do/ də Mháire, do/ də dhuine eile</em></td></tr>
+<tr><td><em>eadar</em> (idir)</td><td><em>eadar Seán agus Tomás</em></td></tr>
+<tr><td><em>fá</em> ((thart) faoi)</td><td><em>fá bhaile, ag caint fá Thomas</em></td></tr>
+<tr><td><em>faoi</em></td><td><em>uibheacha faoi chearc, ag magadh faoi Phaidí</em></td></tr>
+<tr><td><em>fríd</em> (trí)</td><td><em>fríd dhuine, gual fríd mhóin, fríd thóin an mhála</em></td></tr>
+<tr><td><em>gan</em></td><td><em>gan coirce, gan Cormac, gan mhaith/mhoill</em></td></tr>
+<tr><td><em>go</em></td><td><em>go Meiriceá/hAlbain, fan go maidin</em></td></tr>
+<tr><td><em>go dtí</em></td><td><em>go dtí teach Shíle</em></td></tr>
+<tr><td><em>i(n)</em></td><td><em>i bpoll, in Albain, i(n) Seán, istigh i(n) roilig</em></td></tr>
+<tr><td><em>i(o)nseir</em> (ionsar)</td><td><em>i(o)nseir Mháire, i(o)nseir shagart na paróiste</em></td></tr>
+<tr><td><em>lea/li</em> (le)</td><td><em>lea/li Seán iad, thit sé lea/li binn, lea/li seachtain, lea Anna, l'Anna</em></td></tr>
+<tr><td><em>o/a/wa</em> (ó)</td><td><em>o/a mhaidin, o/a Shamhain go Bealtaine, o/a/wa Sheán/Mháire</em></td></tr>
+<tr><td><em>roimh(e)/ró</em> (roimh)</td><td><em>roimhe seo/sin, roimhe bhliain ó inniu, roimhe/ró Shíle, roimhe/ró mhadadh na comharsan</em></td></tr>
+<tr><td><em>thaire(a)**,</em> (thar)</td><td><em>thaire(a) Mhánas, thaire(a) phunta, thaire(a) sheachtain</em></td></tr>
+</tbody></table>
+</div>
+<p>* The pronounciation of /də/ is the same as <em><strong>-da</strong></em> in <em>fa<strong>da</strong>.</em></p>
+<p>** The end of this preposition has two common pronunciations, /i/ like in <em>fir</em>, and /a/ like in <em>teach</em>.</p>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
+<ul>
+<li>(a) The Standard's <em>ag, ar</em> and <em>ionsar</em> have slender consonants at the end.</li>
+<li>(b) No distinction is made anymore normally between <em>do</em> and <em>de</em> except maybe in the 3rd person masculine singular.</li>
+<li>(c) <em>fá</em> and <em>faoi</em> are distinguished broadly as is shown</li>
+<li>(d) There is variation between <em>i</em> and <em>in</em> before consonants often.</li>
+<li>(e) <em>w</em> is often found as a consonant before <em>u</em> in forms of the preposition <em>ó</em>. IT's commonly found in <em>(w)uaim, (w)uaid</em> etc.</li>
+</ul>
+<h2 id="72-simple-prepositions--the-article--the-3rd-person-possessive-particle"><a class="header" href="#72-simple-prepositions--the-article--the-3rd-person-possessive-particle">7.2 Simple prepositions + the article + the 3rd person possessive particle</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Singular Article</th><th>Plural Article</th><th>Possessive Particle</th></tr></thead><tbody>
+<tr><td><em>eig a(n) gheafta</em></td><td><em>eig na daoiní</em></td><td><em>eig (n)a chéile</em></td></tr>
+<tr><td><em>eir a' bhád</em></td><td><em>eir na huain</em></td><td><em>eir a chéile</em></td></tr>
+<tr><td><em>ios a mhála</em></td><td><em>ios na málaí</em></td><td><em>ios a chéile</em></td></tr>
+<tr><td><em>eig a(n) tsagart</em></td><td><em>eig na páistí</em></td><td><em>eig na chéile</em></td></tr>
+<tr><td><em>don fhear</em></td><td><em>do na fir</em></td><td><em>dona chéile</em></td></tr>
+<tr><td><em>faoin mhóin</em></td><td><em>faoi na clocha</em></td><td><em>faoina chéile</em></td></tr>
+<tr><td><em>fríd a' choirce</em></td><td><em>fríd na cuibhrinn</em></td><td><em>fríd a chéile</em></td></tr>
+<tr><td><em>gan a' t-airgead</em></td><td><em>gan na bróga</em></td><td><em>gan a chéile</em></td></tr>
+<tr><td><em>go dtí'n doras</em></td><td><em>go dtí na glúine</em></td><td><em>go dtína chéile</em></td></tr>
+<tr><td><em>(in)sa lá, (in)san áit</em></td><td><em>(in)sna stocaí</em></td><td><em>ina chéile</em></td></tr>
+<tr><td><em>eadar a'bheirt</em></td><td><em>eadar na toithe</em></td><td></td></tr>
+<tr><td><em>i(o)nseir a' tsagart</em></td><td><em>i(o)nseir na páistí</em></td><td><em>i(o)nseir a chéile</em></td></tr>
+<tr><td><em>leis a' chasúr</em></td><td><em>leis/lea na buachaillí</em></td><td><em>lena/leana chéile</em></td></tr>
+<tr><td><em>on/wan ghunna</em></td><td><em>o/wa na gunnaí</em></td><td><em>ona/wana chéile</em></td></tr>
+<tr><td><em>roimhean/rón charr</em></td><td><em>roimhe/ró na carrannaí</em></td><td><em>roimhe/ró (a) chéile</em></td></tr>
+<tr><td><em>thairean bhalla</em></td><td><em>thaire na claíocha</em></td><td><em>thaire(a) chéile/ thaire(a) na chéile</em></td></tr>
+<tr><td><em>thart an t-urlár</em></td><td><em>thart na ballaí</em></td><td></td></tr>
+</tbody></table>
+</div>
+<h3 id="notes-1"><a class="header" href="#notes-1">Notes</a></h3>
+<ul>
+<li>(a) If the preposition ends in a vowel, the preposition and the article are made into one word, and the <em>n</em> of the article isn't dropped e.g. <em>go dtín, roimhean, thairean</em> etc.</li>
+<li>(b) The <em>n</em> in <em>an</em> is dropped between two consonants e.g. <em>ar/leis a' lá</em> etc.</li>
+<li>(c) Regarding the Standard's <em>as</em>, it's pronounced the same as <em>is</em> in phrases like <em>Seán is Máire</em>.</li>
+<li>(d) When the article is added to <em>a</em> there is a variation in pronunciation between the Standard's <em>sa(n)</em> and the form <em>insa(n).</em> Despite the spelling, the first <em>n</em> in <em>insa(n)</em> is broad. Both forms are very common.</li>
+<li>(e) The sound that we're trying to express with <em>wa(n)</em> is like the <em>-mha</em> in the word <em>lámha</em>, since it's unstressed.</li>
+</ul>
+<h2 id="73-the-prepositions-chun-go-mar-and-seach"><a class="header" href="#73-the-prepositions-chun-go-mar-and-seach">7.3 The prepositions <em>chun, go, mar</em> and <em>seach</em></a></h2>
+<p>The pronunciation of the Standard's <em>chun</em> is reduced a lot in speech. A lot depends on the form of the word that follows it. The word following it must be put in the genitive. <em>chun</em> and the article <em>an/na</em> are mixed up together as well. There are a couple of other prepositions below which aren't used often with the article.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>an</em> (= chun)</td><td><em>an báis, an donais/siobarnaí, an aonaigh/Aifrinn, an tsaoil/tsiopa</em></td></tr>
+<tr><td><em>na</em> (= chun a(n))</td><td><em>na chnoic/bhaile/phortaigh/bhealaigh mhóir</em></td></tr>
+<tr><td><em>na</em> (= chun na)</td><td><em>na farraige/habhanna/hoifige/hAlabna/scoile/sráide</em></td></tr>
+<tr><td><em>go</em></td><td><em>go Leitir Ceanainn, go Doire</em></td></tr>
+<tr><td><em>mar</em></td><td><em>mar mhaighistir, mar shagart, mar dhíolaíocht</em></td></tr>
+<tr><td><em>seach</em></td><td><em>seach duine ar bith eile</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="74-personal-forms-of-the-prepositions"><a class="header" href="#74-personal-forms-of-the-prepositions">7.4 Personal forms of the prepositions</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>eig</em> (ag)</td><td><em>1. agam, ogam, aigham</em></td><td><em>againn, ogainn, aighinn</em></td></tr>
+<tr><td></td><td><em>2. agad, ogad, aighad</em></td><td><em>agaibh, ogaibh, aighibh</em></td></tr>
+<tr><td></td><td><em>3. f. eige, b. eici</em></td><td><em>acu, ocu, eocu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>agamsa, agatsa, eigesean, eicise,</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>eir</em> (ar)</td><td><em>1. oram, aram</em></td><td><em>orainn, arainn</em></td></tr>
+<tr><td></td><td><em>2. ort, art</em></td><td><em>oraibh, araibh</em></td></tr>
+<tr><td></td><td><em>3. f. eir, b. orthi, arthi</em></td><td><em>orthu, arthu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>ormsa, ortsa, eirsean, orthise,</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>ios</em> (as)</td><td><em>1. iosam</em></td><td><em>iosainn</em></td></tr>
+<tr><td></td><td><em>2. iosad</em></td><td><em>iosaibh</em></td></tr>
+<tr><td></td><td><em>3. f. ios, b. isti, aisti</em></td><td><em>iostu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>iosamsa, iosatsa, iosan, (a)istise</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>eig</em> (chuig)</td><td><em>1. hogam, húm</em></td><td><em>hogainn, húinn</em></td></tr>
+<tr><td></td><td><em>2. hogad, húd</em></td><td><em>hogaibh, húibh</em></td></tr>
+<tr><td></td><td><em>3. f. heige, b. heici</em></td><td><em>hocu, heocu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>hogamsa, hogatsa, heigeasean</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>de</em></td><td><em>daom, domh, dom</em></td><td><em>daoinn, dúinn</em></td></tr>
+<tr><td></td><td><em>2. daod, duid</em></td><td><em>daoibh</em></td></tr>
+<tr><td></td><td><em>3. f. de, dó, b. daoithe</em></td><td><em>daofa, dófa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>dúsa, daotsa, duitse</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>do</em></td><td><em>1. domh, dom</em></td><td><em>dúinn</em></td></tr>
+<tr><td></td><td><em>2. duid</em></td><td><em>daoibh</em></td></tr>
+<tr><td></td><td><em>3. f. dó, b. daoithe</em></td><td><em>daofa, dófa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>dúsa, duitse</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>faoi</em></td><td><em>1. faom, fúm</em></td><td><em>faoinn, fúinn</em></td></tr>
+<tr><td></td><td><em>2. faod, fúd</em></td><td><em>faoibh, fúibh</em></td></tr>
+<tr><td></td><td><em>3. f. faoi, b. faoithe, fúithe</em></td><td><em>faofa, fúfa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>faotsa, fútsa, faoifse, fúifse</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>eadar</em> (idir)</td><td><em>1. ead(a)rainn</em></td></tr>
+<tr><td></td><td><em>2. ead(a)raibh</em></td></tr>
+<tr><td></td><td><em>3. eat(a)ru</em></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>fá dtaobh do</em> (de)</td><td><em>1. fá dtú domh</em></td><td><em>fá dtú dúinn</em></td></tr>
+<tr><td></td><td><em>2. fá dtú dtuid</em></td><td><em>fá dtú daoibh</em></td></tr>
+<tr><td></td><td><em>3. f. fá dú dó, b. fá dtú daoithe</em></td><td><em>fá dtú daofa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>fá dtú dúsa, duitse</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>fríd</em></td><td><em>1. fríom</em></td><td><em>frínn</em></td></tr>
+<tr><td></td><td><em>2. fríod</em></td><td><em>fríbh</em></td></tr>
+<tr><td></td><td><em>3. f. fríd, b. fríthe</em></td><td><em>fríofa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>fríomsa, fríotsa, frífse, frístean</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>i</em></td><td><em>1. ionnam</em></td><td><em>ionnainn</em></td></tr>
+<tr><td></td><td><em>2. ionnad, ionnat</em></td><td><em>ionnaibh</em></td></tr>
+<tr><td></td><td><em>3. f. ionn, b. inti</em></td><td><em>ionntu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>ionnatsa, ionnaifse, ionnsan/ionnsean/innsean</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>inseir/ionsair</em></td><td><em>1. inseoram, insearam</em></td><td><em>inseorainn, insearainn</em></td></tr>
+<tr><td></td><td><em>2. inseort, inseart</em></td><td><em>inseoraibhse, insearaibhse</em></td></tr>
+<tr><td></td><td><em>3. f. inseir, b. inseorthi, insearthi</em></td><td><em>inseorthu, insearthu</em></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td><em>1. ionsoram, ionsaram</em></td><td><em>ionsorainn, ionsarainn</em></td></tr>
+<tr><td></td><td><em>2. ionsort, ionsart</em></td><td><em>ionsaraibh, ionsaraibh</em></td></tr>
+<tr><td></td><td><em>3. f. ionsair, b. ionsorthi, ionsarthi</em></td><td><em>ionsorthu, ionsarthu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>inseoramsa, inseortsa, inseirsean, insearthi</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>le</em></td><td><em>1. liom</em></td><td><em>linn</em></td></tr>
+<tr><td></td><td><em>2. leat</em></td><td><em>libh</em></td></tr>
+<tr><td></td><td><em>3. f. leis, b. léithe</em></td><td><em>leofa, leotha, leo</em></td></tr>
+</tbody></table>
+</div>
+<p><em>leisean, léithese, lifse, leofasan</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>ó</em></td><td><em>1. wuam, wiam</em></td><td><em>wuainn, wiainn</em></td></tr>
+<tr><td></td><td><em>2. wuaid, wiaid</em></td><td><em>wuaibh, wiaibh</em></td></tr>
+<tr><td></td><td><em>3. f. wua, wia, b. wuaithe, wiaithe</em></td><td><em>wuafa, wiafa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>wuaitse, wiaifse</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>roimhe</em> (roimh)</td><td><em>1. róm</em></td><td><em>róinn</em></td></tr>
+<tr><td></td><td><em>2. ród</em></td><td><em>róibh</em></td></tr>
+<tr><td></td><td><em>3. f. roimhe, ró, roimhis, b. roipi, róithe</em></td><td><em>rópu, rófa</em></td></tr>
+</tbody></table>
+</div>
+<p><em>rómsa, rótsa</em> etc.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><em>thaire</em> (thar)</td><td><em>1. thaiream</em></td><td><em>thairinn</em></td></tr>
+<tr><td></td><td><em>2. thairead</em></td><td><em>thairibh</em></td></tr>
+<tr><td></td><td><em>3. f. thairis, b. thairsti</em></td><td><em>tharstu</em></td></tr>
+</tbody></table>
+</div>
+<p><em>thaireamsa, thaireatsa, thairifse</em> etc.</p>
+<h3 id="notes-2"><a class="header" href="#notes-2">Notes</a></h3>
+<ul>
+<li>(a) Regarding the forms of the prepositions <em>ag</em>, the version with <em>og-</em> is the most common in the dialects generally. A dipthong like in the word <em>saighdiúir</em> is found in the south of the county - Teileann, - Gleann Cholm Cille, and we show that with the spelling <em>aigh-</em>. The forms where <em>a</em> is said in the first syllable are mostly found in the north of the county, - Ros Goill. The spelling <em>eocu</em> shows the open vowel like in the word <em>seo</em> in the first syllable.</li>
+<li>(b) There is widespread variation between <em>o</em> and <em>a</em> in the forms of the preposition <em>ar</em>. Note that the <em>r</em> is broad in the 3rd person feminine singular.</li>
+<li>(c) With regards to <em>chuig</em>, it's typical to pronounce the <em>ch</em> as a <em>h</em>. It's also often dropped entirely. The forms with <em>ú</em> are only found in Teileann. <em>siugainn</em> with <em>u</em> is a very common pronunciation of the Standard's <em>seo chugainn</em>. <em>siúinn</em> is the form found in Teileann.</li>
+<li>(d) <em>de</em> and <em>do</em> fell together long ago, and that's how it is in this dialect. Although the influence of the forms that <em>de</em> used to have are still found across the subdialects, both prepositions are inflected as <em>do</em> now mostly. For example, forms of the preposition <em>de</em> are found all with the long vowel <em>í</em> - <em>daom, daot, daoithe, daoinn, daoibh, daofa</em>. In those forms above and in the 3rd person masculine singular <em>de</em>, the <em>d</em> is broad. The form <em>dom</em> is only found in Toraigh. <em>domh</em> is said as [duw/duh] usually. Sometimes in phrases the first <em>d</em> in the prepositions <em>de</em> and <em>do</em> is lenited, in examples like this: <em>Seo dhuit! Oíche mhaith dhaoibh</em> but it's typical to leave it unlenited.</li>
+<li>(e) The <em>d</em> becomes a <em>t</em> before <em>-sa/-se</em> in <em>duitse, daotsa</em> etc.</li>
+<li>(f) The <em>í</em> sound is the most common in the forms of the prepositions <em>faoi</em>, the forms with <em>ú</em> are only found in Teileann</li>
+<li>(g) The spelling <em>idir</em> doesn't agree with the pronunciation of this preposition in Ulster dialects. The consonants are broad in this dialect as shown with the spelling <em>eadar</em>. That first vowel is heard being said as <em>e</em> or as <em>a</em> depending on the area.</li>
+<li>(h) <em>fá dtaobh do</em> is a preposition which is particular to Ulster Irish. It means <em>faoi</em> or <em>thart faoi rud, thart timpeall ar rud</em> and so on, in phrasees like this - <em>ag caint fá dtú dó, thart fá dtú dúinn</em> and so on. Although <em>dé</em> is the form of the preposition in the standard, it's said as <em>do</em> in all of the forms e.g. <em>domh, duid</em> etc. <em>(h)á dtú dó/duid</em> etc. is heard too.</li>
+<li>(i) The standard's <em>trí</em> isn't found in the dialect. <em>Fríd</em> is the form found instead, even in phrases like <em>fríd a chéile</em> and so on.</li>
+<li>(j) In the Standard's version of the preposition <em>i</em> there's only 1 <em>n</em> in the forms. That doesn't match exactly with the dialects of Ulster. They all agree that it should be <em>nn</em> and pronounce it as such. <em>i</em> and <em>o</em>, as in the words <em>sin</em> and <em>son</em>, respectively, are found as pronunciations of <em>ionn-</em> in the spelling of the forms.</li>
+<li>(k) Regarding the Standard's <em>ionsar</em>, the <em>ns</em> is usually slender in this dialect, meaning that it's best written as <em>inseir</em>. Some speakers say the group <em>ns</em> as broad, and that is shown above through writing <em>ionsair</em> etc. Remember that the stress is on the second syllable in this word, that is on the preposition <em>ar</em>.</li>
+<li>(l) The intrusive consonant <em>w</em> is found in the personal forms of the preposition <em>ó</em>. Note that the <em>u</em> in <em>uaim, uaid</em> etc. is said as an unrounded <em>u</em> in Ulster Irish. This pronunciation is found inn areas where <em>ao</em> is said as unrounded <em>ú</em>. In the counters where <em>ao</em> is <em>í</em>, the <em>u</em> is said as <em>i</em> in <em>uam, uaid</em>, etc. as shown above in the spelling <em>wiam, wiaid,</em> etc. The pronunciation of the 3rd person masculine seems like it came from some form like <em>uadh</em>.</li>
+<li>(m) Two paradigms for <em>roimhe</em> are common in the Irish of the north. The vowel <em>ó</em> is found throughout the forms in one paradigm. This seems to me to be a new development in the dialect, based on the historical development that left <em>ó</em> in all the forms except for the 3rd person singular and plural. The <em>ó</em> is very nasal in every person. In stead of the Standard's <em>mp</em> in <em>roimpi/rompu</em>, <em>p</em> is what's norma now in the dialects of Donegal. <em>roimpi/rompu</em> are heard in songs and stories. <em>roimhis</em> is only found in Teileann. Often the forms with <em>ó</em> have two syllables in certain areas, in that case they're said as <em>ro-am, ro-ad</em> etc.</li>
+<li>(n) Note that <em>thaire</em> has a slender <em>r</em> in all forms. There are two syllables in the base form as well.</li>
+</ul>
+<h2 id="75-compound-prepositions"><a class="header" href="#75-compound-prepositions">7.5 Compound prepositions</a></h2>
+<p>Only special forms or special usages of compound prepositions in the dialect will be mentioned here.</p>
+<div class="table-wrapper"><table><thead><tr><th>The Standard</th><th>The Dialect</th><th>Examples</th></tr></thead><tbody>
+<tr><td><em>ar feadh</em></td><td><em>eir feadh/fei</em></td><td><em>eir feadh/fei na hoíche</em></td></tr>
+<tr><td><em>ar son</em></td><td><em>eir shon</em></td><td><em>dhíol mé eir shon na mónú</em></td></tr>
+<tr><td><em>de/a chóir</em></td><td><em>(a) chóir</em></td><td><em>(a) chóir na háite</em></td></tr>
+<tr><td><em>de thairbhe</em></td><td><em>(a) thairbhe</em></td><td><em>(a) thairbhe Sheáin dó</em></td></tr>
+<tr><td><em>faoi choinne</em></td><td><em>(fá) choinne</em></td><td><em>(fá) choinne an eallaigh</em></td></tr>
+<tr><td><em>i ndiaidh</em></td><td><em>i ndéidh</em></td><td><em>(i) ndéidh na fearthanna</em></td></tr>
+<tr><td><em>i rith</em></td><td><em>(i) rith/raoth</em></td><td><em>(i) rith/raoth an lae</em></td></tr>
+<tr><td><em>in araicis</em></td><td><em>(i) naraicis/nairicis</em></td><td><em>(i) naraicis/nairicis Mháire</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="76-toigh-without-a-preposition"><a class="header" href="#76-toigh-without-a-preposition">7.6 <em>Toigh</em> without a preposition</a></h2>
+<p><em>toigh/dtoigh</em> can be used as follows without a preposition. This word is used when houses, shops, pubs and such are being talked about. Although the second form above may have come from <em>i dtoigh</em>, there is no trace of the <em>i</em> to be heard anymore.</p>
+<ul>
+<li><em>toigh/dtoigh Sheáin</em></li>
+<li><em>thiar/thuas/thoir dtoigh na scoile</em></li>
+<li><em>istoigh toigh/dtoigh Mhac Cuireáin</em></li>
+<li><em>thuas/thoir/thíos dToigh an Phobail</em></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="pronouns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="pronouns.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

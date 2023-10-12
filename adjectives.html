@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Adjectives - The Living Language - Ulster</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>Translator's Note</div></li><li class="chapter-item expanded affix "><div>Introduction</div></li><li class="chapter-item expanded "><a href="pronunciation.html"><strong aria-hidden="true">1.</strong> Pronunciation</a></li><li class="chapter-item expanded "><a href="verbs.html"><strong aria-hidden="true">2.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="the_copula.html"><strong aria-hidden="true">3.</strong> The Copula</a></li><li class="chapter-item expanded "><a href="nouns.html"><strong aria-hidden="true">4.</strong> Nouns</a></li><li class="chapter-item expanded "><a href="adjectives.html" class="active"><strong aria-hidden="true">5.</strong> Adjectives</a></li><li class="chapter-item expanded "><a href="pronouns.html"><strong aria-hidden="true">6.</strong> Pronouns</a></li><li class="chapter-item expanded "><a href="prepositions.html"><strong aria-hidden="true">7.</strong> Prepositions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Numbers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Misceallaneous</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Vocabulary</div></li><li class="chapter-item expanded affix "><div>Index</div></li><li class="chapter-item expanded affix "><div>Map</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Living Language - Ulster</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="5-adjectives"><a class="header" href="#5-adjectives">5. Adjectives</a></h1>
+<h2 id="51-the-dative-singular---initial-mutations"><a class="header" href="#51-the-dative-singular---initial-mutations">5.1 The dative singular - initial mutations</a></h2>
+<p>The ulster dialect doesn't agree entirely with the recommendations made in the Official Standard. There are two cases to distinguish, after a preposition and the article, and after a preposition on its own.</p>
+<p>The adjective is always lenited in the dative singular after a preposition and The Article.</p>
+<ul>
+<li><em>Tá sé ag troid leis an fhear mhór fhada.</em></li>
+<li><em>Bhí sé ag caint ar an fhear bheag rua a casadh air.</em></li>
+<li><em>Insan fhuinneog fhada chúng a bhí an lampa.</em></li>
+<li><em>Léim sé thar an chlaí mhór ard.</em></li>
+<li><em>Shuigh sí ar an stól fhada chaol a bhí ann.</em></li>
+<li><em>ag snámh sa tsáile fhuar; ag an tsaighdiúir bhocht; ar an tsráid fhada</em></li>
+<li><em>fríd an talamh bhog; ar an tráigh fholamh</em></li>
+</ul>
+<h3 id="511"><a class="header" href="#511">5.1.1</a></h3>
+<p>The adjective is always lenited when it's a feminine noun following the preposition, like this:</p>
+<ul>
+<li><em>ag caint ar Bhríd Mhór</em></li>
+<li><em>ina suí ar chathaoir bheag</em></li>
+<li><em>amach as sráid bheag dhorcha</em></li>
+<li><em>anonn go dtí fuinneog bheag linn</em></li>
+</ul>
+<p>When it's a masculine noun, the adjective is usually left unlenited:</p>
+<ul>
+<li><em>thuas ar chnoc beag</em></li>
+<li><em>píosa de pháipéar gorm</em></li>
+<li><em>ag caint fá Mhánas Mór</em></li>
+<li><em>amach as mála garbh</em></li>
+<li><em>le bata mór</em></li>
+<li><em>marbh ag cat fiáin</em></li>
+</ul>
+<p>Some speakers have a tendency to also lenite the adjective in the cases where the noun is lenited except in the case of people's names like <em>Dónall Bán, Mánas Beag, Mícheál Dubh, Éamonn Mór</em> etc.</p>
+<ul>
+<li><em>ar stóll fhada chaol</em></li>
+<li><em>píosa de pháipéar ghorm</em></li>
+<li><em>fríd pholl bheag</em></li>
+<li><em>ar Mhícheál Dubh</em></li>
+<li><em>airgead do Sheán Bán</em></li>
+<li><em>ag caint fá Éamonn Mór</em></li>
+</ul>
+<h3 id="512-special-form-with-feminine-nouns"><a class="header" href="#512-special-form-with-feminine-nouns">5.1.2 Special form with feminine nouns</a></h3>
+<p>These are now set forms and the rule pertaining to them no longer exists in speech.</p>
+<ul>
+<li><em>Bhí siad ag obair sa pháirc bhig.</em></li>
+<li><em>Tháinig sé inaa ghaoith mhóir.</em></li>
+<li><em>Bhuail sé cnag ar an fhuinneoig bhig.</em></li>
+</ul>
+<h2 id="52-the-genitive-singular"><a class="header" href="#52-the-genitive-singular">5.2 The genitive singular</a></h2>
+<p>It's very rare that adjectives are used with nouns in the genitive. There are two systems, the old historical system and a new development, where no inflection is done on the noun or the adjective except to lenite them. The new modern versions are given after the / here below.</p>
+<ul>
+<li>Masculine
+<ul>
+<li><em>hata an fhir mhóir/an fhear mhór</em></li>
+<li><em>fear an hata dheirg/an hata dhearg</em></li>
+<li><em>carr an fhir uasail/an fhear uasal</em></li>
+<li><em>ag bualadh an mhadaidh shalaigh/an mhadadh shalach</em></li>
+<li><em>bean an fhir dhóighiúil/an fhear dhóighiúil</em></li>
+</ul>
+</li>
+<li>Feminine
+<ul>
+<li><em>fear na mná uaisle/an bhean uasal</em></li>
+<li><em>cró na bó duibhe/an bhó dhubh</em></li>
+<li><em>im na bó báine/an bhó bhán</em></li>
+<li><em>barr na fuinneoige bige/an fhuinneog bheag</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="note"><a class="header" href="#note">Note</a></h3>
+<p>The second form isn't typical in old phrases or place names, where the historical version is calcified in speech.</p>
+<ul>
+<li><em>ar thaobh an bhealaigh mhóir</em></li>
+<li><em>muintir an Chlocháin Léith</em></li>
+<li><em>taobh na láimhe deise/clí</em></li>
+<li><em>bun na hÁite Coime</em></li>
+<li><em>gaiscíoch na beilte deirge</em></li>
+<li><em>amach chun an toí big/móir</em> (unlenited)</li>
+<li><em>isteach na bhaile mhóir</em> (chun an)</li>
+</ul>
+<h2 id="53-the-nominative-plural"><a class="header" href="#53-the-nominative-plural">5.3 The nominative plural</a></h2>
+<p>The dialect follows the standard for the most part. Note however that there are adjectives in the standard which end on a vowel but which don't in the dialect e.g. <em>cruaidh</em>.</p>
+<ul>
+<li><em>na fir bhána/dhubha/mhóra</em></li>
+<li><em>na cailíní/buachaillí dóighiúla</em></li>
+<li><em>daoine iontacha/aisteacha/amaideacha</em></li>
+<li><em>ceist <strong>fhurast</strong>/ceisteannaí furasta</em></li>
+<li><em>rógairí glice iad</em></li>
+<li><em>bróga maithe</em></li>
+<li><em>oícheannaí ciúine</em></li>
+<li><em>mná uaisle</em></li>
+<li><em>toithe <strong>íseala</strong></em></li>
+<li><em>páirceannaí míne <strong>réidhe</strong> [réye]</em></li>
+<li><em>ceisteannaí <strong>cruaidhe</strong> [cruaidhe]</em></li>
+<li><em>bróga <strong>buídhe</strong> [bwíye, bwí-e]</em></li>
+<li><em>na fir bhreátha</em></li>
+<li><em>na daoiní beotha</em></li>
+<li><em>milseáin <strong>thethe</strong></em></li>
+<li><em>bosa <strong>tethe</strong></em></li>
+<li><em>na pioctúirí gránna</em></li>
+<li><em>mná ábalta iad sin</em></li>
+<li><em>páistí dolba</em></li>
+</ul>
+<p>Often there is a choice between two endings in the plural. In the case of adjectives ending in <em>-ir</em>, <em>-e</em> or <em>-eacha</em> are added to them without syncopation in the plural.</p>
+<ul>
+<li><em>fir shocaire/shocaireacha</em></li>
+<li><em>rópaí láidire/láidireacha</em></li>
+</ul>
+<p>In some places the demonstrative adjectives <em>seo</em> and <em>sin</em> are inflected.</p>
+<ul>
+<li><em>na rudaí sine</em></li>
+<li><em>na leabharthaí seotha</em></li>
+</ul>
+<h2 id="54-the-genitive-plural"><a class="header" href="#54-the-genitive-plural">5.4 The genitive plural</a></h2>
+<p>As we've mentioned already a few times, the tendency of the language for a long time has been to base the genitive plural on the nominative plural. It's the same story with this dialect, especially when there's an adjective along with the noun. In the examples below the standard version is given in parentheses.</p>
+<ul>
+<li><em>ag bualadh na bhfir bheaga</em> (na bhfear beag)</li>
+<li><em>ag troid na mbeithíg allta</em> (na mbeithíoch allta)</li>
+<li><em>ag péinteáil na bhfuinneogaí arda</em> (na bhfuinneog ard)</li>
+<li><em>ag tógáil na gclocha móra</em> (na gcloch mór)</li>
+</ul>
+<h2 id="55-comparative-degrees-of-the-adjective"><a class="header" href="#55-comparative-degrees-of-the-adjective">5.5 Comparative degrees of the adjective</a></h2>
+<h3 id="níosnas"><a class="header" href="#níosnas"><em>Níos/Nas</em></a></h3>
+<p>These two forms of the particle are common and widespread in the dialect. The usage of <em>nas</em> increases as you go north in Donegal and gets stronger as you  go east towards Ros Goill and Fánaid. The <em>n</em> at the beginning is usually slender if it's followed by a long <em>í</em> or a short <em>i</em>. It's slender in the form <em>nas</em> and it has a neutral vowel after it in that case, /nəs/. Often a mix of the two forms is heard as well, a broad <em>n</em> followed by <em>í</em>. This last form could be expressed in writing with the spelling <em>nuíos</em>.</p>
+<ul>
+<li><em>Tá sí níos/nas/nuíos f(h)earr</em></li>
+<li><em>Bhí sé níos/nas/nuíos duibhe/glaise</em></li>
+<li><em>Sílim go bhfuil siad níos/nas/nuíos óige</em></li>
+</ul>
+<h2 id="56-adjectives-ending-in--idh"><a class="header" href="#56-adjectives-ending-in--idh">5.6 Adjectives ending in <em>-idh</em>.</a></h2>
+<p>Often in the standard the <em>-idh</em> which was historically in adjectives like <em>cruaidh</em> etc. is left out. It's normal then not to inflect that kind of word and that <em>crua/níos crua/is crua</em> is the pattern followed. That doesn't fit with Ulster Irish since the <em>-dh</em> in adjectives like <em>cruaidh</em> is always pronounced in this dialect. That means that there is an additional syllable in the comparative.</p>
+<ul>
+<li><em>níos cruaidhe (cruaye)</em></li>
+<li><em>níos buídhe (bwíye)</em></li>
+<li><em>níos réidhe (réye)</em></li>
+<li><em>nios ruaidhe (ruaye)</em></li>
+</ul>
+<h2 id="57-adjectives-ending-in--ith"><a class="header" href="#57-adjectives-ending-in--ith">5.7 Adjectives ending in <em>-ith</em></a></h2>
+<p>Note that in the following monosyllabic adjectives the comparative forms have a pronunciation which isn't clear from the spelling.  The pronunciation of <em>-ith</em> is almost identical to <em>-idh</em> in words like <em>cruaidh</em>, which means they often have the ending said as <em>-idhe</em>. The adjective <em>lách</em> (&lt; laghach) should also be put in this group.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>méith</em></td><td><em>níos méithe (méíthe, méíye)</em></td></tr>
+<tr><td><em>tláith</em></td><td><em>níos tláithe (tláíhe, tláíye)</em></td></tr>
+<tr><td><em>lách (laghach)</em></td><td><em>níos láiche (laeíthe, laeíye)</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="58-two-syllable-adjectives-ending-in--igh"><a class="header" href="#58-two-syllable-adjectives-ending-in--igh">5.8 Two Syllable Adjectives ending in <em>-igh.</em></a></h2>
+<p>These are inflected in a particular way in Ulster Irish. This inflection isn't mentioned in the Official Standard at all. The ending <em>-íocha</em> is added instead of <em>-igh</em> which is in the nominative. It's said as <em>í</em> + <em>acha</em>.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>doiligh</em></td><td><em>níos doilíocha</em></td></tr>
+</tbody></table>
+</div>
+<p>Many other adjectives have come into this group, most of them are generated from verbs e.g. <em>sásta, cráite</em> etc. Often those same adjectives are pronounced as <em>sástaí, cráití.</em> If the base adjective ends in <em>-ta/te</em>, it's used as in the Standard. If it ends on <em>-t(a)í</em> it's handled like <em>doiligh</em>, or it's not changed at all.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>sásta</em></td><td><em>níos sásta</em></td></tr>
+<tr><td><em>sástaí</em></td><td><em>níos sástaí/sástaíocha</em></td></tr>
+<tr><td><em>cráite</em></td><td><em>níos cráite</em></td></tr>
+<tr><td><em>cráití</em></td><td><em>níos cráití/cráitíocha</em></td></tr>
+<tr><td><em>amscaí</em></td><td><em>níos amscaí/amscaíocha</em></td></tr>
+<tr><td><em>minic</em></td><td><em>níos minicí/minicíocha</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="59-other-irregular-forms"><a class="header" href="#59-other-irregular-forms">5.9 Other irregular forms</a></h2>
+<p>Here are some irregular forms that perhaps wouldn't be expected from the Standard's rules.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>beo</em></td><td><em>níos beotha/beoichte</em></td></tr>
+<tr><td><em>bór</em> (bodhar)</td><td><em>níos bóire/boivre</em></td></tr>
+<tr><td><em>bréa</em></td><td><em>níos breátha/breáichte</em></td></tr>
+<tr><td><em>gránna</em></td><td><em>níos gráice</em></td></tr>
+<tr><td><em>maith</em></td><td><em>is fearr/is measa (Is tú is measa liom = is fearr)</em></td></tr>
+<tr><td><em>ramhar</em></td><td><em>níos/is ramha</em></td></tr>
+<tr><td><em>te</em></td><td><em>níos teo(tha)/tethe</em></td></tr>
+</tbody></table>
+</div>
+<h2 id="510-preposition--possessive-adjective"><a class="header" href="#510-preposition--possessive-adjective">5.10 Preposition + possessive adjective</a></h2>
+<p>(a) In ulster irish the preposition and the possessive adjective like <em>mo, do, a</em> etc. are kept separate from each other, unlike other dialects. These examples show what's meant.</p>
+<ul>
+<li><em>Stad sé do mo bhualadh.</em></li>
+<li><em>Ó mo dheartháir a tháinig an litir.</em></li>
+</ul>
+<p>(b) Note that commonly <em>dona, dena</em> are heard rather than <em>dá</em> in Ulster.</p>
+<ul>
+<li><em>Thug sé dona mháthair é.</em></li>
+<li><em>Bhain siad an teach dena ndeartháir.</em></li>
+</ul>
+<p>(c) <em>S'agam/S'agat</em> etc.
+These are common forms in the dialect to express possession. They take the place of the possessive adjectives <em>mo, do</em> etc. <em>Seo agam, seo agat</em> etc. is the standard spelling. As they're written in the title is how they're said, with a broad <em>s</em>.</p>
+<ul>
+<li><em>Ghortaigh mé an tsúil <strong>s'agam</strong>.</em></li>
+<li><em>Bhí an t-airgead <strong>s'acu</strong> caillte.</em></li>
+<li><em>Tá an fear <strong>s'aici</strong> curtha.</em>
+The version <em>seo agamsa, seo againne</em> etc. is used to express particular emphasis. In this case the two words are pronounced individually.</li>
+<li><em>Tá <strong>an fear seo agamsa</strong> ag goil go Meiriceá amárach.</em></li>
+<li><em>An bhfuil <strong>ag mac sin agaibhse</strong> ar an Choláiste i mBaile Átha Cliath?</em></li>
+<li><em>Sin <strong>muintir an bhaile seo againne</strong> agat!</em></li>
+</ul>
+<h2 id="511-possessive-adjective--cuid"><a class="header" href="#511-possessive-adjective--cuid">5.11 Possessive adjective + <em>cuid</em></a></h2>
+<p>When a plural word follows the possessive adjective, there's a variant where the word <em>cuid</em> is used to express possession. Since the genitive follows <em>cuid</em>, the noun after it is in the genitive plural. There's a tendency in the modern language to use the nominative plural instead of the genitive but both tendencies still exist. Here are some examples.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em>mo shúile</em></td><td><em>mo chuid súl/súile</em></td></tr>
+<tr><td><em>mo bhróga</em></td><td><em>mo chuid bróg/bróga</em></td></tr>
+<tr><td><em>mo lámha</em></td><td><em>mo chuid lámh/lámha</em></td></tr>
+<tr><td><em>mo dheartháireacha</em></td><td><em>mo chuid deartháireach/dheartháireacha</em></td></tr>
+</tbody></table>
+</div>
+<p>In the case of the following forms, you can't use <em>mo, do</em> etc. with them. Instead <em>s'agam, s'agat</em> etc. or <em>cuid</em> is used to express possession. The following are some examples.</p>
+<ul>
+<li><em>mo chuid páistí</em></li>
+<li><em>do chuid préataí</em></li>
+<li><em>a gcuid ceisteannaí</em></li>
+<li><em>a chuid bréag/bréaga</em></li>
+<li><em>ár gcuid fear</em></li>
+</ul>
+<p>There are specific kinds of words where <em>cuid</em> is used with them instead of <em>mo, do</em> etc. It's hard to give a definite rule about the kind of word but perhaps the below can be a guide.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><em><strong>Bia</strong></em></td><td><em>mo chuid bainne/tae/aráin/feola</em></td></tr>
+<tr><td><em><strong>Maoin</strong></em></td><td><em>do chuid airgid/eallaigh/mónadh/talaimh</em></td></tr>
+<tr><td><em><strong>Teangacha</strong></em></td><td><em>mo chuid Gaeilge/Béarla/Fraincise</em></td></tr>
+<tr><td><strong><em>Gairm/Bu</em>a</strong></td><td><em>do chuid ceoil/garradóireachta/múinteoireachta/teagaisc</em></td></tr>
+<tr><td><em><strong>Saothar</strong></em></td><td><em>ár gcuid oibre/ama/trioblóide</em></td></tr>
+</tbody></table>
+</div>
+<p>The forms below pertain especially to Ulster Irish.</p>
+<ul>
+<li><em>cuid aráin Sheáin</em></li>
+<li><em>cuid eallaigh na comharsan</em></li>
+<li><em>cuid airgid mo mháthara</em></li>
+<li><em>cuid mónadh an fhir seo</em></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nouns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="pronouns.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nouns.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="pronouns.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
